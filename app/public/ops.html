@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ripples · Scorecard</title>
+  <meta name="description" content="Scorecard, open gaps, follow-up accountability and drafts awaiting approval. Sample data.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='5' fill='%23ff2e5b'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%234cc3ff' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <script type="module" src="/js/pages/ops.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <div id="chrome"></div>
+    <main id="main"><div id="page">
+      <div class="page-head">
+        <h1>Climate Scorecard</h1>
+        <p>Promises kept, open gaps and follow-up accountability across all tracked cities, plus every draft waiting for a person to approve it.</p>
+      </div>
+      <div class="kpis" id="kpis"></div>
+      <div class="cols-2" style="margin-top:16px;align-items:start">
+        <section class="card stack" aria-labelledby="draftsTitle"><div id="draftsHead"></div><ul class="list" id="drafts"></ul></section>
+        <div class="stack">
+          <section class="card"><h2>Gaps by agency</h2><div id="agencyBars"></div></section>
+          <section class="card"><h2>Follow-up log</h2><div id="followups"></div></section>
+        </div>
+      </div>
+      <section class="card" style="margin-top:16px"><h2>City scorecard</h2><div id="cityTable"></div></section>
+      <section class="card" style="margin-top:16px"><h2>Follow-up accountability</h2><div id="officeTable"></div></section>
+      <section class="card" style="margin-top:16px"><h2>Project explorer</h2>
+        <div class="form" id="explorerFilters" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))"></div>
+        <div id="explorer" style="margin-top:12px"></div></section>
+    </div></main>
+  </div>
+  <div id="navs"></div>
+</body>
+</html>

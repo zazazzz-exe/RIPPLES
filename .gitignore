@@ -1,0 +1,4 @@
+node_modules/
+app/state/*.json
+app/state/*.tmp
+~$*.docx

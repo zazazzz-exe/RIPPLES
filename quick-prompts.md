@@ -1,20 +1,20 @@
-# Tanaw: prompts for Amazon Quick
+# Ripples: prompts for Amazon Quick
 
-Paste these into Amazon Quick in order. They assume the space described in D0 holds `tanaw-project-document`, the six CSVs from `data/`, and (if Quick accepts it) the mockup `tanaw-climate-map.html`. Replace anything in [BRACKETS]. All CSV data is sample data from the mockup.
+Paste these into Amazon Quick in order. They assume the space described in D0 holds `ripples-project-document`, the six CSVs from `data/`, and (if Quick accepts it) the mockup `ripples-climate-map.html`. Replace anything in [BRACKETS]. All CSV data is sample data from the mockup.
 
 ## D0. Set up the space
 
-1. In Quick, create a space named **Tanaw: Climate Defense Map**.
-2. Add knowledge → file uploads: `tanaw-project-document.md` (or the `.docx`), `quick-prompts.md`, and all six CSVs from `data/`.
-3. Add the mockup. Upload `tanaw-climate-map.html` if Quick accepts HTML files. If it doesn't, Part B of the project document and the CSVs carry the same information. If the team shares the published mockup link publicly, it can also be added through a web crawler knowledge base.
+1. In Quick, create a space named **Ripples: Climate Defense Map**.
+2. Add knowledge → file uploads: `ripples-project-document.md` (or the `.docx`), `quick-prompts.md`, and all six CSVs from `data/`.
+3. Add the mockup. Upload `ripples-climate-map.html` if Quick accepts HTML files. If it doesn't, Part B of the project document and the CSVs carry the same information. If the team shares the published mockup link publicly, it can also be added through a web crawler knowledge base.
 4. Optional: add a web crawler knowledge base for the public PAGASA and NDRRMC sites.
 
 ## D1. Master kickoff prompt
 
 ```
-You are the AI orchestration layer for Tanaw, a climate adaptation app for the Philippines. Read "tanaw-project-document" in this space first; it is the source of truth. The CSVs in this space (cities, projects, advisories, evidence, evacuation_centers, community_actions) are SAMPLE DATA from our mockup. Treat them as realistic test data and never present them as real LGU records.
+You are the AI orchestration layer for Ripples, a climate adaptation app for the Philippines. Read "ripples-project-document" in this space first; it is the source of truth. The CSVs in this space (cities, projects, advisories, evidence, evacuation_centers, community_actions) are SAMPLE DATA from our mockup. Treat them as realistic test data and never present them as real LGU records.
 
-Our goal: find gaps in each city's climate defenses before hazards hit, help Filipinos prepare for those gaps, and push the responsible offices to close them. The app is organized by city on an explorable 3D map; each city has a City Page; each project has an evidence view.
+Our goal: find gaps in each city's climate defenses before hazards hit, help Filipinos prepare for those gaps, and push the responsible offices to close them. The public app is organized by city on an explorable 3D map; each city has a City Page; each project has an evidence view. That front end is only a mockup for now: you build the internal system that reviewers, DRRMO staff and partners use.
 
 Your four objectives:
 1. Connect data sources: tell me which connectors and knowledge bases to set up (S3 or uploads for LCCAP PDFs, web crawler for PAGASA/NDRRMC, our CSVs now and our API later through OpenAPI or MCP, email/Slack/Teams action connectors).
@@ -35,7 +35,7 @@ Start by giving me a build plan: the list of dashboards, flows, automations, res
 ## D2. Scorecard dashboard (Quick Sight)
 
 ```
-Using cities.csv, projects.csv and evidence.csv in this space, build a dashboard called "Tanaw Climate Scorecard". Label it "Sample data" in the title area.
+Using cities.csv, projects.csv and evidence.csv in this space, build a dashboard called "Ripples Climate Scorecard". Label it "Sample data" in the title area.
 
 Sheets and visuals:
 1. National overview: KPI tiles for commitments tracked, open gaps (projects where gap is "Overdue" or "Needs maintenance"), and cities at High or Critical real-risk level. A map of cities using lat/lon, colored by real_risk_level (Low, Moderate, High, Critical in that order).
@@ -70,7 +70,7 @@ Rules: never call the city safe; defer to PAGASA and NDRRMC; neutral language on
 Create a flow named "Advisory guidance card".
 Inputs: advisory text (pasted from PAGASA or NDRRMC), city_id.
 Steps:
-1. Identify the advisory type (Heat, Rain, Flood, Typhoon, Drought, Thunderstorm, Coastal) and level, using the PAGASA thresholds in Appendix B of tanaw-project-document.
+1. Identify the advisory type (Heat, Rain, Flood, Typhoon, Drought, Thunderstorm, Coastal) and level, using the PAGASA thresholds in Appendix B of ripples-project-document.
 2. Look up the city's open gaps in projects.csv (gap = Overdue or Needs maintenance) and its evacuation centers in evacuation_centers.csv.
 3. Write four short sections, two to three sentences each: For households (what to prepare and when to go to which evacuation center), For schools (suggested schedule changes, deferring to DepEd and LGU announcements), For farmers (crops, drainage, irrigation, fisherfolk), For barangay officials (which open gaps matter now and the interim measure for each).
 4. Add the official source and time. End with: "Follow official warnings and evacuation orders from PAGASA and NDRRMC."
@@ -118,7 +118,7 @@ For each project:
 2. Send the draft to the reviewer for approval (email or Slack). Wait for approval.
 3. On approval, send it to the responsible office's official contact and log it.
 4. Start a 15-working-day reply clock. If a reply arrives, attach it to the project and post it to the City Page. If not, record "No reply" for the scorecard.
-5. Call the Tanaw backend action "anchor_record" for each status change.
+5. If the Ripples backend action "anchor_record" is connected, call it for each status change. If it is not connected yet, log the status change and skip this step.
 Send me a weekly summary: letters sent, replies received, silences recorded, by city and agency.
 Do not send anything without reviewer approval.
 ```
@@ -132,7 +132,7 @@ Steps:
 1. For each affected city, run "Advisory guidance card" with the signal advisory.
 2. List the city's open gaps and draft an interim-measure notice for barangay officials.
 3. For overdue flood, drainage, dike, pump or seawall projects in affected cities, queue the "Deadline escalation" steps with a note that the advisory is active.
-4. Refresh the "Tanaw Climate Scorecard" dashboard.
+4. Refresh the "Ripples Climate Scorecard" dashboard.
 5. Send the team a status message: cities affected, real-risk levels, open gaps in the path, drafts waiting for approval.
 All outputs are drafts until a reviewer approves them.
 ```
@@ -148,7 +148,7 @@ For each city in cities.csv: run the City risk brief research prompt, attach the
 ## D6. Chat agent
 
 ```
-Create a custom chat agent named "Tanaw City Assistant", grounded only in this space and in the PAGASA and NDRRMC web sources.
+Create a custom chat agent named "Ripples City Assistant", grounded only in this space and in the PAGASA and NDRRMC web sources.
 It answers questions from the team, partner NGOs and DRRMO staff, such as: "Which open gaps raise Malabon's risk this season?", "Which offices have not replied to follow-ups?", "Draft the household section for an orange rainfall warning in Legazpi."
 Rules: cite the file or source for each answer; say when data is sample data; never say a place is safe; neutral language; for live warnings, link PAGASA and NDRRMC instead of answering from memory.
 ```
@@ -156,7 +156,7 @@ Rules: cite the file or source for each answer; say when data is sample data; ne
 ## D7. Reviewer app (Apps in Amazon Quick)
 
 ```
-Build an internal app named "Tanaw Reviewer" for our data reviewers.
+Build an internal app named "Ripples Reviewer" for our data reviewers.
 Screens:
 1. Commitments queue: AI-extracted LCCAP commitments with source page, editable fields (what, where, budget, deadline, responsible office) and Approve / Reject buttons.
 2. Drafts queue: follow-up letters, advisory guidance cards and readiness reports waiting for approval, with the source record beside each.

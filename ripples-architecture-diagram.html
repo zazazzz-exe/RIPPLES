@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ripples — System Architecture</title>
+<style>
+  :root {
+    --navy-900: #0a1628;
+    --navy-800: #0f1f38;
+    --navy-700: #16294a;
+    --navy-600: #1e3660;
+    --navy-500: #27447a;
+    --line: rgba(120, 160, 220, 0.25);
+    --line-strong: rgba(140, 180, 240, 0.5);
+    --text: #e8eef7;
+    --text-dim: #9fb2cc;
+    --text-mute: #6b7f9e;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+    --red: #f87171;
+    --cyan: #38bdf8;
+    --violet: #a78bfa;
+    --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(ellipse at top, #10213d 0%, var(--navy-900) 60%);
+    font-family: var(--font);
+    color: var(--text);
+    padding: 32px 28px 44px;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
+  header { text-align: center; margin-bottom: 10px; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cyan); font-weight: 600; margin-bottom: 8px;
+  }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+  h1 .accent { color: var(--cyan); }
+  .tagline { color: var(--text-dim); font-size: 14px; margin-top: 6px; }
+  .flow-pills { display: flex; gap: 8px; justify-content: center; margin: 16px 0 26px; flex-wrap: wrap; }
+  .flow-pill {
+    font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 100px;
+    background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.3); color: var(--cyan);
+  }
+  .flow-pill .arw { color: var(--text-mute); margin: 0 2px; }
+
+  /* layer blocks */
+  .layer {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px 18px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+  }
+  .layer-head { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
+  .layer-tag {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+    padding: 3px 9px; border-radius: 5px;
+  }
+  .layer-title { font-size: 14px; font-weight: 600; color: var(--text); }
+  .layer-sub { font-size: 12px; color: var(--text-mute); margin-left: auto; text-align: right; }
+
+  .t-present { background: rgba(167,139,250,0.16); color: var(--violet); }
+  .t-orch { background: rgba(56,189,248,0.16); color: var(--cyan); }
+  .t-data { background: rgba(52,211,153,0.16); color: var(--green); }
+  .t-rules { background: rgba(251,191,36,0.16); color: var(--yellow); }
+
+  .present { border-color: rgba(167,139,250,0.35); }
+  .orch { border-color: rgba(56,189,248,0.4); background: linear-gradient(180deg, rgba(56,189,248,0.05), rgba(56,189,248,0.01)); }
+  .data { border-color: rgba(52,211,153,0.35); }
+  .rules { border-color: rgba(251,191,36,0.35); }
+
+  /* connectors */
+  .connector { text-align: center; color: var(--text-mute); font-size: 11px; margin: -2px 0 8px; height: 20px; line-height: 20px; }
+  .connector .bar { color: var(--line-strong); font-size: 15px; }
+
+  /* card grids */
+  .grid { display: grid; gap: 10px; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .node {
+    background: var(--navy-700);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 11px 12px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .node:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  .node .code {
+    font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--cyan);
+    display: inline-block; margin-bottom: 3px;
+  }
+  .node .nm { font-size: 12.5px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .node .ds { font-size: 11px; color: var(--text-dim); margin-top: 3px; line-height: 1.4; }
+
+  .node.gate { border-color: rgba(251,191,36,0.5); background: linear-gradient(180deg, rgba(251,191,36,0.09), var(--navy-700)); }
+  .node.gate .code { color: var(--yellow); }
+  .node.agent { border-color: rgba(167,139,250,0.45); }
+  .node.agent .code { color: var(--violet); }
+
+  .sublabel { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); font-weight: 700; margin: 4px 0 7px; }
+
+  .data-node { background: var(--navy-800); border:1px solid rgba(52,211,153,0.22); border-radius: 8px; padding: 9px 10px; text-align:center; }
+  .data-node .fn { font-family: var(--mono); font-size: 11px; color: var(--green); font-weight: 600; }
+  .data-node .rc { font-size: 10px; color: var(--text-mute); margin-top: 2px; }
+
+  .rules-inner { display:flex; align-items:center; gap: 14px; flex-wrap: wrap; }
+  .risk-chips { display:flex; gap:6px; }
+  .chip { font-size:10px; font-weight:700; padding:3px 10px; border-radius:5px; color:#0a1628; }
+  .chip.g{background:var(--green);} .chip.y{background:var(--yellow);} .chip.o{background:var(--orange);} .chip.r{background:var(--red);}
+  .rules-note { font-size:11.5px; color: var(--text-dim); flex:1; min-width: 220px; }
+
+  .side-note {
+    position:absolute; top:16px; right:18px; font-size:10px; color:var(--text-mute);
+    border:1px dashed var(--line); border-radius:6px; padding:3px 8px;
+  }
+
+  /* legend / principles */
+  .principles { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:18px; }
+  .principle { background: var(--navy-800); border:1px solid var(--line); border-radius:10px; padding:13px 14px; }
+  .principle .pt { font-size:12.5px; font-weight:700; color:var(--text); margin-bottom:4px; display:flex; align-items:center; gap:7px; }
+  .principle .dot { width:8px;height:8px;border-radius:50%; }
+  .principle .pd { font-size:11px; color:var(--text-dim); line-height:1.5; }
+
+  footer { text-align:center; margin-top:22px; font-size:11px; color:var(--text-mute); }
+  .sample-tag { display:inline-block; background:rgba(251,191,36,0.14); color:var(--yellow); border:1px solid rgba(251,191,36,0.3); font-size:10px; font-weight:700; padding:3px 10px; border-radius:5px; letter-spacing:0.08em; }
+
+  @media (max-width: 720px){ .cols-4,.cols-3{grid-template-columns:1fr 1fr;} .principles{grid-template-columns:1fr;} }
+
+  @media (prefers-reduced-motion: no-preference){
+    .fade{opacity:0; transform:translateY(10px); transition:opacity .5s ease-out, transform .5s ease-out;}
+    .fade.in{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="fade">
+    <div class="eyebrow">Amazon Quick · Climate Accountability System</div>
+    <h1><span class="accent">Ripples</span> — System Architecture</h1>
+    <div class="tagline">Detect gaps in a city's climate defenses · Protect people with guidance · Push the responsible offices to act</div>
+    <div class="flow-pills">
+      <span class="flow-pill">DETECT <span class="arw">→</span> PROTECT <span class="arw">→</span> PUSH</span>
+      <span class="flow-pill">A person approves every output</span>
+    </div>
+  </header>
+
+  <!-- PRESENTATION -->
+  <div class="layer present fade">
+    <span class="side-note">future: OpenAPI / MCP connector</span>
+    <div class="layer-head">
+      <span class="layer-tag t-present">Presentation</span>
+      <span class="layer-title">Public experience — mockup only this version</span>
+    </div>
+    <div class="grid cols-3">
+      <div class="node"><span class="nm">3D National Map</span><div class="ds">City pins by real-risk level; beam height = risk score</div></div>
+      <div class="node"><span class="nm">City Page</span><div class="ds">Risk breakdown, advisories, project pins & evac centers</div></div>
+      <div class="node"><span class="nm">Project Evidence View</span><div class="ds">Photo / satellite / schematic + info rail</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--text-mute);margin-top:9px;">
+      <code style="font-family:var(--mono)">ripples-climate-map.html</code> — a design, not a connected app. Shows the same sample data Quick uses.
+    </div>
+  </div>
+
+  <div class="connector fade"><span class="bar">▲ │ ▼</span> &nbsp; not yet connected</div>
+
+  <!-- ORCHESTRATION -->
+  <div class="layer orch fade">
+    <div class="layer-head">
+      <span class="layer-tag t-orch">Orchestration</span>
+      <span class="layer-title">Amazon Quick — what we build now</span>
+      <span class="layer-sub">connects data · synthesizes research · turns ideas into actions · automates</span>
+    </div>
+
+    <div class="sublabel">Human-facing surfaces</div>
+    <div class="grid cols-2" style="margin-bottom:12px;">
+      <div class="node agent"><span class="code">D6</span><span class="nm">Ripples City Assistant</span><div class="ds">Chat agent · cited, sample-labeled answers for team, NGOs & DRRMO staff</div></div>
+      <div class="node gate"><span class="code">D7 · APPROVAL GATE</span><span class="nm">Ripples Reviewer App</span><div class="ds">Commitments · Drafts · Reports queues → approve / reject</div></div>
+    </div>
+
+    <div class="sublabel">Automations — Quick Automate (trigger-driven, approval-gated)</div>
+    <div class="grid cols-3" style="margin-bottom:12px;">
+      <div class="node"><span class="code">D5a</span><span class="nm">Deadline Escalation</span><div class="ds">Daily check → letter → review → 15-day reply clock</div></div>
+      <div class="node"><span class="code">D5b</span><span class="nm">Typhoon Playbook</span><div class="ds">Signal raised → cards + notices + escalations + refresh</div></div>
+      <div class="node"><span class="code">D5c</span><span class="nm">Pre-season Readiness</span><div class="ds">On demand / 4 wks pre-season → per-city reports</div></div>
+    </div>
+
+    <div class="sublabel">Flows — Quick Flows (reusable building blocks)</div>
+    <div class="grid cols-3" style="margin-bottom:12px;">
+      <div class="node"><span class="code">D4a</span><span class="nm">Advisory Guidance Card</span><div class="ds">Advisory → 4-audience card (households, schools, farmers, barangay)</div></div>
+      <div class="node"><span class="code">D4b</span><span class="nm">Follow-up Letter</span><div class="ds">Project → neutral letter + FOI request (DRAFT)</div></div>
+      <div class="node"><span class="code">D4c</span><span class="nm">Citizen Report Triage</span><div class="ds">Report → corroborated / unverified · hides identity</div></div>
+    </div>
+
+    <div class="sublabel">Research & Analytics</div>
+    <div class="grid cols-2">
+      <div class="node"><span class="code">D3</span><span class="nm">Quick Research — City Risk Brief</span><div class="ds">Per-city 2-page readiness brief + commitment-extraction check, cited</div></div>
+      <div class="node"><span class="code">D2</span><span class="nm">Quick Sight — Ripples Climate Scorecard</span><div class="ds">5 sheets: overview, city table, gaps by agency, accountability, explorer</div></div>
+    </div>
+  </div>
+
+  <div class="connector fade"><span class="bar">▲</span> &nbsp; one space grounds everything</div>
+
+  <!-- DATA -->
+  <div class="layer data fade">
+    <div class="layer-head">
+      <span class="layer-tag t-data">Data &amp; Knowledge</span>
+      <span class="layer-title">Quick space “Ripples: Climate Defense Map” (D0)</span>
+      <span class="layer-sub">project doc · prompts · web-crawler KB (PAGASA / NDRRMC) · (later) LCCAP PDFs</span>
+    </div>
+    <div class="grid cols-4">
+      <div class="data-node"><div class="fn">cities.csv</div><div class="rc">8 rows · city_id</div></div>
+      <div class="data-node"><div class="fn">projects.csv</div><div class="rc">32 rows · project_id</div></div>
+      <div class="data-node"><div class="fn">advisories.csv</div><div class="rc">10 rows · advisory_id</div></div>
+      <div class="data-node"><div class="fn">evidence.csv</div><div class="rc">48 rows · evidence_id</div></div>
+      <div class="data-node"><div class="fn">evacuation_centers.csv</div><div class="rc">24 rows · center_id</div></div>
+      <div class="data-node"><div class="fn">community_actions.csv</div><div class="rc">19 rows · action_id</div></div>
+      <div class="data-node" style="border-style:dashed;"><div class="fn" style="color:var(--text-dim)">LCCAP PDFs</div><div class="rc">later</div></div>
+      <div class="data-node" style="border-style:dashed;"><div class="fn" style="color:var(--text-dim)">PAGASA / NDRRMC</div><div class="rc">web crawler</div></div>
+    </div>
+  </div>
+
+  <div class="connector fade"><span class="bar">▲</span> &nbsp; fixed rules, outside Quick · Quick reads, never recomputes</div>
+
+  <!-- RULES -->
+  <div class="layer rules fade">
+    <div class="layer-head">
+      <span class="layer-tag t-rules">Rules Engine</span>
+      <span class="layer-title">Appendix B — real-risk &amp; advisory levels</span>
+      <span class="layer-sub">precomputed into cities.csv now · app backend later</span>
+    </div>
+    <div class="rules-inner">
+      <div class="risk-chips">
+        <span class="chip g">Low</span><span class="chip y">Moderate</span><span class="chip o">High</span><span class="chip r">Critical</span>
+      </div>
+      <div class="rules-note">
+        Real-risk level = current hazard points + open-gap points. Advisory levels follow PAGASA thresholds. Deterministic and explainable — AI never sets a risk level, it only does the language work.
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="sublabel" style="margin-top:20px;">Governing principles</div>
+  <div class="principles">
+    <div class="principle fade"><div class="pt"><span class="dot" style="background:var(--yellow)"></span>Rule-based where it matters</div><div class="pd">Risk & advisory levels from fixed rules — AI only extracts, triages & drafts. Every result explainable.</div></div>
+    <div class="principle fade"><div class="pt"><span class="dot" style="background:var(--green)"></span>A person approves everything</div><div class="pd">Quick drafts; a reviewer approves. Nothing is sent or published automatically.</div></div>
+    <div class="principle fade"><div class="pt"><span class="dot" style="background:var(--cyan)"></span>One space grounds everything</div><div class="pd">A single Quick space holds the doc, CSVs & LCCAP files so every component reads the same records.</div></div>
+  </div>
+
+  <footer class="fade">
+    <span class="sample-tag">⚠ ALL SAMPLE DATA</span>
+    <div style="margin-top:9px;">Critical build path: <b style="color:var(--text-dim)">D0 space → D4 flows → D7 Reviewer → D5 automations</b>. Everything that <i>sends</i> depends on the approval gate existing first.</div>
+  </footer>
+</div>
+
+<script>
+  // single clean entrance after full render
+  var els = document.querySelectorAll('.fade');
+  els.forEach(function(el, i){ setTimeout(function(){ el.classList.add('in'); }, 60 + i*45); });
+</script>
+</body>
+</html>

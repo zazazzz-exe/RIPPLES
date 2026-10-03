@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ripples</title>
+<script>
+  // The project view now lives in the 3D explorer.
+  var id = new URLSearchParams(location.search).get('id');
+  location.replace(id ? '/#/project/' + encodeURIComponent(id) : '/');
+</script>
+</head>
+<body style="background:#020817;color:#dde9ff;font-family:system-ui"><p><a href="/" style="color:#ffcf4a">Open the Ripples map</a></p></body>
+</html>

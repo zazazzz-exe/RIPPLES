@@ -1,0 +1,51 @@
+/* Design tokens: the 3D explorer's visual language (ripples-climate-map),
+   shared by the Scorecard, Simulate and Assistant pages. Dark only, like the
+   explorer. The older names (--bg, --surface, --text, …) alias the mockup's. */
+:root {
+  /* mockup palette */
+  --ink-0: #020817;
+  --ink-1: #06122b;
+  --ink-2: #0b1d3f;
+  --line: #1d3a68;
+  --line-hi: #2f5794;
+  --ice: #dde9ff;
+  --ice-dim: #93a9cf;
+  --mute: #6a82aa;
+  --route: #ff2e4a;
+  --sun: #ffcf4a;
+
+  --low: #35e39a;
+  --mod: #ffd23f;
+  --high: #ff8a2b;
+  --crit: #ff2e5b;
+  --on-risk: #020817;
+
+  --s-none: #8ea0c4;
+  --s-run: #4cc3ff;
+  --s-done: #35e39a;
+  --s-late: #ffae2b;
+  --maint: #ff6bd6;
+
+  /* aliases used by the page components */
+  --bg: var(--ink-0);
+  --surface: var(--ink-1);
+  --surface-2: var(--ink-2);
+  --text: var(--ice);
+  --text-dim: var(--ice-dim);
+  --text-mute: var(--mute);
+  --accent: var(--sun);
+
+  --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --radius: 3px;
+  --radius-sm: 2px;
+  --gutter: 16px;
+  --nav-w: 220px;
+  --tab-h: 64px;
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, .7);
+  --ease: cubic-bezier(.22, .8, .2, 1);
+  --panel-bg: linear-gradient(180deg, rgba(11, 29, 63, .55), rgba(6, 18, 43, .85));
+  color-scheme: dark;
+}

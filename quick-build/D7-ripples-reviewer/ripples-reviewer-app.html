@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ripples Reviewer — Approval Gate (D7, sample data)</title>
+<!--
+  Ripples Reviewer app (D7) — static mockup of "Apps in Amazon Quick".
+  The approval gate: three queues (Commitments / Drafts / Reports) with Approve/Reject.
+  Draft-state model: DRAFT -> APPROVED | REJECTED. The APPROVED state is what the
+  D5a/D5b/D5c automations read before they send/share/post. This mockup never sends.
+  Visual language matches ripples-climate-map.html. All data is SAMPLE DATA.
+  S2: everything DRAFT until a reviewer approves. S5: no reporter identity in Reports.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap');
+:root{
+  --ink-0:#020817; --ink-1:#06122b; --ink-2:#0b1d3f; --line:#1d3a68; --line-hi:#2f5794;
+  --ice:#dde9ff; --ice-dim:#93a9cf; --mute:#6a82aa;
+  --sun:#ffcf4a;
+  --low:#35e39a; --mod:#ffd23f; --high:#ff8a2b; --crit:#ff2e5b;
+  --ok:#35e39a; --reject:#ff2e5b;
+  --f-display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular","Cascadia Code",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--ink-0);color:var(--ice);font-family:var(--f-body);font-size:14px;-webkit-font-smoothing:antialiased}
+.scan{position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,rgba(150,190,255,.02) 0 1px,transparent 1px 3px)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+
+/* top bar */
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:16px;padding:16px 24px;
+  background:linear-gradient(180deg,rgba(6,18,43,.96),rgba(4,12,30,.9));border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.brand-name{font-family:var(--f-display);font-weight:800;font-size:30px;letter-spacing:.16em;line-height:1}
+.brand-sub{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--ice-dim);text-transform:uppercase;margin-top:3px}
+.sample{display:inline-block;margin-left:4px;padding:2px 7px;border:1px dashed var(--sun);color:var(--sun);
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em}
+.gate{margin-left:auto;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;color:var(--ice-dim);text-align:right}
+.gate b{color:var(--sun)}
+
+/* tabs */
+.tabs{display:flex;gap:4px;padding:0 24px;background:var(--ink-1);border-bottom:1px solid var(--line);position:sticky;top:72px;z-index:4}
+.tab{font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 18px;color:var(--mute);border-bottom:2px solid transparent;display:flex;gap:8px;align-items:center}
+.tab:hover{color:var(--ice-dim)}
+.tab.on{color:var(--ice);border-bottom-color:var(--sun)}
+.tab .count{font-family:var(--f-mono);font-size:11px;letter-spacing:0;background:var(--ink-2);border:1px solid var(--line);
+  padding:1px 6px;border-radius:2px;color:var(--ice-dim)}
+
+main{position:relative;z-index:1;padding:22px 24px 60px;max-width:1180px;margin:0 auto}
+.screen{display:none}
+.screen.on{display:block}
+.screen-lead{font-size:12.5px;color:var(--ice-dim);margin:0 0 18px;max-width:760px;line-height:1.5}
+.screen-lead code{font-family:var(--f-mono);font-size:11.5px;color:var(--ice)}
+
+/* queue cards */
+.item{background:linear-gradient(180deg,rgba(11,29,63,.6),rgba(6,18,43,.6));border:1px solid var(--line);
+  border-radius:4px;margin-bottom:16px;overflow:hidden;transition:border-color .2s,opacity .3s}
+.item:hover{border-color:var(--line-hi)}
+.item.decided-APPROVED{border-color:rgba(53,227,154,.5)}
+.item.decided-REJECTED{border-color:rgba(255,46,91,.4);opacity:.72}
+.item-head{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(2,8,23,.4)}
+.item-title{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:.04em}
+.item-id{font-family:var(--f-mono);font-size:10.5px;color:var(--mute)}
+.state-pill{margin-left:auto;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;padding:3px 9px;border-radius:2px;border:1px solid var(--line)}
+.state-DRAFT{color:var(--sun);border-color:var(--sun)}
+.state-APPROVED{color:var(--ink-0);background:var(--ok);border-color:var(--ok);font-weight:600}
+.state-REJECTED{color:var(--ink-0);background:var(--reject);border-color:var(--reject);font-weight:600}
+
+/* two-column: draft beside source record */
+.split{display:grid;grid-template-columns:1fr 320px;gap:0}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.col{padding:16px}
+.col+.col{border-left:1px solid var(--line)}
+@media(max-width:820px){.col+.col{border-left:0;border-top:1px solid var(--line)}}
+.col-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.draft-marker{display:inline-block;font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;color:var(--sun);
+  border:1px solid var(--sun);padding:2px 7px;margin-bottom:10px}
+.letter{font-size:13px;line-height:1.55;color:var(--ice-dim);white-space:pre-wrap}
+.letter b{color:var(--ice)}
+
+/* source record panel */
+.record{background:rgba(2,8,23,.5)}
+.kv{display:grid;grid-template-columns:92px 1fr;gap:4px 10px;font-size:12.5px;margin-bottom:3px}
+.kv dt{color:var(--mute);font-family:var(--f-mono);font-size:11px}
+.kv dd{margin:0;color:var(--ice)}
+.gap-pill{display:inline-block;font-family:var(--f-display);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:1px 7px;border-radius:2px;color:var(--ink-0)}
+.gap-Overdue{background:var(--high)}
+.gap-Needs{background:var(--mod)}
+.gap-OK{background:var(--low)}
+
+/* editable commitment fields */
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:620px){.fields{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:4px}
+.field.wide{grid-column:1/-1}
+.field label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.field input{background:var(--ink-0);border:1px solid var(--line);border-radius:3px;color:var(--ice);
+  padding:8px 10px;font:inherit;font-size:13px}
+.field input:focus{border-color:var(--line-hi);outline:none}
+.src-page{font-family:var(--f-mono);font-size:10.5px;color:var(--ice-dim);border:1px solid var(--line);padding:2px 7px;border-radius:2px}
+
+/* triage result */
+.triage{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.metric{background:rgba(2,8,23,.5);border:1px solid var(--line);border-radius:3px;padding:8px 12px;min-width:120px}
+.metric .m-label{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.metric .m-val{font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1.1;margin-top:2px}
+.status-corroborated{color:var(--low)}
+.status-unverified{color:var(--mod)}
+.flag-yes{color:var(--crit)}
+.flag-no{color:var(--ice-dim)}
+.matches{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.matches th,.matches td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.matches th{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.matches td{color:var(--ice-dim)}
+.matches .in-window{color:var(--ice)}
+.privacy{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:11.5px;color:var(--low);
+  background:rgba(53,227,154,.07);border:1px solid rgba(53,227,154,.3);border-radius:3px;padding:8px 11px}
+.evidence-row{font-family:var(--f-mono);font-size:11px;color:var(--ice-dim);background:var(--ink-0);
+  border:1px solid var(--line);border-radius:3px;padding:9px 11px;margin-top:10px;white-space:pre-wrap;word-break:break-word}
+
+/* action bar */
+.actions{display:flex;gap:10px;align-items:center;padding:12px 16px;border-top:1px solid var(--line);background:rgba(2,8,23,.4)}
+.btn{font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+  padding:9px 18px;border-radius:3px;border:1px solid var(--line)}
+.btn-approve{color:var(--ink-0);background:var(--ok);border-color:var(--ok)}
+.btn-approve:hover{filter:brightness(1.1)}
+.btn-reject{color:var(--reject);border-color:var(--reject)}
+.btn-reject:hover{background:rgba(255,46,91,.12)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.action-note{font-family:var(--f-mono);font-size:10.5px;color:var(--mute);margin-left:auto}
+.decided-txt{font-family:var(--f-mono);font-size:11px;color:var(--ice-dim);margin-left:4px}
+.decided-txt b{color:var(--ice)}
+
+footer{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px 40px;color:var(--mute);font-size:11.5px;line-height:1.6}
+footer code{font-family:var(--f-mono);color:var(--ice-dim)}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+
+<header>
+  <div>
+    <div class="brand-name">RIPPLES REVIEWER <span class="sample">SAMPLE DATA</span></div>
+    <div class="brand-sub">D7 · Apps in Amazon Quick · the approval gate</div>
+  </div>
+  <div class="gate">
+    draft-state model: <b>DRAFT → APPROVED / REJECTED</b><br>
+    automations (D5a/b/c) act only on <b>APPROVED</b>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab on" data-screen="commitments" role="tab">Commitments <span class="count" id="c-commitments">0</span></button>
+  <button class="tab" data-screen="drafts" role="tab">Drafts <span class="count" id="c-drafts">0</span></button>
+  <button class="tab" data-screen="reports" role="tab">Reports <span class="count" id="c-reports">0</span></button>
+</nav>
+
+<main>
+  <!-- SCREEN 1 — COMMITMENTS -->
+  <section class="screen on" id="screen-commitments">
+    <p class="screen-lead">AI-extracted LCCAP commitments with their source page. Edit any field to correct an extraction error, then
+      <b>Approve</b> to trust the commitment or <b>Reject</b> to send it back. Approval moves the item <code>DRAFT → APPROVED</code>.
+      Budget is a recorded commitment amount only — no money is handled anywhere in the system.</p>
+    <div id="list-commitments"></div>
+  </section>
+
+  <!-- SCREEN 2 — DRAFTS -->
+  <section class="screen" id="screen-drafts">
+    <p class="screen-lead">Follow-up letters (D4b), advisory guidance cards (D4a) and readiness reports awaiting approval — each shown
+      beside its source record. <b>Approve</b> sets <code>review_state = APPROVED</code>, the exact flag the deadline-escalation (D5a),
+      typhoon-playbook (D5b) and pre-season (D5c) automations read before they send, share or post. Nothing sends from this app.</p>
+    <div id="list-drafts"></div>
+  </section>
+
+  <!-- SCREEN 3 — REPORTS -->
+  <section class="screen" id="screen-reports">
+    <p class="screen-lead">Citizen report triage results (D4c) with matching-report context and a corroborate / reject control.
+      <b>Reporter identity is never shown here</b> — there is no field for it (S5/CC-5). <b>Corroborate</b> is enabled only when the fixed
+      rule is already met (≥2 matching reports in 30 days, or a satellite check) — a lone report cannot be hand-corroborated (S6/CC-6).</p>
+    <div id="list-reports"></div>
+  </section>
+</main>
+
+<footer>
+  <strong>Sample data.</strong> This mockup reads the sample CSVs in <code>data/</code> (<code>projects.csv</code>, <code>advisories.csv</code>,
+  <code>evidence.csv</code>) and the DRAFT outputs of the D4a/b/c flows. Real city and office names are used only to show how the system works;
+  nothing here describes the real status of any LGU, DPWH, DENR, MMDA or PAGASA record. This app is the approval gate — it only sets a draft's
+  <code>review_state</code>; it never sends, shares, or publishes. Build spec: <code>quick-build/D7-ripples-reviewer/app-spec.md</code>.
+</footer>
+
+<script>
+/* ---------- draft-state model ---------- */
+const STATE = { DRAFT:'DRAFT', APPROVED:'APPROVED', REJECTED:'REJECTED' };
+
+/* ---------- sample data (grounded in data/*.csv and the D4 flow outputs) ---------- */
+
+// SCREEN 1 — Commitments (extracted from projects.csv under each city's LCCAP)
+const commitments = [
+  { item_id:'commit-mal-wall', source_page:'LCCAP 2020–2030',
+    what:'Tullahan River wall repair, Tinajeros — repair & raise 900 m of river wall',
+    where:'Malabon City · Tinajeros (Tullahan River)',
+    budget:'₱120.0 M', deadline:'2026-05',
+    responsible_office:'District Engineer, DPWH Malabon-Navotas District Engineering Office',
+    review_state:STATE.DRAFT },
+  { item_id:'commit-dag-dike', source_page:'LCCAP 2022–2031',
+    what:'Pantal River dike raising, Phase 2 — raise 1.8 km of dike by 1.2 m',
+    where:'Dagupan City · riverside barangays (Pantal River)',
+    budget:'₱180.0 M', deadline:'2026-06',
+    responsible_office:'District Engineer, DPWH Pangasinan District Engineering Office',
+    review_state:STATE.DRAFT },
+  { item_id:'commit-leg-lahar', source_page:'LCCAP 2019–2028',
+    what:'Yawa River lahar dike extension — extend lahar dike by 1.5 km',
+    where:'Legazpi City · upstream barangays (Yawa River, Mayon)',
+    budget:'₱140.0 M', deadline:'2026-01',
+    responsible_office:'District Engineer, DPWH Albay 2nd District Engineering Office',
+    review_state:STATE.DRAFT },
+];
+
+// SCREEN 2 — Drafts (D4b letter + D4a card), each with its source record
+const drafts = [
+  {
+    item_id:'draft-mal-wall-letter', kind:'Follow-up letter (D4b)', source_ref:'mal-wall',
+    title:'Follow-up letter — Tullahan River wall repair', review_state:STATE.DRAFT,
+    draftText:
+`To: District Engineer, DPWH Malabon–Navotas District Engineering Office
+Re: Status request — Tullahan River wall repair, Tinajeros (sample ref mal-wall)
+
+Dear District Engineer,
+
+We write regarding the Tullahan River wall repair in Tinajeros, a commitment under Malabon City's LCCAP 2020–2030. The recorded budget is ₱120 million, with a committed deadline of May 2026. Our records show the status as Delayed, progress ~30%, and the commitment marked Overdue.
+
+So that this record stays accurate, we respectfully request:
+1. Current progress and a revised completion date.
+2. Interim measures for the affected barangays in Tinajeros this season.
+3. The latest progress report under EO No. 2, s. 2016 (FOI) or the local FOI ordinance.
+
+Your reply will be posted in full on the City Page. If no reply is received within 15 working days, the record will note "No reply".
+
+This defense matters this week because PAGASA (sample) has an active coastal high-tide advisory and a flood advisory for the Tullahan River.
+
+Respectfully,
+Ripples Follow-up Program (sample-data demonstration)`,
+    record:{ type:'project record · projects.csv', rows:[
+      ['project_id','mal-wall'], ['city','Malabon City'],
+      ['project','Tullahan River wall repair, Tinajeros'], ['type','Dike'],
+      ['responsible_office','DPWH Malabon-Navotas DEO'],
+      ['budget','₱120.0 M'], ['deadline','2026-05'],
+      ['status','Delayed (30%)'], ['gap','Overdue'],
+      ['followups','2 sent / 0 replied'] ] }
+  },
+  {
+    item_id:'draft-malabon-card', kind:'Advisory guidance card (D4a)', source_ref:'malabon-a2',
+    title:'Advisory card — Flood advisory: Tullahan River', review_state:STATE.DRAFT,
+    draftText:
+`[DRAFT] Flood Advisory — Tullahan River above normal
+City: Malabon City · Type: Flood · Level: Advisory (hazard points 2, Appendix B)
+
+For households — Move vehicles and valuables to higher floors; pack a go-bag. Riverside residents in Tinajeros should be ready to move to Malabon National High School (1,500), Tonsuya covered court (400) or the City Hall annex (800).
+For schools — Prepare to adjust schedules for riverside campuses; avoid ground-floor rooms near the river.
+For farmers — Fishpond operators along the Tullahan should secure gates and nets; clear pond drains.
+For barangay officials — Tullahan wall repair is overdue (station a watcher at the 120-m sandbag gap); flood sensors need maintenance (manual watchers at the two offline sites).
+
+Follow official warnings and evacuation orders from PAGASA and NDRRMC.`,
+    record:{ type:'advisory record · advisories.csv', rows:[
+      ['advisory_id','malabon-a2'], ['city','Malabon City'],
+      ['type','Flood'], ['level','Advisory'], ['hazard_points','2'],
+      ['source','PAGASA (sample)'],
+      ['open gaps','mal-wall (Overdue), mal-sensor (Needs maintenance)'] ] }
+  },
+];
+
+// SCREEN 3 — Reports (D4c triage results). NO reporter identity exists in this data.
+const reports = [
+  {
+    item_id:'report-mal-wall', title:'Triage — Tullahan River wall (Tinajeros)', source_ref:'mal-wall',
+    triage_status:'corroborated', matching_reports_30d:2, satellite_check_agrees:false,
+    review_flag:false, flag_reason:'',
+    review_state:STATE.DRAFT,
+    matches:[
+      { id:'mal-wall-e1', date:'2026-09', source:'Citizen photo report', obs:'Gap in the wall still open, sandbags displaced.', inWindow:true },
+      { id:'mal-wall-e2', date:'2026-09', source:'Citizen photo report', obs:'Same gap photographed from the opposite bank.', inWindow:true },
+      { id:'mal-wall-e3', date:'2026-07', source:'Satellite check', obs:'No construction activity visible at the site.', inWindow:false },
+    ],
+    evidence_row:'mal-wall-e5,mal-wall,malabon,2026-09,Citizen photo report,Reported the Tinajeros section of the Tullahan River wall still has an open gap with displaced sandbags.,yes,yes'
+  },
+  {
+    item_id:'report-dag-tidegate', title:'Triage — Calmay outfall tide gates (Dagupan)', source_ref:'dag-tidegate',
+    triage_status:'unverified', matching_reports_30d:0, satellite_check_agrees:false,
+    review_flag:false, flag_reason:'',
+    review_state:STATE.DRAFT,
+    matches:[
+      { id:'dag-tidegate-e1', date:'2026-04', source:'LGU update', obs:'Detailed design ongoing.', inWindow:false },
+    ],
+    evidence_row:'dag-tidegate-e2,dag-tidegate,dagupan,2026-09,Citizen photo report,Reported the Calmay outfall tide gates are not yet built; only bare ground and survey stakes were observed.,no,yes'
+  },
+];
+
+/* ---------- render ---------- */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function gapClass(g){ if(g==='Overdue')return 'gap-Overdue'; if((g||'').startsWith('Needs'))return 'gap-Needs'; return 'gap-OK'; }
+
+function statePill(s){ return `<span class="state-pill state-${s}">${s}</span>`; }
+function decidedTxt(it){ return it.review_state===STATE.DRAFT ? '' :
+  `<span class="decided-txt">decided by <b>${esc(it.decided_by||'reviewer')}</b> · ${esc(it.decided_at||'now')}</span>`; }
+
+function renderCommitments(){
+  const el = document.getElementById('list-commitments');
+  el.innerHTML = commitments.map(it=>`
+    <div class="item decided-${it.review_state}" id="item-${it.item_id}">
+      <div class="item-head">
+        <span class="item-title">Commitment</span>
+        <span class="item-id">${esc(it.item_id)}</span>
+        <span class="src-page">source page: ${esc(it.source_page)}</span>
+        ${statePill(it.review_state)}
+      </div>
+      <div class="col">
+        <div class="fields">
+          <div class="field wide"><label>what</label><input value="${esc(it.what)}" ${it.review_state!==STATE.DRAFT?'disabled':''}></div>
+          <div class="field wide"><label>where</label><input value="${esc(it.where)}" ${it.review_state!==STATE.DRAFT?'disabled':''}></div>
+          <div class="field"><label>budget (committed amount)</label><input value="${esc(it.budget)}" ${it.review_state!==STATE.DRAFT?'disabled':''}></div>
+          <div class="field"><label>deadline</label><input value="${esc(it.deadline)}" ${it.review_state!==STATE.DRAFT?'disabled':''}></div>
+          <div class="field wide"><label>responsible office</label><input value="${esc(it.responsible_office)}" ${it.review_state!==STATE.DRAFT?'disabled':''}></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-approve" ${it.review_state!==STATE.DRAFT?'disabled':''} onclick="decide('commitments','${it.item_id}','${STATE.APPROVED}')">Approve</button>
+        <button class="btn btn-reject" ${it.review_state!==STATE.DRAFT?'disabled':''} onclick="decide('commitments','${it.item_id}','${STATE.REJECTED}')">Reject</button>
+        ${decidedTxt(it)}
+        <span class="action-note">edit fields before approving · ${esc(it.review_state===STATE.DRAFT?'awaiting reviewer':'closed')}</span>
+      </div>
+    </div>`).join('');
+}
+
+function renderDrafts(){
+  const el = document.getElementById('list-drafts');
+  el.innerHTML = drafts.map(it=>`
+    <div class="item decided-${it.review_state}" id="item-${it.item_id}">
+      <div class="item-head">
+        <span class="item-title">${esc(it.title)}</span>
+        <span class="item-id">${esc(it.kind)} · ${esc(it.item_id)}</span>
+        ${statePill(it.review_state)}
+      </div>
+      <div class="split">
+        <div class="col">
+          <div class="col-label">draft artifact</div>
+          <span class="draft-marker">DRAFT — not sent</span>
+          <div class="letter">${esc(it.draftText)}</div>
+        </div>
+        <div class="col record">
+          <div class="col-label">source record · ${esc(it.record.type)}</div>
+          <dl class="kv">
+            ${it.record.rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${k==='gap'?`<span class="gap-pill ${gapClass(v)}">${esc(v)}</span>`:esc(v)}</dd>`).join('')}
+          </dl>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-approve" ${it.review_state!==STATE.DRAFT?'disabled':''} onclick="decide('drafts','${it.item_id}','${STATE.APPROVED}')">Approve</button>
+        <button class="btn btn-reject" ${it.review_state!==STATE.DRAFT?'disabled':''} onclick="decide('drafts','${it.item_id}','${STATE.REJECTED}')">Reject</button>
+        ${decidedTxt(it)}
+        <span class="action-note">${it.review_state===STATE.APPROVED?'APPROVED → D5 automation may send to a test contact':(it.review_state===STATE.REJECTED?'rejected → returned, nothing sent':'awaiting reviewer · nothing sent')}</span>
+      </div>
+    </div>`).join('');
+}
+
+function renderReports(){
+  const el = document.getElementById('list-reports');
+  el.innerHTML = reports.map(it=>{
+    const ruleMet = it.matching_reports_30d>=2 || it.satellite_check_agrees;
+    const canCorroborate = it.review_state===STATE.DRAFT && ruleMet;
+    return `
+    <div class="item decided-${it.review_state}" id="item-${it.item_id}">
+      <div class="item-head">
+        <span class="item-title">${esc(it.title)}</span>
+        <span class="item-id">triage result · project ${esc(it.source_ref)}</span>
+        ${statePill(it.review_state)}
+      </div>
+      <div class="col">
+        <div class="triage">
+          <div class="metric"><div class="m-label">triage status</div><div class="m-val status-${it.triage_status}">${esc(it.triage_status)}</div></div>
+          <div class="metric"><div class="m-label">matching reports (30d)</div><div class="m-val">${it.matching_reports_30d}</div></div>
+          <div class="metric"><div class="m-label">satellite agrees</div><div class="m-val">${it.satellite_check_agrees?'yes':'no'}</div></div>
+          <div class="metric"><div class="m-label">review flag</div><div class="m-val ${it.review_flag?'flag-yes':'flag-no'}">${it.review_flag?'YES':'none'}</div></div>
+        </div>
+        <div class="col-label">matching reports context · evidence.csv (reporter identity never stored or shown)</div>
+        <table class="matches">
+          <thead><tr><th>evidence_id</th><th>date</th><th>source</th><th>observation</th><th>in 30-day window</th></tr></thead>
+          <tbody>
+            ${it.matches.map(m=>`<tr class="${m.inWindow?'in-window':''}"><td class="mono">${esc(m.id)}</td><td class="mono">${esc(m.date)}</td><td>${esc(m.source)}</td><td>${esc(m.obs)}</td><td>${m.inWindow?'✓ counted':'—'}</td></tr>`).join('')}
+          </tbody>
+        </table>
+        <div class="privacy">🛡 No reporter identity is captured or displayed anywhere in this queue (S5/CC-5). Sources are channels (e.g. "Citizen photo report"), never a person.</div>
+        <div class="col-label" style="margin-top:14px">proposed evidence entry (de-identified, sample data)</div>
+        <div class="evidence-row">${esc(it.evidence_row)}</div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-approve" ${canCorroborate?'':'disabled'} onclick="decide('reports','${it.item_id}','${STATE.APPROVED}')">Corroborate</button>
+        <button class="btn btn-reject" ${it.review_state!==STATE.DRAFT?'disabled':''} onclick="decide('reports','${it.item_id}','${STATE.REJECTED}')">Reject</button>
+        ${decidedTxt(it)}
+        <span class="action-note">${ruleMet?'fixed rule met: ≥2 matching reports or satellite check':'corroborate disabled — needs ≥2 matching reports or a satellite check (S6/CC-6)'}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- state transitions ---------- */
+function findItem(queue,id){
+  const src = queue==='commitments'?commitments : queue==='drafts'?drafts : reports;
+  return src.find(x=>x.item_id===id);
+}
+function decide(queue,id,newState){
+  const it = findItem(queue,id);
+  if(!it || it.review_state!==STATE.DRAFT) return;   // only DRAFT can transition; terminal states are locked
+  it.review_state = newState;
+  it.decided_by = 'reviewer';
+  it.decided_at = new Date().toISOString().slice(0,16).replace('T',' ');
+  if(queue==='reports' && newState===STATE.APPROVED){ it.corroborated = 'yes'; }   // Corroborate also sets evidence.corroborated=yes
+  renderAll();
+}
+
+/* ---------- tabs + counts ---------- */
+function renderAll(){ renderCommitments(); renderDrafts(); renderReports(); updateCounts(); }
+function updateCounts(){
+  document.getElementById('c-commitments').textContent = commitments.filter(x=>x.review_state===STATE.DRAFT).length;
+  document.getElementById('c-drafts').textContent      = drafts.filter(x=>x.review_state===STATE.DRAFT).length;
+  document.getElementById('c-reports').textContent     = reports.filter(x=>x.review_state===STATE.DRAFT).length;
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.screen').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById('screen-'+t.dataset.screen).classList.add('on');
+}));
+
+renderAll();
+</script>
+</body>
+</html>

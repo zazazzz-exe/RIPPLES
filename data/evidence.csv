@@ -1,0 +1,49 @@
+evidence_id,project_id,city_id,date,source,observation,corroborated,sample_data
+dag-dike-e1,dag-dike,dagupan,2026-09,Citizen photo report,400-m section still at old height near the fish port.,yes,yes
+dag-dike-e2,dag-dike,dagupan,2026-08,Satellite check,No visible change to the open section since May.,yes,yes
+dag-dike-e3,dag-dike,dagupan,2026-05,LGU update,Contractor reports 55% complete.,no,yes
+dag-drain-e1,dag-drain,dagupan,2026-09,Citizen photo report,Silt and plastic blocking inlets on two downtown streets.,yes,yes
+dag-drain-e2,dag-drain,dagupan,2026-09,Citizen photo report,Water stood 40 cm for 3 hours after a yellow warning.,yes,yes
+dag-drain-e3,dag-drain,dagupan,2025-03,LGU update,Project turned over as complete.,yes,yes
+dag-mangrove-e1,dag-mangrove,dagupan,2026-09,Community monitoring,62% seedling survival in planted plots.,yes,yes
+dag-mangrove-e2,dag-mangrove,dagupan,2026-06,LGU update,5 of 12 ha planted.,yes,yes
+dag-tidegate-e1,dag-tidegate,dagupan,2026-04,LGU update,Detailed design ongoing.,no,yes
+mal-wall-e1,mal-wall,malabon,2026-09,Citizen photo report,"Gap in the wall still open, sandbags displaced.",yes,yes
+mal-wall-e2,mal-wall,malabon,2026-09,Citizen photo report,Same gap photographed from the opposite bank.,yes,yes
+mal-wall-e3,mal-wall,malabon,2026-07,Satellite check,No construction activity visible at the site.,yes,yes
+mal-wall-e4,mal-wall,malabon,2026-02,LGU update,"30% complete, awaiting materials.",no,yes
+mal-pump-e1,mal-pump,malabon,2026-08,LGU update,"Second pump installed, backup generator next.",yes,yes
+mal-drain-e1,mal-drain,malabon,2026-08,Community monitoring,Water drained within an hour after a yellow warning.,yes,yes
+mal-sensor-e1,mal-sensor,malabon,2026-09,Citizen photo report,Sensor at Tonsuya bridge has no power light.,yes,yes
+mal-sensor-e2,mal-sensor,malabon,2026-08,LGU update,"Two units offline, batteries for replacement.",yes,yes
+mar-dredge-e1,mar-dredge,marikina,2026-09,Satellite check,Dredged channel visibly wider along the stretch.,yes,yes
+mar-wall-e1,mar-wall,marikina,2026-08,Citizen photo report,Work stopped. Formwork left in place.,yes,yes
+mar-wall-e2,mar-wall,marikina,2026-03,LGU update,"40% complete, right-of-way issue on one block.",yes,yes
+mar-green-e1,mar-green,marikina,2026-09,Community monitoring,"2.5 km planted, 88% tree survival.",yes,yes
+mar-siren-e1,mar-siren,marikina,2026-09,LGU update,Monthly siren test passed.,yes,yes
+leg-seawall-e1,leg-seawall,legazpi,2026-09,Citizen photo report,"Toe of the wall exposed, rocks displaced near Rawis.",yes,yes
+leg-seawall-e2,leg-seawall,legazpi,2026-08,Citizen photo report,Crack along the walkway slab.,no,yes
+leg-lahar-e1,leg-lahar,legazpi,2026-07,Satellite check,No works visible on the planned alignment.,yes,yes
+leg-lahar-e2,leg-lahar,legazpi,2025-11,LGU update,Awaiting fund release.,no,yes
+leg-evac-e1,leg-evac,legazpi,2026-09,LGU update,"Roof installed, interior works ongoing.",yes,yes
+leg-mangrove-e1,leg-mangrove,legazpi,2026-09,Community monitoring,"81% survival, canopy closing.",yes,yes
+tac-embank-e1,tac-embank,tacloban,2026-08,Satellite check,Two open sections at road crossings unchanged since January.,yes,yes
+tac-embank-e2,tac-embank,tacloban,2026-06,LGU update,85% complete.,yes,yes
+tac-buffer-e1,tac-buffer,tacloban,2026-09,Community monitoring,70% survival in planted areas.,yes,yes
+tac-drain-e1,tac-drain,tacloban,2026-09,LGU update,35% complete.,yes,yes
+tac-siren-e1,tac-siren,tacloban,2026-09,LGU update,Monthly test passed at all 14 sites.,yes,yes
+ilo-floodway-e1,ilo-floodway,iloilo,2026-09,Satellite check,Sandbars visible near the outlet.,yes,yes
+ilo-floodway-e2,ilo-floodway,iloilo,2026-08,Citizen photo report,Water hyacinth and silt blocking a section.,yes,yes
+ilo-esplanade-e1,ilo-esplanade,iloilo,2026-09,Community monitoring,93% tree survival.,yes,yes
+ilo-pump-e1,ilo-pump,iloilo,2026-09,Citizen photo report,Only the foundation is in place.,yes,yes
+ilo-pump-e2,ilo-pump,iloilo,2026-04,LGU update,"20% complete, change order under review.",no,yes
+ilo-basin-e1,ilo-basin,iloilo,2026-06,LGU update,Procurement ongoing.,no,yes
+cdo-dike-e1,cdo-dike,cdo,2026-09,Satellite check,Dike alignment complete along most of the stretch.,yes,yes
+cdo-forest-e1,cdo-forest,cdo,2026-08,Community monitoring,"68 ha planted, 70% survival.",yes,yes
+cdo-telemetry-e1,cdo-telemetry,cdo,2026-08,LGU update,Equipment delivery delayed.,yes,yes
+cdo-reloc-e1,cdo-reloc,cdo,2026-07,Community monitoring,No standing water after heavy rain.,yes,yes
+dav-matina-e1,dav-matina,davao,2026-09,LGU update,60% complete.,yes,yes
+dav-floodwall-e1,dav-floodwall,davao,2026-09,Citizen photo report,No mobilization at the site.,yes,yes
+dav-floodwall-e2,dav-floodwall,davao,2026-05,LGU update,Right-of-way acquisition ongoing.,no,yes
+dav-cool-e1,dav-cool,davao,2026-09,LGU update,12 of 40 schools done.,yes,yes
+dav-forest-e1,dav-forest,davao,2026-09,Community monitoring,90% survival.,yes,yes

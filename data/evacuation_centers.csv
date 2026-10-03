@@ -1,0 +1,25 @@
+center_id,city_id,name,capacity_persons,approx_lat,approx_lon,sample_data
+dagupan-ev1,dagupan,Dagupan City Central School,1200,16.0490,120.3440,yes
+dagupan-ev2,dagupan,Bonuan covered court,350,16.0730,120.3120,yes
+dagupan-ev3,dagupan,City sports complex,2000,16.0310,120.3620,yes
+malabon-ev1,malabon,Malabon National High School,1500,14.6560,120.9630,yes
+malabon-ev2,malabon,Tonsuya covered court,400,14.6600,120.9450,yes
+malabon-ev3,malabon,City hall annex,800,14.6660,120.9590,yes
+marikina-ev1,marikina,Marikina Sports Center,3000,14.6520,121.0990,yes
+marikina-ev2,marikina,Tumana covered court,500,14.6620,121.1130,yes
+marikina-ev3,marikina,Nangka Elementary School,900,14.6700,121.1210,yes
+legazpi-ev1,legazpi,Albay Astrodome,2500,13.1430,123.7300,yes
+legazpi-ev2,legazpi,Bogtong evacuation center,800,13.1570,123.7440,yes
+legazpi-ev3,legazpi,Legazpi Port district school,600,13.1350,123.7480,yes
+tacloban-ev1,tacloban,Tacloban Astrodome,3000,11.2460,125.0070,yes
+tacloban-ev2,tacloban,San Jose National High School,1200,11.2260,125.0330,yes
+tacloban-ev3,tacloban,Marasbaras covered court,500,11.2240,124.9950,yes
+iloilo-ev1,iloilo,Iloilo Sports Complex,2500,10.7300,122.5560,yes
+iloilo-ev2,iloilo,La Paz Central School,900,10.7360,122.5660,yes
+iloilo-ev3,iloilo,Jaro Plaza covered court,600,10.7460,122.5540,yes
+cdo-ev1,cdo,Pelaez Sports Center,2000,8.4790,124.6480,yes
+cdo-ev2,cdo,Macasandig Elementary School,800,8.4610,124.6560,yes
+cdo-ev3,cdo,Carmen covered court,500,8.4810,124.6340,yes
+davao-ev1,davao,Davao City Recreation Center,2500,7.0770,125.6150,yes
+davao-ev2,davao,Matina Central School,900,7.0690,125.6010,yes
+davao-ev3,davao,Bucana covered court,400,7.0650,125.6210,yes

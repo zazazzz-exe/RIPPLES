@@ -1,0 +1,20 @@
+action_id,city_id,kind,action,when,sample_data
+dagupan-ca1,dagupan,Clean-up,"Canal clean-up, Pantal riverside","Sat 10 Oct, 6:00 AM",yes
+dagupan-ca2,dagupan,Monitoring,"Mangrove survival count, Bonuan coast",Every first Saturday,yes
+dagupan-ca3,dagupan,Sponsor need,"2,000 sandbags for the dike's open section · via partner NGO",Open,yes
+malabon-ca1,malabon,Clean-up,"Esteros clean-up, Longos","Sun 11 Oct, 7:00 AM",yes
+malabon-ca2,malabon,Sponsor need,Replacement batteries for 2 flood sensors · via partner NGO,Open,yes
+malabon-ca3,malabon,Monitoring,Report flood depth with a photo during high tide,Ongoing,yes
+marikina-ca1,marikina,Clean-up,"Riverbank clean-up, Tumana","Sat 17 Oct, 6:00 AM",yes
+marikina-ca2,marikina,Monitoring,"Tree survival count, bikeway corridor",Monthly,yes
+legazpi-ca1,legazpi,Monitoring,"Seawall crack reporting, Boulevard",Ongoing,yes
+legazpi-ca2,legazpi,Sponsor need,Generators for the Bogtong evacuation center · via partner NGO,Open,yes
+legazpi-ca3,legazpi,Clean-up,"Drainage outfall clean-up, Rawis","Sat 24 Oct, 6:00 AM",yes
+tacloban-ca1,tacloban,Monitoring,"Mangrove and beach-forest survival count, San Jose",Quarterly,yes
+tacloban-ca2,tacloban,Clean-up,"Drainage clean-up, downtown","Sat 10 Oct, 6:00 AM",yes
+iloilo-ca1,iloilo,Clean-up,"Floodway clean-up, Jaro","Sun 18 Oct, 6:00 AM",yes
+iloilo-ca2,iloilo,Monitoring,Esplanade tree survival,Monthly,yes
+cdo-ca1,cdo,Monitoring,Watershed seedling survival count,Quarterly,yes
+cdo-ca2,cdo,Sponsor need,Handheld radios for river watchers · via partner NGO,Open,yes
+davao-ca1,davao,Monitoring,"Urban forest tree count, Diversion Road",Quarterly,yes
+davao-ca2,davao,Clean-up,Matina River clean-up,"Sat 31 Oct, 6:00 AM",yes

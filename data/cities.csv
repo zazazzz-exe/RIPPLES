@@ -1,0 +1,9 @@
+city_id,city,province,island_group,lat,lon,hazards,lccap,pilot_city,hazard_points,gap_points,risk_score,real_risk_level,commitments_due,kept_on_time,promises_kept_pct,completed_defenses,maintained_ok,maintained_pct,as_of,sample_data
+dagupan,Dagupan City,Pangasinan,Luzon,16.043,120.334,Flood; Storm surge; Subsidence,LCCAP 2022–2031,no,2,2,4,High,2,1,50,1,0,0,2026-10,yes
+malabon,Malabon City,Metro Manila,Luzon,14.662,120.957,Flood; Storm surge; High tide,LCCAP 2020–2030,yes,2,2,4,High,3,2,67,2,1,50,2026-10,yes
+marikina,Marikina City,Metro Manila,Luzon,14.65,121.103,River flood; Heat; Earthquake,LCCAP 2021–2030,no,1,1,2,Moderate,2,1,50,1,1,100,2026-10,yes
+legazpi,Legazpi City,Albay,Luzon,13.139,123.734,Typhoon; Storm surge; Lahar,LCCAP 2019–2028,no,2,2,4,High,3,1,33,2,1,50,2026-10,yes
+tacloban,Tacloban City,Leyte,Visayas,11.244,125.003,Storm surge; Typhoon; Flood,LCCAP 2020–2029,no,1,1,2,Moderate,2,1,50,1,1,100,2026-10,yes
+iloilo,Iloilo City,Iloilo,Visayas,10.72,122.562,Flood; Heat,LCCAP 2021–2030,no,1,2,3,Moderate,3,2,67,2,1,50,2026-10,yes
+cdo,Cagayan de Oro City,Misamis Oriental,Mindanao,8.477,124.646,Flash flood; Landslide,LCCAP 2020–2029,no,1,1,2,Moderate,2,1,50,1,1,100,2026-10,yes
+davao,Davao City,Davao del Sur,Mindanao,7.073,125.613,Flood; Heat; Landslide,LCCAP 2019–2028,no,0,1,1,Low,2,1,50,1,1,100,2026-10,yes

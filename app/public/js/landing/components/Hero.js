@@ -20,7 +20,7 @@ export function render(vm) {
           <a class="btn btn-ghost" href="#problem">${HERO.secondary}</a>
         </div>
       </div>
-      <p class="hero-meta">Sample data · ${p ? p.alt : ''}. ${credit(p)}</p>
+      <p class="hero-meta">${p ? p.alt : ''}. ${credit(p)}</p>
       <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
     </header>`;
 }

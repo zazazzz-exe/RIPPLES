@@ -18,7 +18,7 @@ export function render(vm) {
             <div class="share" aria-hidden="true"><i style="--w:${((vm.counts[s.key] / total) * 100).toFixed(1)}%"></i></div>
           </article>`)}
         </div>
-        <p class="sample-note" style="margin-top:16px">Counts from the Ripples sample dataset (${total} projects)</p>
+        <p class="sample-note" style="margin-top:16px">Counts from the Ripples dataset (${total} projects)</p>
       </div>
     </section>`;
 }

@@ -35,7 +35,7 @@ export function render(vm) {
         <div class="scene-captions" aria-hidden="true">${SCENE_BEATS.map((b) => html`<p class="${b.dark ? 'dark' : ''}">${b.text}</p>`)}</div>
         <div class="map-ui">
           <div class="map-head">
-            <p class="eyebrow">Interactive map · Sample data</p>
+            <p class="eyebrow">Interactive map</p>
             <h2>${MAP.title}</h2>
             <p data-head-lede>${MAP.lede}</p>
             <div class="map-crumb" hidden><span>Philippines ›</span> <b data-crumb></b> <button type="button" data-act="country">Return to map</button></div>

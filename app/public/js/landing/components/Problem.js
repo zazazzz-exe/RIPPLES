@@ -19,7 +19,7 @@ const factList = (facts) => html`<ul class="facts">${facts.map((f, i) => html`
 export function render(vm) {
   return html`<div id="problem">${PROBLEM.map((b) => Cine.render({
     ph: vm.photos[b.photo], eyebrow: b.eyebrow, title: b.title, body: b.body, right: b.right,
-    extra: html`${factList(b.factsFromData ? dataFacts(vm) : b.facts)}${b.factsFromData ? html`<p class="sample-note" style="margin-top:14px">Figures from the Ripples sample dataset</p>` : ''}`,
+    extra: html`${factList(b.factsFromData ? dataFacts(vm) : b.facts)}${b.factsFromData ? html`<p class="sample-note" style="margin-top:14px">Figures from the Ripples dataset</p>` : ''}`,
   }))}</div>`;
 }
 

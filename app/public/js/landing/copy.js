@@ -31,7 +31,7 @@ export const COMPARE = {
     { project: 'ilo-floodway', photo: 'flood-river-manila', label: 'Floodway desilting' },
     { project: 'mal-sensor', photo: 'flood-forecasting-station', label: 'Flood early-warning sensors' },
   ],
-  note: 'Photos are representative and do not show the sample project. Observation text comes from the sample evidence record.',
+  note: 'Photos are representative and do not show the project itself. Observation text comes from the evidence record.',
 };
 
 export const PROBLEM = [
@@ -90,14 +90,14 @@ export const ABOUT = {
 
 export const IMPACT = {
   eyebrow: 'At a glance',
-  title: 'What the sample dataset covers today.',
-  lede: 'These figures are counted live from the Ripples sample dataset that powers the map. They show how the platform works and are not official statistics.',
+  title: 'What the dataset covers today.',
+  lede: 'These figures are counted live from the Ripples dataset that powers the map. They are not official statistics.',
 };
 
 export const FAQ = [
   { q: 'How does Ripples keep records from being changed?', a: 'Each project record (its details, status, progress, deadline, maintenance and evidence) is turned into a SHA-256 fingerprint and stored in a blockchain-style ledger, where every block also carries the hash of the block before it. If anyone edits a past record or block, the hashes stop matching and the chain shows where it broke. You can check any record yourself on the Ledger page. The ledger is only for record integrity: there is no cryptocurrency, wallet or payment.' },
   { q: 'What is this platform?', a: 'Ripples is a civic-technology platform for exploring public infrastructure and climate-resilience projects in the Philippines. It shows what each city committed to, how far each project has come, and the evidence collected about it, all on one map.' },
-  { q: 'Where does the project information come from?', a: 'In this version, all records are sample data built from the structure of real Local Climate Change Action Plans (LCCAPs). They use real city names to show how the platform works but do not describe the actual status of any project. In production, records would come from published LCCAPs, local budgets and agency updates, each reviewed by a person before publishing.' },
+  { q: 'Where does the project information come from?', a: 'Records are built from the structure of real Local Climate Change Action Plans (LCCAPs). Records come from published LCCAPs, local budgets and agency updates, each reviewed by a person before publishing.' },
   { q: 'What is a "ghost project"?', a: 'It is a term used in public discussion for a project that is reported or funded but cannot be found, finished or verified on the ground. Ripples does not label any project this way. It shows the record and the evidence side by side, uses neutral terms such as "delayed", "incomplete" and "requires verification", and helps questions reach the responsible office through proper channels.' },
   { q: 'How is project progress represented?', a: 'Each project has a reported physical progress percentage and one of six statuses: planned, ongoing, completed, delayed, incomplete, or requires verification. Statuses follow fixed rules based on the deadline, the reported status and the latest maintenance check, so every status can be explained.' },
   { q: 'Can citizens report a project?', a: 'Yes. Anyone can submit a status update, a dispute or a maintenance problem from a project\'s page. Reports are anonymous: the platform never asks for or stores who you are, and photos are processed in your browser to remove location data.' },

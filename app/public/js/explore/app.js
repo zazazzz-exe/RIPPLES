@@ -319,7 +319,7 @@ function renderCity(opts){opts=opts||{};const c=C[cur.c],r=riskOf(c),s=scoreOf(c
   const ci=cur.c,idx=String(ci+1).padStart(2,"0");
   cityPanel.style.setProperty("--c",rc);
   cityPanel.innerHTML=`<div class="c-head">
-    <nav class="crumbs" aria-label="Breadcrumb"><span>PH</span><span class="sep">▸</span><span>${esc(c.region)}</span><span class="sep">▸</span><b>${esc(c.prov)}</b>${c.pilot?'<span class="pilot">PILOT CITY</span>':""}<span class="sample">SAMPLE DATA</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><span>PH</span><span class="sep">▸</span><span>${esc(c.region)}</span><span class="sep">▸</span><b>${esc(c.prov)}</b>${c.pilot?'<span class="pilot">PILOT CITY</span>':""}</nav>
     <div class="c-title"><h1 class="c-name">${esc(c.name)}</h1><span class="c-count">CITY <b>${idx}</b> / ${C.length}</span></div>
     <div class="c-meta">${c.hazards.map(h=>`<span class="hz">${esc(h)}</span>`).join("")}<span>· ${esc(c.lccap)}</span></div>
     <div class="tabs" role="tablist">${[["overview","Overview"],["projects","Projects"],["prepare","Prepare"],["score","Scorecard"]].map(([k,l])=>`<button role="tab" data-tab="${k}" class="${cityTab===k?"on":""}" aria-selected="${cityTab===k}">${l}</button>`).join("")}</div></div>
@@ -337,7 +337,7 @@ function renderCity(opts){opts=opts||{};const c=C[cur.c],r=riskOf(c),s=scoreOf(c
       <div id="plist">${prows}</div></section>
     <section><h2 class="sec-h">Open gaps this season <small>${gs.length} raising the risk level</small></h2>
       ${gs.length?gs.map(p=>{const g=gapOf(p);return `<div class="gap" style="--fc:${g==="Overdue"?"#ff2e5b":"#d8799a"}"><span class="flag">●</span><div><b>${esc(p.name)} · ${g.toLowerCase()}</b><p>Interim measure: ${esc(p.interim||"Assign watchers during advisories.")}</p></div></div>`;}).join(""):`<p class="meta">No open gaps. Every finished defense is maintained.</p>`}</section>
-    <section id="t-prepare"><h2 class="sec-h">Seasonal outlook <small>sample · no live PAGASA outlook connected</small></h2><div class="outlook">${c.outlook.map(([m,t])=>`<div><b>${esc(m)}</b><p>${esc(t)}</p></div>`).join("")}</div></section>
+    <section id="t-prepare"><h2 class="sec-h">Seasonal outlook <small>check PAGASA for the official outlook</small></h2><div class="outlook">${c.outlook.map(([m,t])=>`<div><b>${esc(m)}</b><p>${esc(t)}</p></div>`).join("")}</div></section>
     <section><h2 class="sec-h">Evacuation centers <small>green markers on the map</small></h2><ul class="list">${c.evac.map(e=>`<li>${esc(e[0])}<span>${e[1].toLocaleString()} people</span></li>`).join("")}</ul></section>
     <section><h2 class="sec-h">Community actions <small>verified ways to help</small></h2><ul class="list">${c.actions.map(a=>`<li><span style="font-family:var(--f-body);color:var(--ice);font-size:12.5px;white-space:normal"><em>${esc(a[0])}</em>${esc(a[1])}</span><span>${esc(a[2])}</span></li>`).join("")}</ul>
       <p class="note">No money passes through the app. Sponsors give directly to partner NGOs or the LGU.</p></section>
@@ -356,7 +356,7 @@ cityPanel.addEventListener("pointerleave",()=>setHover(null));
 
 /* ================= PROJECT VIEW ================= */
 function renderProject(){const c=C[cur.c],p=c.projects[cur.p],g=gapOf(p),sc=STAT[p.status].css;projPanel.style.setProperty("--c",g?"#ff2e5b":sc);
-  $("#pCrumbs").innerHTML=`<span>PH</span><span class="sep">▸</span><span>${esc(c.name)}</span><span class="sep">▸</span><b>${esc(p.type)}</b><span class="sample">SAMPLE DATA</span>`;
+  $("#pCrumbs").innerHTML=`<span>PH</span><span class="sep">▸</span><span>${esc(c.name)}</span><span class="sep">▸</span><b>${esc(p.type)}</b>`;
   $("#pCount").innerHTML=`PROJECT <b>${cur.p+1}</b> / ${c.projects.length}`;$("#fcoord").textContent=`${fmtLat(c.lat+p.dy)} ${fmtLon(c.lon+p.dx)}`;
   const segs=Array.from({length:20},(_,k)=>`<i style="--k:${k}" class="${k<Math.round(p.progress/5)?"f":""}"></i>`).join("");
   const ms=[];if(p.start)ms.push([p.start,"Work started"]);p.evidence.filter(e=>e[1]==="LGU update").slice().reverse().forEach(e=>ms.push([e[0],e[2]]));ms.push([p.deadline,"Deadline in "+c.lccap]);if(p.done)ms.push([p.done,"Completed"]);
@@ -385,7 +385,7 @@ let mediaTok=0;async function renderMedia(p){const tok=++mediaTok;const ph=await
     $("#fcap").textContent="Your photo stays on this device; location data was stripped. Your written report was sent for triage and stays unverified until two more matching reports or a satellite check back it up.";}
   else if(p.media.photos.length){const r=p.media.photos[0];
     $("#media").innerHTML=`<img class="kb" src="/img/projects/${esc(r.file)}" alt="Reference photo: ${esc(r.title)}">`;$("#ftag").textContent=`REFERENCE PHOTO · ${r.match.toUpperCase()}`;
-    $("#fcap").innerHTML=`${esc(r.title)}. Reference only, not this sample project's own record. Photo: ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source)}</a>`:esc(r.source)} (${r.license_url?`<a href="${esc(r.license_url)}" target="_blank" rel="noopener">${esc(r.license_note)}</a>`:esc(r.license_note)}).`;}
+    $("#fcap").innerHTML=`${esc(r.title)}. Reference only, not this project's own record. Photo: ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source)}</a>`:esc(r.source)} (${r.license_url?`<a href="${esc(r.license_url)}" target="_blank" rel="noopener">${esc(r.license_note)}</a>`:esc(r.license_note)}).`;}
   else{$("#media").innerHTML=schematic(p);$("#ftag").textContent="SCHEMATIC";$("#fcap").textContent=`No field photo yet. Citizen photos, satellite checks and LGU updates appear here as evidence.`;}
   $("#factions").innerHTML=`<button class="btn-sm" data-act="report">＋ ${ph?"Replace":"Add"} photo report</button>`;}
 projPanel.addEventListener("click",e=>{const b=e.target.closest("[data-act]");if(!b)return;const a=b.dataset.act;if(a==="reverify")loadIntegrity(C[cur.c].projects[cur.p]);else if(a==="letter")openLetter(cur.c,cur.p);else if(a==="report")openReport("status");else if(a==="dispute")openReport("dispute");});

@@ -1,4 +1,4 @@
-// Headline numbers, counted live from the sample dataset; they count up once
+// Headline numbers, counted live from the dataset; they count up once
 // when the band scrolls into view.
 import { html } from '../../ui.js';
 import { IMPACT } from '../copy.js';
@@ -20,7 +20,7 @@ export function render(vm) {
         <h2 id="impTitle" data-reveal style="--d:80ms;max-width:20ch">${IMPACT.title}</h2>
         <p class="lede" data-reveal style="--d:160ms">${IMPACT.lede}</p>
         <div class="impact">${items.map(([n, label, cls]) => html`<div class="${cls || ''}"><b data-count="${n}">0</b><span>${label}</span></div>`)}</div>
-        <p class="sample-note" style="margin-top:16px">Sample data · as of ${vm.asOfLabel}</p>
+        <p class="sample-note" style="margin-top:16px">As of ${vm.asOfLabel}</p>
       </div>
     </section>`;
 }

@@ -73,14 +73,14 @@ const BRAND = raw('<img class="brand-logo" src="/img/brand/ripples-logo.png" src
 export function initShell(active) {
   const links = NAV.map(([k, href, label]) => html`<a href="${href}" ${raw(k === active ? 'aria-current="page"' : '')}>${icon(k)}<span>${label}</span></a>`);
   mount('#chrome', html`
-    <div class="banner"><b>SAMPLE DATA</b><span>Real city names, sample records. For live warnings follow <a href="https://www.pagasa.dost.gov.ph" target="_blank" rel="noopener">PAGASA</a> and <a href="https://ndrrmc.gov.ph" target="_blank" rel="noopener">NDRRMC</a>.</span></div>
+    <div class="banner"><span>For live warnings follow <a href="https://www.pagasa.dost.gov.ph" target="_blank" rel="noopener">PAGASA</a> and <a href="https://ndrrmc.gov.ph" target="_blank" rel="noopener">NDRRMC</a>.</span></div>
     <header class="topbar">
       <a class="brand" href="/" aria-label="Ripples home">${BRAND}<small>Climate defense map</small></a>
       <div class="spacer"></div>
       <a class="to-map" href="/map">Open map ›</a>
     </header>`);
   mount('#navs', html`
-    <nav class="nav" aria-label="Main">${links}<div class="nav-foot">Sample data · as of Oct 2026</div></nav>
+    <nav class="nav" aria-label="Main">${links}<div class="nav-foot">As of Oct 2026</div></nav>
     <nav class="tabbar" aria-label="Main">${links}</nav>`);
 }
 

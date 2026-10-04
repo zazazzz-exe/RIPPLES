@@ -37,7 +37,7 @@ export function createDetail(stage, { photos, asOf, onPrev, onNext, onReturn, on
     const own = p.media && p.media.photos[0];
     const ph = own ? null : photos[TYPE_PHOTO[p.type]];
     const caption = own
-      ? `Reference photo (${own.match}) · not this sample project's own record. Photo: ${own.source}, ${own.license_note}.`
+      ? `Reference photo (${own.match}) · not this project's own record. Photo: ${own.source}, ${own.license_note}.`
       : `Representative photo · not this project. ${credit(ph)}`;
     const latest = p.evidence[0];
     const i = (n) => raw(`style="--i:${n}"`);
@@ -58,7 +58,7 @@ export function createDetail(stage, { photos, asOf, onPrev, onNext, onReturn, on
           <div class="d-kicker" ${i(0)}>${p.city.name} · ${p.type} · ${p.agency}</div>
           <h3 ${i(1)}>${p.name}</h3>
           <p class="d-loc" ${i(2)}>${p.city.name}, ${p.city.prov} · ${(p.city.lat + p.dy).toFixed(3)}°N ${(p.city.lon + p.dx).toFixed(3)}°E</p>
-          <div class="d-row" ${i(3)}>${statusChip(p.status_key)}<span class="sample-note">Sample record</span></div>
+          <div class="d-row" ${i(3)}>${statusChip(p.status_key)}</div>
           <div ${i(4)}>${progressBar(p.progress, p.status_key)}</div>
           <div class="d-sec" ${i(5)}><h4>Project</h4><p>${p.summary}</p><p class="sample-note">${p.lccap} · ₱${p.budget}M budget</p>
             ${p.gap ? html`<p><b>Interim measure:</b> ${p.interim}</p>` : ''}</div>

@@ -47,3 +47,216 @@ dav-floodwall-e1,dav-floodwall,davao,2026-09,Citizen photo report,No mobilizatio
 dav-floodwall-e2,dav-floodwall,davao,2026-05,LGU update,Right-of-way acquisition ongoing.,no,yes
 dav-cool-e1,dav-cool,davao,2026-09,LGU update,12 of 40 schools done.,yes,yes
 dav-forest-e1,dav-forest,davao,2026-09,Community monitoring,90% survival.,yes,yes
+dag-retention-e1,dag-retention,dagupan,2026-09,LGU update,Pond excavation halfway complete; outlet works pending.,yes,yes
+dag-retention-e2,dag-retention,dagupan,2026-08,Community monitoring,Excavated basin holds runoff after afternoon rain.,no,yes
+mal-navotas-drain-e1,mal-navotas-drain,malabon,2026-09,MMDA update,Two of four drain segments cleared.,yes,yes
+mal-navotas-drain-e2,mal-navotas-drain,malabon,2026-08,Citizen photo report,Silt remains near the Longos bend.,yes,yes
+mar-nangka-basin-e1,mar-nangka-basin,marikina,2026-09,LGU update,Sheet-pile works started; basin excavation not yet complete.,yes,yes
+leg-yawa-sabo-e1,leg-yawa-sabo,legazpi,2026-09,Satellite check,Two check-dam sites active upstream of the city.,yes,yes
+leg-yawa-sabo-e2,leg-yawa-sabo,legazpi,2026-07,LGU update,Channel clearing ongoing near the bridge approach.,yes,yes
+tac-outfall-e1,tac-outfall,tacloban,2026-08,LGU update,Design complete; procurement not yet awarded.,no,yes
+ilo-molo-gate-e1,ilo-molo-gate,iloilo,2026-09,LGU update,Three of five outfalls fitted with flap gates.,yes,yes
+ilo-molo-gate-e2,ilo-molo-gate,iloilo,2026-08,Citizen photo report,Trash rack at one outfall needs clearing.,yes,yes
+cdo-puntod-drain-e1,cdo-puntod-drain,cdo,2026-09,Citizen photo report,Stockpiled riprap but no work crew on site.,yes,yes
+cdo-puntod-drain-e2,cdo-puntod-drain,cdo,2026-07,LGU update,42% complete; quarry delivery delayed.,no,yes
+dav-talomo-basin-e1,dav-talomo-basin,davao,2026-09,LGU update,Diversion drain excavation 48% complete.,yes,yes
+dav-talomo-basin-e2,dav-talomo-basin,davao,2026-08,Community monitoring,Temporary ponding area already catching runoff.,no,yes
+dagupan-flood-01-e1,dagupan-flood-01,dagupan,2026-10,Community monitoring,35% sample status recorded for the Pantal flood-control work package.,no,yes
+dagupan-flood-02-e1,dagupan-flood-02,dagupan,2026-10,LGU update,100% sample status recorded for the Bonuan flood-control work package.,yes,yes
+dagupan-flood-03-e1,dagupan-flood-03,dagupan,2026-10,LGU update,57% sample status recorded for the Calmay flood-control work package.,yes,yes
+dagupan-flood-04-e1,dagupan-flood-04,dagupan,2026-10,Community monitoring,0% sample status recorded for the Lucao flood-control work package.,yes,yes
+dagupan-flood-05-e1,dagupan-flood-05,dagupan,2026-10,LGU update,25% sample status recorded for the Downtown flood-control work package.,yes,yes
+dagupan-flood-06-e1,dagupan-flood-06,dagupan,2026-10,LGU update,100% sample status recorded for the Tapuac flood-control work package.,no,yes
+dagupan-flood-07-e1,dagupan-flood-07,dagupan,2026-10,Community monitoring,46% sample status recorded for the Pantal flood-control work package.,yes,yes
+dagupan-flood-08-e1,dagupan-flood-08,dagupan,2026-10,LGU update,57% sample status recorded for the Bonuan flood-control work package.,yes,yes
+dagupan-flood-09-e1,dagupan-flood-09,dagupan,2026-10,LGU update,100% sample status recorded for the Calmay flood-control work package.,yes,yes
+dagupan-flood-10-e1,dagupan-flood-10,dagupan,2026-10,Community monitoring,0% sample status recorded for the Lucao flood-control work package.,yes,yes
+dagupan-flood-11-e1,dagupan-flood-11,dagupan,2026-10,LGU update,35% sample status recorded for the Downtown flood-control work package.,no,yes
+dagupan-flood-12-e1,dagupan-flood-12,dagupan,2026-10,LGU update,100% sample status recorded for the Tapuac flood-control work package.,yes,yes
+dagupan-flood-13-e1,dagupan-flood-13,dagupan,2026-10,Community monitoring,25% sample status recorded for the Pantal flood-control work package.,yes,yes
+malabon-flood-01-e1,malabon-flood-01,malabon,2026-10,Community monitoring,35% sample status recorded for the Longos flood-control work package.,no,yes
+malabon-flood-02-e1,malabon-flood-02,malabon,2026-10,LGU update,100% sample status recorded for the Tonsuya flood-control work package.,yes,yes
+malabon-flood-03-e1,malabon-flood-03,malabon,2026-10,LGU update,57% sample status recorded for the Tinajeros flood-control work package.,yes,yes
+malabon-flood-04-e1,malabon-flood-04,malabon,2026-10,Community monitoring,0% sample status recorded for the Tullahan flood-control work package.,yes,yes
+malabon-flood-05-e1,malabon-flood-05,malabon,2026-10,LGU update,25% sample status recorded for the Catmon flood-control work package.,yes,yes
+malabon-flood-06-e1,malabon-flood-06,malabon,2026-10,LGU update,100% sample status recorded for the Dampalit flood-control work package.,no,yes
+malabon-flood-07-e1,malabon-flood-07,malabon,2026-10,Community monitoring,46% sample status recorded for the Longos flood-control work package.,yes,yes
+malabon-flood-08-e1,malabon-flood-08,malabon,2026-10,LGU update,57% sample status recorded for the Tonsuya flood-control work package.,yes,yes
+malabon-flood-09-e1,malabon-flood-09,malabon,2026-10,LGU update,100% sample status recorded for the Tinajeros flood-control work package.,yes,yes
+malabon-flood-10-e1,malabon-flood-10,malabon,2026-10,Community monitoring,0% sample status recorded for the Tullahan flood-control work package.,yes,yes
+malabon-flood-11-e1,malabon-flood-11,malabon,2026-10,LGU update,35% sample status recorded for the Catmon flood-control work package.,no,yes
+malabon-flood-12-e1,malabon-flood-12,malabon,2026-10,LGU update,100% sample status recorded for the Dampalit flood-control work package.,yes,yes
+malabon-flood-13-e1,malabon-flood-13,malabon,2026-10,Community monitoring,25% sample status recorded for the Longos flood-control work package.,yes,yes
+marikina-flood-01-e1,marikina-flood-01,marikina,2026-10,Community monitoring,35% sample status recorded for the Tumana flood-control work package.,no,yes
+marikina-flood-02-e1,marikina-flood-02,marikina,2026-10,LGU update,100% sample status recorded for the Nangka flood-control work package.,yes,yes
+marikina-flood-03-e1,marikina-flood-03,marikina,2026-10,LGU update,57% sample status recorded for the Sto. Nino flood-control work package.,yes,yes
+marikina-flood-04-e1,marikina-flood-04,marikina,2026-10,Community monitoring,0% sample status recorded for the Malanday flood-control work package.,yes,yes
+marikina-flood-05-e1,marikina-flood-05,marikina,2026-10,LGU update,25% sample status recorded for the Concepcion flood-control work package.,yes,yes
+marikina-flood-06-e1,marikina-flood-06,marikina,2026-10,LGU update,100% sample status recorded for the Marikina River flood-control work package.,no,yes
+marikina-flood-07-e1,marikina-flood-07,marikina,2026-10,Community monitoring,46% sample status recorded for the Tumana flood-control work package.,yes,yes
+marikina-flood-08-e1,marikina-flood-08,marikina,2026-10,LGU update,57% sample status recorded for the Nangka flood-control work package.,yes,yes
+marikina-flood-09-e1,marikina-flood-09,marikina,2026-10,LGU update,100% sample status recorded for the Sto. Nino flood-control work package.,yes,yes
+marikina-flood-10-e1,marikina-flood-10,marikina,2026-10,Community monitoring,0% sample status recorded for the Malanday flood-control work package.,yes,yes
+marikina-flood-11-e1,marikina-flood-11,marikina,2026-10,LGU update,35% sample status recorded for the Concepcion flood-control work package.,no,yes
+marikina-flood-12-e1,marikina-flood-12,marikina,2026-10,LGU update,100% sample status recorded for the Marikina River flood-control work package.,yes,yes
+marikina-flood-13-e1,marikina-flood-13,marikina,2026-10,Community monitoring,25% sample status recorded for the Tumana flood-control work package.,yes,yes
+legazpi-flood-01-e1,legazpi-flood-01,legazpi,2026-10,Community monitoring,35% sample status recorded for the Yawa River flood-control work package.,no,yes
+legazpi-flood-02-e1,legazpi-flood-02,legazpi,2026-10,LGU update,100% sample status recorded for the Rawis flood-control work package.,yes,yes
+legazpi-flood-03-e1,legazpi-flood-03,legazpi,2026-10,LGU update,57% sample status recorded for the Puro flood-control work package.,yes,yes
+legazpi-flood-04-e1,legazpi-flood-04,legazpi,2026-10,Community monitoring,0% sample status recorded for the Bogtong flood-control work package.,yes,yes
+legazpi-flood-05-e1,legazpi-flood-05,legazpi,2026-10,LGU update,25% sample status recorded for the Tibu flood-control work package.,yes,yes
+legazpi-flood-06-e1,legazpi-flood-06,legazpi,2026-10,LGU update,100% sample status recorded for the Legazpi Port flood-control work package.,no,yes
+legazpi-flood-07-e1,legazpi-flood-07,legazpi,2026-10,Community monitoring,46% sample status recorded for the Yawa River flood-control work package.,yes,yes
+legazpi-flood-08-e1,legazpi-flood-08,legazpi,2026-10,LGU update,57% sample status recorded for the Rawis flood-control work package.,yes,yes
+legazpi-flood-09-e1,legazpi-flood-09,legazpi,2026-10,LGU update,100% sample status recorded for the Puro flood-control work package.,yes,yes
+legazpi-flood-10-e1,legazpi-flood-10,legazpi,2026-10,Community monitoring,0% sample status recorded for the Bogtong flood-control work package.,yes,yes
+legazpi-flood-11-e1,legazpi-flood-11,legazpi,2026-10,LGU update,35% sample status recorded for the Tibu flood-control work package.,no,yes
+legazpi-flood-12-e1,legazpi-flood-12,legazpi,2026-10,LGU update,100% sample status recorded for the Legazpi Port flood-control work package.,yes,yes
+legazpi-flood-13-e1,legazpi-flood-13,legazpi,2026-10,Community monitoring,25% sample status recorded for the Yawa River flood-control work package.,yes,yes
+tacloban-flood-01-e1,tacloban-flood-01,tacloban,2026-10,Community monitoring,35% sample status recorded for the Downtown flood-control work package.,no,yes
+tacloban-flood-02-e1,tacloban-flood-02,tacloban,2026-10,LGU update,100% sample status recorded for the San Jose flood-control work package.,yes,yes
+tacloban-flood-03-e1,tacloban-flood-03,tacloban,2026-10,LGU update,57% sample status recorded for the Sagkahan flood-control work package.,yes,yes
+tacloban-flood-04-e1,tacloban-flood-04,tacloban,2026-10,Community monitoring,0% sample status recorded for the Anibong flood-control work package.,yes,yes
+tacloban-flood-05-e1,tacloban-flood-05,tacloban,2026-10,LGU update,25% sample status recorded for the Balyuan flood-control work package.,yes,yes
+tacloban-flood-06-e1,tacloban-flood-06,tacloban,2026-10,LGU update,100% sample status recorded for the Abucay flood-control work package.,no,yes
+tacloban-flood-07-e1,tacloban-flood-07,tacloban,2026-10,Community monitoring,46% sample status recorded for the Downtown flood-control work package.,yes,yes
+tacloban-flood-08-e1,tacloban-flood-08,tacloban,2026-10,LGU update,57% sample status recorded for the San Jose flood-control work package.,yes,yes
+tacloban-flood-09-e1,tacloban-flood-09,tacloban,2026-10,LGU update,100% sample status recorded for the Sagkahan flood-control work package.,yes,yes
+tacloban-flood-10-e1,tacloban-flood-10,tacloban,2026-10,Community monitoring,0% sample status recorded for the Anibong flood-control work package.,yes,yes
+tacloban-flood-11-e1,tacloban-flood-11,tacloban,2026-10,LGU update,35% sample status recorded for the Balyuan flood-control work package.,no,yes
+tacloban-flood-12-e1,tacloban-flood-12,tacloban,2026-10,LGU update,100% sample status recorded for the Abucay flood-control work package.,yes,yes
+iloilo-flood-01-e1,iloilo-flood-01,iloilo,2026-10,Community monitoring,35% sample status recorded for the Jaro flood-control work package.,no,yes
+iloilo-flood-02-e1,iloilo-flood-02,iloilo,2026-10,LGU update,100% sample status recorded for the La Paz flood-control work package.,yes,yes
+iloilo-flood-03-e1,iloilo-flood-03,iloilo,2026-10,LGU update,57% sample status recorded for the Molo flood-control work package.,yes,yes
+iloilo-flood-04-e1,iloilo-flood-04,iloilo,2026-10,Community monitoring,0% sample status recorded for the Mandurriao flood-control work package.,yes,yes
+iloilo-flood-05-e1,iloilo-flood-05,iloilo,2026-10,LGU update,25% sample status recorded for the Arevalo flood-control work package.,yes,yes
+iloilo-flood-06-e1,iloilo-flood-06,iloilo,2026-10,LGU update,100% sample status recorded for the Iloilo River flood-control work package.,no,yes
+iloilo-flood-07-e1,iloilo-flood-07,iloilo,2026-10,Community monitoring,46% sample status recorded for the Jaro flood-control work package.,yes,yes
+iloilo-flood-08-e1,iloilo-flood-08,iloilo,2026-10,LGU update,57% sample status recorded for the La Paz flood-control work package.,yes,yes
+iloilo-flood-09-e1,iloilo-flood-09,iloilo,2026-10,LGU update,100% sample status recorded for the Molo flood-control work package.,yes,yes
+iloilo-flood-10-e1,iloilo-flood-10,iloilo,2026-10,Community monitoring,0% sample status recorded for the Mandurriao flood-control work package.,yes,yes
+iloilo-flood-11-e1,iloilo-flood-11,iloilo,2026-10,LGU update,35% sample status recorded for the Arevalo flood-control work package.,no,yes
+iloilo-flood-12-e1,iloilo-flood-12,iloilo,2026-10,LGU update,100% sample status recorded for the Iloilo River flood-control work package.,yes,yes
+cdo-flood-01-e1,cdo-flood-01,cdo,2026-10,Community monitoring,35% sample status recorded for the Puntod flood-control work package.,no,yes
+cdo-flood-02-e1,cdo-flood-02,cdo,2026-10,LGU update,100% sample status recorded for the Bonbon flood-control work package.,yes,yes
+cdo-flood-03-e1,cdo-flood-03,cdo,2026-10,LGU update,57% sample status recorded for the Carmen flood-control work package.,yes,yes
+cdo-flood-04-e1,cdo-flood-04,cdo,2026-10,Community monitoring,0% sample status recorded for the Macasandig flood-control work package.,yes,yes
+cdo-flood-05-e1,cdo-flood-05,cdo,2026-10,LGU update,25% sample status recorded for the Calaanan flood-control work package.,yes,yes
+cdo-flood-06-e1,cdo-flood-06,cdo,2026-10,LGU update,100% sample status recorded for the CDO River flood-control work package.,no,yes
+cdo-flood-07-e1,cdo-flood-07,cdo,2026-10,Community monitoring,46% sample status recorded for the Puntod flood-control work package.,yes,yes
+cdo-flood-08-e1,cdo-flood-08,cdo,2026-10,LGU update,57% sample status recorded for the Bonbon flood-control work package.,yes,yes
+cdo-flood-09-e1,cdo-flood-09,cdo,2026-10,LGU update,100% sample status recorded for the Carmen flood-control work package.,yes,yes
+cdo-flood-10-e1,cdo-flood-10,cdo,2026-10,Community monitoring,0% sample status recorded for the Macasandig flood-control work package.,yes,yes
+cdo-flood-11-e1,cdo-flood-11,cdo,2026-10,LGU update,35% sample status recorded for the Calaanan flood-control work package.,no,yes
+cdo-flood-12-e1,cdo-flood-12,cdo,2026-10,LGU update,100% sample status recorded for the CDO River flood-control work package.,yes,yes
+davao-flood-01-e1,davao-flood-01,davao,2026-10,Community monitoring,35% sample status recorded for the Matina flood-control work package.,no,yes
+davao-flood-02-e1,davao-flood-02,davao,2026-10,LGU update,100% sample status recorded for the Bucana flood-control work package.,yes,yes
+davao-flood-03-e1,davao-flood-03,davao,2026-10,LGU update,57% sample status recorded for the Talomo flood-control work package.,yes,yes
+davao-flood-04-e1,davao-flood-04,davao,2026-10,Community monitoring,0% sample status recorded for the Bangkal flood-control work package.,yes,yes
+davao-flood-05-e1,davao-flood-05,davao,2026-10,LGU update,25% sample status recorded for the Davao River flood-control work package.,yes,yes
+davao-flood-06-e1,davao-flood-06,davao,2026-10,LGU update,100% sample status recorded for the Agdao flood-control work package.,no,yes
+davao-flood-07-e1,davao-flood-07,davao,2026-10,Community monitoring,46% sample status recorded for the Matina flood-control work package.,yes,yes
+davao-flood-08-e1,davao-flood-08,davao,2026-10,LGU update,57% sample status recorded for the Bucana flood-control work package.,yes,yes
+davao-flood-09-e1,davao-flood-09,davao,2026-10,LGU update,100% sample status recorded for the Talomo flood-control work package.,yes,yes
+davao-flood-10-e1,davao-flood-10,davao,2026-10,Community monitoring,0% sample status recorded for the Bangkal flood-control work package.,yes,yes
+davao-flood-11-e1,davao-flood-11,davao,2026-10,LGU update,35% sample status recorded for the Davao River flood-control work package.,no,yes
+davao-flood-12-e1,davao-flood-12,davao,2026-10,LGU update,100% sample status recorded for the Agdao flood-control work package.,yes,yes
+man-baseco-seawall-e1,man-baseco-seawall,manila,2026-09,Citizen photo report,Wave overtopping at the unfinished western section.,no,yes
+man-baseco-seawall-e2,man-baseco-seawall,manila,2026-08,Satellite check,No change to the open western section since May.,yes,yes
+man-baseco-seawall-e3,man-baseco-seawall,manila,2026-06,LGU update,"45% complete, armor rock supply pending.",yes,yes
+man-binondo-estero-e1,man-binondo-estero,manila,2026-08,Community monitoring,Water level in the estero dropped within two hours after heavy rain.,yes,yes
+man-vitas-pump-e1,man-vitas-pump,manila,2026-09,MMDA update,First replacement pump installed and tested.,yes,yes
+man-vitas-pump-e2,man-vitas-pump,manila,2026-07,Community monitoring,Station ran on its old pumps during the July rains.,yes,yes
+man-espana-drain-e1,man-espana-drain,manila,2026-09,Citizen photo report,Knee-deep water on España after a thunderstorm.,no,yes
+man-espana-drain-e2,man-espana-drain,manila,2026-09,Citizen photo report,Excavation along the westbound lane is still open.,no,yes
+man-espana-drain-e3,man-espana-drain,manila,2026-08,LGU update,"35% complete, delayed by utility relocation.",yes,yes
+man-pasig-wall-e1,man-pasig-wall,manila,2026-09,Community monitoring,Seepage seen at two wall panels during high river level.,yes,yes
+man-pasig-wall-e2,man-pasig-wall,manila,2026-07,Satellite check,Wall alignment unchanged; no breach visible.,yes,yes
+man-paco-estero-e1,man-paco-estero,manila,2026-08,LGU update,Two of three walkway segments planted.,yes,yes
+man-sensors-e1,man-sensors,manila,2026-09,LGU update,All 12 sensors online after the monthly test.,yes,yes
+man-evac-e1,man-evac,manila,2026-07,LGU update,Site cleared; bidding scheduled for Q4 2026.,yes,yes
+man-aviles-pump-e1,man-aviles-pump,manila,2026-09,MMDA update,One generator installed; second awaiting delivery.,yes,yes
+man-roxas-outfall-e1,man-roxas-outfall,manila,2026-08,Community monitoring,Gates closed as expected during a 1.3 m high tide.,yes,yes
+tug-buntun-dike-e1,tug-buntun-dike,tuguegarao,2026-09,LGU update,Embankment complete up to the Linao section.,yes,yes
+tug-buntun-dike-e2,tug-buntun-dike,tuguegarao,2026-08,Satellite check,New embankment visible along 1.3 km of the riverbank.,yes,yes
+tug-pinacanauan-e1,tug-pinacanauan,tuguegarao,2026-09,Citizen photo report,Bank erosion continuing beside the unfinished section.,no,yes
+tug-pinacanauan-e2,tug-pinacanauan,tuguegarao,2026-07,Satellite check,No visible work since March.,yes,yes
+tug-centro-drain-e1,tug-centro-drain,tuguegarao,2026-08,Community monitoring,Streets cleared of water within an hour after a yellow warning.,yes,yes
+tug-annafunan-drain-e1,tug-annafunan-drain,tuguegarao,2026-08,LGU update,"Design approved, not yet bid out.",yes,yes
+tug-gauges-e1,tug-gauges,tuguegarao,2026-09,LGU update,Sirens sounded on schedule during the monthly test.,yes,yes
+tug-evac-e1,tug-evac,tuguegarao,2026-09,LGU update,Foundations and ground-floor columns complete.,yes,yes
+tug-shade-e1,tug-shade,tuguegarao,2026-08,Community monitoring,"Survival count found about 2,000 of 3,000 trees alive.",yes,yes
+tug-larion-pump-e1,tug-larion-pump,tuguegarao,2026-06,LGU update,Included in the 2027 investment plan.,yes,yes
+tug-carig-forest-e1,tug-carig-forest,tuguegarao,2026-07,LGU update,40 hectares planted.,yes,yes
+tug-atulayan-e1,tug-atulayan,tuguegarao,2026-08,Satellite check,Revetment intact after the August high water.,yes,yes
+nag-river-wall-e1,nag-river-wall,naga,2026-09,LGU update,Wall complete from Sabang to the Colgante bridge.,yes,yes
+nag-bicol-dike-e1,nag-bicol-dike,naga,2026-09,Citizen photo report,Low section of the dike still at the old height.,no,yes
+nag-bicol-dike-e2,nag-bicol-dike,naga,2026-08,Satellite check,Fill work stopped at about 800 m.,yes,yes
+nag-bicol-dike-e3,nag-bicol-dike,naga,2026-04,LGU update,40% complete.,yes,yes
+nag-centro-drain-e1,nag-centro-drain,naga,2026-08,Community monitoring,Downtown streets cleared within an hour after a yellow warning.,yes,yes
+nag-triangulo-pump-e1,nag-triangulo-pump,naga,2026-09,LGU update,Pump house walls up; pumps on order.,yes,yes
+nag-gauges-e1,nag-gauges,naga,2026-09,LGU update,Bicol River gauge not transmitting.,yes,yes
+nag-calauag-drain-e1,nag-calauag-drain,naga,2026-07,LGU update,Survey complete; procurement next.,yes,yes
+nag-evac-e1,nag-evac,naga,2026-08,Community monitoring,Center used during the August typhoon; facilities working.,yes,yes
+nag-river-green-e1,nag-river-green,naga,2026-08,Community monitoring,Seedlings planted along about 1.8 km.,yes,yes
+nag-pacol-basin-e1,nag-pacol-basin,naga,2026-09,Satellite check,Excavation visible on the pond site.,yes,yes
+nag-balatas-revet-e1,nag-balatas-revet,naga,2026-06,LGU update,Funding approved in the 2026 budget.,yes,yes
+pps-baywalk-seawall-e1,pps-baywalk-seawall,puerto-princesa,2026-08,Satellite check,Seawall intact; no scour visible.,yes,yes
+pps-mangrove-e1,pps-mangrove,puerto-princesa,2026-09,Community monitoring,Survival count about 80% in the first planting block.,yes,yes
+pps-irawan-dike-e1,pps-irawan-dike,puerto-princesa,2026-08,LGU update,Half of the revetment placed.,yes,yes
+pps-rizal-drain-e1,pps-rizal-drain,puerto-princesa,2026-09,Citizen photo report,Water pooling at two clogged inlets after rain.,no,yes
+pps-rizal-drain-e2,pps-rizal-drain,puerto-princesa,2026-09,LGU update,Declogging requested.,yes,yes
+pps-sirens-e1,pps-sirens,puerto-princesa,2026-09,LGU update,All sirens sounded during the monthly test.,yes,yes
+pps-evac-e1,pps-evac,puerto-princesa,2026-07,LGU update,Lot identified; design under way.,yes,yes
+pps-tagburos-drain-e1,pps-tagburos-drain,puerto-princesa,2026-09,Satellite check,Work area visible at the highway crossing.,yes,yes
+pps-school-shade-e1,pps-school-shade,puerto-princesa,2026-08,LGU update,18 of 25 schools planted.,yes,yes
+pps-sicsican-basin-e1,pps-sicsican-basin,puerto-princesa,2026-06,LGU update,Included in the 2027 investment plan.,yes,yes
+pps-mandaragat-revet-e1,pps-mandaragat-revet,puerto-princesa,2026-09,LGU update,Final 100 m of revetment being placed.,yes,yes
+ceb-mahiga-e1,ceb-mahiga,cebu,2026-09,LGU update,Floodwall complete on the Banilad side.,yes,yes
+ceb-mahiga-e2,ceb-mahiga,cebu,2026-08,Satellite check,Widened channel visible along about 1 km.,yes,yes
+ceb-guadalupe-e1,ceb-guadalupe,cebu,2026-09,Citizen photo report,Silt bars still visible under the bridge.,no,yes
+ceb-guadalupe-e2,ceb-guadalupe,cebu,2026-08,Satellite check,Only the downstream section has been lined.,yes,yes
+ceb-butuanon-e1,ceb-butuanon,cebu,2026-08,Community monitoring,Revetment intact after the August rains.,yes,yes
+ceb-pasil-pump-e1,ceb-pasil-pump,cebu,2026-09,LGU update,Outfall gates installed; pumps next.,yes,yes
+ceb-sensors-e1,ceb-sensors,cebu,2026-09,LGU update,Two of five sensors offline.,yes,yes
+ceb-sensors-e2,ceb-sensors,cebu,2026-09,Citizen photo report,Sensor at the Lahug creek bridge has no power light.,no,yes
+ceb-pardo-evac-e1,ceb-pardo-evac,cebu,2026-09,LGU update,Roof framing under way.,yes,yes
+ceb-kinalumsan-e1,ceb-kinalumsan,cebu,2026-07,LGU update,Design complete; awaiting funding release.,yes,yes
+ceb-buhisan-forest-e1,ceb-buhisan-forest,cebu,2026-08,Community monitoring,About 25 hectares planted.,yes,yes
+ceb-srp-revet-e1,ceb-srp-revet,cebu,2026-08,Satellite check,Revetment line intact.,yes,yes
+ceb-lahug-drain-e1,ceb-lahug-drain,cebu,2026-08,Community monitoring,No street flooding on Salinas Drive after heavy rain.,yes,yes
+orm-anilao-dike-e1,orm-anilao-dike,ormoc,2026-08,Satellite check,Dike crest intact along its full length.,yes,yes
+orm-malbasag-e1,orm-malbasag,ormoc,2026-09,LGU update,Lining complete on the downstream 1 km.,yes,yes
+orm-diversion-e1,orm-diversion,ormoc,2026-09,Community monitoring,Debris piled at two bridge piers.,yes,yes
+orm-diversion-e2,orm-diversion,ormoc,2026-08,Satellite check,Sand bars forming in the channel.,yes,yes
+orm-gauges-e1,orm-gauges,ormoc,2026-09,LGU update,All gauges reporting; sirens tested.,yes,yes
+orm-seawall-e1,orm-seawall,ormoc,2026-09,Citizen photo report,Unfinished section has no armor rock.,no,yes
+orm-seawall-e2,orm-seawall,ormoc,2026-07,Satellite check,No new work since February.,yes,yes
+orm-downtown-drain-e1,orm-downtown-drain,ormoc,2026-09,LGU update,Real Street section complete.,yes,yes
+orm-cogon-evac-e1,orm-cogon-evac,ormoc,2026-07,LGU update,Bidding scheduled for November.,yes,yes
+orm-watershed-e1,orm-watershed,ormoc,2026-08,Community monitoring,About 50 hectares planted; survival good.,yes,yes
+orm-mangrove-e1,orm-mangrove,ormoc,2026-08,Community monitoring,Survival count about 85%.,yes,yes
+orm-outfall-pump-e1,orm-outfall-pump,ormoc,2026-06,LGU update,Feasibility study complete.,yes,yes
+btn-agusan-dike-e1,btn-agusan-dike,butuan,2026-09,Citizen photo report,Gap in the embankment near the Ong Yiu landing.,no,yes
+btn-agusan-dike-e2,btn-agusan-dike,butuan,2026-09,Citizen photo report,Same gap photographed from the river.,no,yes
+btn-agusan-dike-e3,btn-agusan-dike,butuan,2026-08,Satellite check,About half the embankment visible; no change since March.,yes,yes
+btn-masao-e1,btn-masao,butuan,2026-07,LGU update,Not yet bid out.,yes,yes
+btn-montilla-drain-e1,btn-montilla-drain,butuan,2026-09,Community monitoring,Water pooled for three hours after heavy rain.,yes,yes
+btn-libertad-pump-e1,btn-libertad-pump,butuan,2026-09,LGU update,30% complete; pump house foundation done.,yes,yes
+btn-telemetry-e1,btn-telemetry,butuan,2026-09,LGU update,All stations reporting.,yes,yes
+btn-bading-evac-e1,btn-bading-evac,butuan,2026-09,LGU update,Second floor slab poured.,yes,yes
+btn-taguibo-e1,btn-taguibo,butuan,2026-08,Satellite check,Revetment work visible on the lower section.,yes,yes
+btn-bamboo-e1,btn-bamboo,butuan,2026-08,Community monitoring,Bamboo clumps well established.,yes,yes
+btn-mangrove-e1,btn-mangrove,butuan,2026-09,Community monitoring,About 6 hectares planted.,yes,yes
+btn-culverts-e1,btn-culverts,butuan,2026-06,LGU update,Design under review.,yes,yes
+zam-tumaga-e1,zam-tumaga,zamboanga,2026-09,LGU update,Floodwall complete along the Putik section.,yes,yes
+zam-riohondo-e1,zam-riohondo,zamboanga,2026-09,Citizen photo report,Open section with no rock at the river mouth.,no,yes
+zam-riohondo-e2,zam-riohondo,zamboanga,2026-08,Satellite check,No new work since April.,yes,yes
+zam-canelar-drain-e1,zam-canelar-drain,zamboanga,2026-08,Community monitoring,Streets cleared within an hour after a thunderstorm.,yes,yes
+zam-stamaria-pump-e1,zam-stamaria-pump,zamboanga,2026-09,LGU update,Outfall box complete; pumps on order.,yes,yes
+zam-sirens-e1,zam-sirens,zamboanga,2026-09,LGU update,All sirens sounded during the monthly test.,yes,yes
+zam-mangrove-e1,zam-mangrove,zamboanga,2026-08,Community monitoring,Survival count about 80%.,yes,yes
+zam-tetuan-evac-e1,zam-tetuan-evac,zamboanga,2026-09,LGU update,Structural frame complete.,yes,yes
+zam-shade-e1,zam-shade,zamboanga,2026-08,LGU update,About 70% of trees planted.,yes,yes
+zam-tumaga-basin-e1,zam-tumaga-basin,zamboanga,2026-06,LGU update,Feasibility study under way.,yes,yes
+zam-arena-seawall-e1,zam-arena-seawall,zamboanga,2026-08,Satellite check,Seawall intact.,yes,yes

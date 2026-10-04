@@ -7,7 +7,7 @@ module.exports = {
   // Source of record: the repo's sample CSVs (read-only).
   dataDir: process.env.RIPPLES_DATA_DIR || path.join(__dirname, '..', '..', 'data'),
 
-  // Mutable state (drafts, outbox, follow-up log, simulation).
+  // Mutable state (drafts, outbox, follow-up log, citizen reports).
   stateDir: process.env.RIPPLES_STATE_DIR || path.join(__dirname, '..', 'state'),
 
   // Safeguard S2. "required": a person approves every draft before release.
@@ -23,5 +23,11 @@ module.exports = {
   testEmailDomain: 'test.ripples.invalid',
 
   replyClockWorkingDays: 15,
-  followUpCooldownDays: 30,
+
+  // Public Mapbox token (pk.…) for satellite imagery on the 3D map. Set in
+  // app/.env; restrict it to the app's URLs in the Mapbox account.
+  mapboxToken: process.env.MAPBOX_TOKEN || '',
+
+  // Salt for hashing anonymous rating voter IDs (set a secret value in production).
+  ratingSalt: process.env.RIPPLES_RATING_SALT || 'ripples-dev-rating-salt',
 };

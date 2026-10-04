@@ -20,7 +20,8 @@ tanaw-quick-pack/
 │           ├── design.md              # architecture, data flow, Appendix B rules
 │           └── tasks.md               # discrete tasks, dependency-tagged for parallel waves
 ├── app/                               # Ripples web app (Node + plain HTML), see docs/ARCHITECTURE.md
-│   ├── server.js  src/{data,domain,services,api}  public/  test/
+│   ├── server.js  src/{data,domain,services,api}  test/
+│   └── public/  index.html (landing) · map.html (3D explorer) · ops.html (Scorecard) · js/{landing,explore,shared,pages}
 ├── docs/ARCHITECTURE.md               # web app architecture
 ├── data/                              # six sample CSVs (source of record for the build)
 │   ├── cities.csv  projects.csv  advisories.csv

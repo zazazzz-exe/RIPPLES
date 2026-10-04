@@ -126,4 +126,4 @@ Acceptance criteria use EARS notation (WHEN/IF … THE SYSTEM SHALL …).
 - **CC-7 (S7):** Sample data is labeled everywhere.
 
 ## Out of scope (this version)
-Live feeds, LCCAP ingestion at scale, satellite checks, real citizen uploads with EXIF/face handling, the Ripples backend (OpenAPI/MCP), Stellar anchoring, and the production public map. The 3D map remains a mockup.
+Live feeds, LCCAP ingestion at scale, satellite checks, real citizen uploads with EXIF/face handling, the Ripples backend (OpenAPI/MCP), a hosted record ledger, and the production public map. The 3D map remains a mockup.

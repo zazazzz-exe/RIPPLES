@@ -42,6 +42,10 @@ function createRepository(dataDir) {
   const centers = load(dataDir, 'evacuation_centers');
   const actions = load(dataDir, 'community_actions');
 
+  // Optional reference photos and source links per project (data/project_media.json).
+  const mediaFile = path.join(dataDir, 'project_media.json');
+  const media = fs.existsSync(mediaFile) ? JSON.parse(fs.readFileSync(mediaFile, 'utf8')).projects || {} : {};
+
   const cityById = new Map(cities.map((c) => [c.city_id, c]));
   const projectById = new Map(projects.map((p) => [p.project_id, p]));
   const projectsByCity = groupBy(projects, 'city_id');
@@ -62,6 +66,7 @@ function createRepository(dataDir) {
     evidenceOf: (projectId) => evidenceByProject.get(projectId) || [],
     centersOf: (cityId) => centersByCity.get(cityId) || [],
     actionsOf: (cityId) => actionsByCity.get(cityId) || [],
+    mediaOf: (projectId) => media[projectId] || { photos: [], references: [] },
     counts: () => ({
       cities: cities.length, projects: projects.length, advisories: advisories.length,
       evidence: evidence.length, centers: centers.length, actions: actions.length,

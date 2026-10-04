@@ -7,8 +7,8 @@
 <script>
   // The project view now lives in the 3D explorer.
   var id = new URLSearchParams(location.search).get('id');
-  location.replace(id ? '/#/project/' + encodeURIComponent(id) : '/');
+  location.replace(id ? '/map#/project/' + encodeURIComponent(id) : '/map');
 </script>
 </head>
-<body style="background:#020817;color:#dde9ff;font-family:system-ui"><p><a href="/" style="color:#ffcf4a">Open the Ripples map</a></p></body>
+<body style="background:#020817;color:#dde9ff;font-family:system-ui"><p><a href="/map" style="color:#ffcf4a">Open the Ripples map</a></p></body>
 </html>

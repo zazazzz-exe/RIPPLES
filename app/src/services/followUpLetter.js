@@ -25,12 +25,10 @@ function createFollowUpLetter({ repo, config }, { cities, drafts, outbox }) {
       to: outbox.testAddress(project.responsible_office),
       subject: letter.subject, body: letter.body,
       hazard_sentence_included: letter.hazard_sentence_included,
-      simulated: active.some((a) => a.simulated),
-      simulation_id: (active.find((a) => a.simulated) || {}).simulation_id || null,
       note,
       log_entry: `${config.today}, ${project.project_id}, "${project.responsible_office}", drafted`,
       sample_label: SAMPLE_LABEL,
-      source_records: [`projects.csv:${project.project_id}`, `cities.csv:${city.city_id}`, ...active.map((a) => (a.simulated ? 'simulation' : `advisories.csv:${a.advisory_id}`))],
+      source_records: [`projects.csv:${project.project_id}`, `cities.csv:${city.city_id}`, ...active.map((a) => `advisories.csv:${a.advisory_id}`)],
     };
     return enforce(draft, { kind: 'letter' });
   }

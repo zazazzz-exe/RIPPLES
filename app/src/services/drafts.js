@@ -4,7 +4,7 @@ const rules = require('../domain/rules');
 const { NotFoundError, ConflictError, ValidationError } = require('../errors');
 const { ApprovalError } = require('../domain/approval');
 
-const PREFIX = { advisory: 'adv', letter: 'ltr', notice: 'ntc', report: 'rpt' };
+const PREFIX = { letter: 'ltr' };
 
 function createDraftService({ store, config, policy }, { outbox }) {
   const find = (id) => store.get().drafts.find((d) => d.id === id);
@@ -16,9 +16,8 @@ function createDraftService({ store, config, policy }, { outbox }) {
 
   // What "release" means for each kind of draft.
   const RELEASE = {
-    advisory: (d) => ({ published_to: `City Page: ${d.city}` }),
     letter: (d) => {
-      const msg = outbox.send({ to: d.to, subject: d.subject, body: d.body, kind: 'letter', draft_id: d.id, city_id: d.city_id, simulated: d.simulated });
+      const msg = outbox.send({ to: d.to, subject: d.subject, body: d.body, kind: 'letter', draft_id: d.id, city_id: d.city_id });
       const entry = store.update((s) => {
         const e = {
           id: `fu-${String(s.followups.length + 1).padStart(4, '0')}`,
@@ -33,11 +32,6 @@ function createDraftService({ store, config, policy }, { outbox }) {
       });
       return { outbox_id: msg.id, followup_id: entry.id, clock_due: entry.clock_due };
     },
-    notice: (d) => ({ outbox_id: outbox.send({ to: d.to, subject: d.subject, body: d.body, kind: 'notice', draft_id: d.id, city_id: d.city_id, simulated: d.simulated }).id }),
-    report: (d) => ({
-      outbox_id: outbox.send({ to: d.to, subject: d.subject, body: d.text, kind: 'report', draft_id: d.id, city_id: d.city_id }).id,
-      published_to: `City Page: ${d.city}`,
-    }),
   };
 
   function release(draft) {

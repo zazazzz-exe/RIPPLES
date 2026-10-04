@@ -9,39 +9,13 @@ const make = (approvalMode = 'required') => createServices({ ...baseConfig, appr
 test('D2 scorecard: open-gap total equals a hand count of projects.csv', () => {
   const s = make();
   const sc = s.scorecard.build();
-  assert.equal(sc.kpis.commitments_tracked, 32);
-  assert.equal(sc.kpis.open_gaps, 12);
-  assert.equal(sc.kpis.overdue, 8);
-  assert.equal(sc.kpis.needs_maintenance, 4);
-  assert.equal(sc.kpis.cities_high_or_critical, 3);
+  assert.equal(sc.kpis.commitments_tracked, 220);
+  assert.equal(sc.kpis.open_gaps, 84);
+  assert.equal(sc.kpis.overdue, 57);
+  assert.equal(sc.kpis.needs_maintenance, 27);
+  assert.equal(sc.kpis.cities_high_or_critical, 11);
   assert.deepEqual(sc.cities.map((c) => c.risk_score), [...sc.cities.map((c) => c.risk_score)].sort((a, b) => b - a));
   assert.match(sc.sample_label, /Sample/);
-});
-
-test('D4a advisory card for Malabon: four sections, official line, DRAFT, never "safe"', () => {
-  const s = make();
-  const d = s.advisoryCard.create({ city_id: 'malabon', type: 'Flood', level: 'Advisory' });
-  assert.equal(d.review_state, 'DRAFT');
-  assert.equal(d.hazard_points, 2);
-  assert.deepEqual(Object.keys(d.sections), ['households', 'schools', 'farmers', 'barangay_officials']);
-  assert.match(d.sections.households, /Malabon National High School/);
-  assert.match(d.sections.barangay_officials, /Tullahan River wall repair/);
-  assert.equal(d.official_line, safeguards.OFFICIAL_LINE);
-  assert.deepEqual(safeguards.check(d, { kind: 'advisory' }), []);
-  assert.throws(() => s.advisoryCard.create({ city_id: 'malabon', type: 'Flood', level: 'Purple' }), /level for Flood/);
-  assert.equal(s.advisoryCard.preview({ city_id: 'davao', type: 'Heat', heat_index: 45 }).level, 'Danger');
-});
-
-test('every advisory type and level produces a card that passes the safeguards', () => {
-  const s = make();
-  const rules = require('../src/domain/rules');
-  for (const key of Object.keys(rules.ADVISORY_POINTS)) {
-    const [type, level] = key.split(':');
-    for (const city of ['malabon', 'davao']) {
-      const card = s.advisoryCard.preview({ city_id: city, type, level });
-      assert.deepEqual(safeguards.check(card, { kind: 'advisory' }), [], `${key} ${city}`);
-    }
-  }
 });
 
 test('D4b letter for Malabon river wall: neutral, three requests, hazard sentence', () => {
@@ -67,7 +41,7 @@ test('approval gate: nothing reaches the outbox until a person approves (S2)', (
   assert.equal(approved.review_state, 'APPROVED');
   assert.equal(s.outbox.list().length, 1);
   assert.match(s.outbox.list()[0].to[0], /@test\.ripples\.invalid$/);
-  assert.equal(s.automations.weeklySummary().awaiting, 1);
+  assert.equal(s.followups.summary().awaiting, 1);
   assert.throws(() => s.drafts.decide(d.id, 'reject'), /already APPROVED/);
 
   const r = s.followUpLetter.create('dag-dike');
@@ -100,72 +74,72 @@ test('D4c triage: lone report unverified, corroborated with matches, never store
   assert.ok(dup.flags.includes('Identical wording to an earlier report'));
 });
 
-test('D5a escalation selects the 12 candidates and respects the 30-day cooldown', () => {
+test('follow-up log: an approved letter starts a reply clock and a reply can be recorded', () => {
   const s = make();
-  const first = s.automations.runEscalation();
-  assert.equal(first.candidates, 12);
-  assert.equal(first.drafted, 12);
-  assert.equal(s.outbox.list().length, 0);
-  const again = s.automations.runEscalation();
-  assert.equal(again.drafted, 0); // drafts already pending
-  const mal = first.drafts.find((d) => d.project_id === 'mal-wall');
-  s.drafts.decide(mal.id, 'approve');
-  const skip = s.automations.escalationCandidates().find((c) => c.project_id === 'mal-wall');
-  assert.match(skip.skip, /last 30 days/);
-  const clocks = s.automations.checkClocks('2026-11-30');
-  assert.equal(clocks.marked_no_reply.length, 1);
-  assert.equal(s.automations.weeklySummary().no_reply, 1);
+  const d = s.followUpLetter.create('mal-wall');
+  assert.equal(s.followups.summary().letters_sent, 0);
+  s.drafts.decide(d.id, 'approve');
+  const [f] = s.followups.summary().followups;
+  assert.equal(f.project_id, 'mal-wall');
+  assert.equal(f.status, 'Awaiting reply');
+  assert.equal(f.clock_due, '2026-10-23');
+  s.followups.recordReply(f.id, 'Revised completion date: March 2027.');
+  assert.equal(s.followups.summary().replies, 1);
+  assert.throws(() => s.followups.recordReply(f.id, '  '), /reply text is required/);
+  assert.throws(() => s.followups.recordReply('fu-9999', 'x'), /No follow-up/);
+  // The reply now counts on the city scorecard.
+  assert.equal(s.cities.scorecard('malabon').followups_replied, 2);
 });
 
-test('D5b typhoon: Malabon goes Critical, drafts wait for approval, reset restores baseline', () => {
+test('public ratings: one vote per browser, changeable, anonymous, and never change status or risk', () => {
   const s = make();
-  const run = s.automations.runTyphoon();
-  const mal = run.affected.find((a) => a.city_id === 'malabon');
-  assert.equal(mal.signal, 3);
-  assert.equal(mal.real_risk_level, 'Critical');
-  assert.equal(s.outbox.list().length, 0);
-  assert.ok(run.awaiting_approval > 0);
-  // Approved simulated card shows on the City Page while the simulation runs.
-  const card = s.drafts.list({ kind: 'advisory', city_id: 'malabon' })[0];
-  assert.equal(s.cities.page('malabon').advisories.some((a) => a.id === card.id), false);
-  s.drafts.decide(card.id, 'approve');
-  assert.equal(s.cities.page('malabon').advisories[0].id, card.id);
-  s.automations.resetTyphoon();
-  assert.equal(s.cities.risk('malabon').real_risk_level, 'High');
-  assert.equal(s.cities.page('malabon').advisories.some((a) => a.id === card.id), false);
-  assert.equal(s.drafts.list({ state: 'DRAFT' }).length, 0);
+  const A = 'voter-aaaaaaaaaaaaaaaa';
+  const B = 'voter-bbbbbbbbbbbbbbbb';
+  assert.deepEqual(s.ratings.tally('mal-wall', A).mine, null);
+  let t = s.ratings.vote('mal-wall', A, 'up');
+  assert.deepEqual([t.up, t.down, t.mine], [1, 0, 'up']);
+  t = s.ratings.vote('mal-wall', A, 'up');
+  assert.equal(t.up, 1, 'same browser counts once');
+  t = s.ratings.vote('mal-wall', A, 'down', 'unfinished');
+  assert.deepEqual([t.up, t.down, t.mine, t.mine_reason, t.reasons.unfinished], [0, 1, 'down', 'unfinished', 1]);
+  t = s.ratings.vote('mal-wall', B, 'down', 'hard_to_access');
+  assert.deepEqual([t.down, t.mine], [2, 'down']);
+  t = s.ratings.vote('mal-wall', A, null);
+  assert.deepEqual([t.up, t.down, t.mine], [0, 1, null]);
+
+  assert.throws(() => s.ratings.vote('mal-wall', A, 'up', 'unfinished'), /only go with a thumbs down/);
+  assert.throws(() => s.ratings.vote('mal-wall', A, 'down', 'corrupt'), /reason must be one of/);
+  assert.throws(() => s.ratings.vote('mal-wall', 'short', 'up'), /voter must be/);
+  assert.throws(() => s.ratings.vote('mal-wall', A, 'maybe'), /vote must be/);
+  assert.throws(() => s.ratings.vote('atlantis', A, 'up'), /No project/);
+
+  // Only hashes are stored, and the same browser is not linkable across projects.
+  s.ratings.vote('mal-pump', B, 'up');
+  const raw = JSON.stringify(s.ratings.summary()) + JSON.stringify(s.cities.explore());
+  assert.ok(!raw.includes(B));
+  const ratingsState = require('node:util').inspect(s.ratings.tally('mal-wall'));
+  assert.ok(!ratingsState.includes(B));
+
+  // Opinions only: status and risk are unchanged (S4).
+  assert.equal(s.cities.risk('malabon').real_risk_level, 'Critical');
+  assert.equal(s.cities.project('mal-wall').project.status, 'Delayed');
+  assert.deepEqual(s.cities.project('mal-wall').project.rating, { up: 0, down: 1 });
+
+  // Scorecard: most thumbs down with the leading reason.
+  s.ratings.vote('dag-dike', A, 'down', 'not_working');
+  s.ratings.vote('dag-dike', B, 'down', 'not_working');
+  const sc = s.scorecard.build();
+  assert.deepEqual(sc.most_down.map((m) => m.project_id), ['dag-dike', 'mal-wall']);
+  assert.equal(sc.most_down[0].top_reason, 'Not working or not maintained');
+  assert.equal(sc.projects.find((p) => p.project_id === 'mal-pump').rating_up, 1);
 });
 
-test('D3/D5c readiness report for every city, released only after approval', () => {
+test('rating hashes differ per project for the same browser', () => {
   const s = make();
-  const brief = s.cityBrief.build('malabon');
-  assert.equal(brief.sections.length, 5);
-  assert.match(brief.text, /No live PAGASA seasonal outlook is connected/);
-  const run = s.automations.runReadiness();
-  assert.equal(run.reports.length, 8);
-  assert.equal(s.cities.page('malabon').readiness_reports.length, 0);
-  s.drafts.decide(run.reports.find((r) => r.city_id === 'malabon').id, 'approve');
-  assert.equal(s.cities.page('malabon').readiness_reports.length, 1);
-  assert.equal(s.outbox.list()[0].to.length, 3);
-});
-
-test('D6 assistant answers the canonical questions with citations', () => {
-  const s = make();
-  const gaps = s.assistant.ask("Which open gaps raise Malabon's risk this season?");
-  assert.equal(gaps.intent, 'gaps');
-  assert.match(gaps.text, /2 open gaps/);
-  assert.ok(gaps.citations.includes('projects.csv:mal-wall'));
-
-  const silent = s.assistant.ask('Which offices have not replied to follow-ups?');
-  assert.equal(silent.intent, 'no_reply');
-  assert.ok(silent.bullets.length > 0);
-
-  const draft = s.assistant.ask('Draft the household section for an orange rainfall warning in Legazpi.');
-  assert.equal(draft.intent, 'draft_guidance');
-  assert.match(draft.bullets[0], /^households:/);
-
-  const live = s.assistant.ask('Is there a typhoon right now in Davao?');
-  assert.equal(live.intent, 'live');
-  assert.equal(s.assistant.ask('hello').intent, 'fallback');
-  for (const a of [gaps, silent, draft, live]) assert.deepEqual(safeguards.check(a, { kind: 'answer' }), []);
+  const crypto = require('node:crypto');
+  const h = (pid) => crypto.createHash('sha256').update(`${baseConfig.ratingSalt}|${pid}|voter-cccccccccccccccc`).digest('hex');
+  assert.notEqual(h('mal-wall'), h('mal-pump'));
+  s.ratings.vote('mal-wall', 'voter-cccccccccccccccc', 'up');
+  assert.equal(s.ratings.tally('mal-wall', 'voter-cccccccccccccccc').mine, 'up');
+  assert.equal(s.ratings.tally('mal-pump', 'voter-cccccccccccccccc').mine, null);
 });

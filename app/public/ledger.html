@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ripples · Record Ledger</title>
+  <meta name="description" content="A blockchain-style ledger that keeps every project record tamper-evident. Verify any record in your browser. Sample data.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/brand/ripples-mark-32.png">
+  <link rel="apple-touch-icon" href="/img/brand/ripples-mark-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <script type="module" src="/js/pages/ledger.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <div id="chrome"></div>
+    <main id="main"><div id="page">
+      <div class="page-head">
+        <h1>Record Ledger</h1>
+        <p>A blockchain-style ledger for project records. Every commitment's record is fingerprinted with SHA-256 and chained to the block before it, so no one can quietly edit a past record. The ledger is for record integrity only: no currency, wallets or payments. Sample data.</p>
+      </div>
+      <div class="kpi-groups" id="ledgerKpis"></div>
+      <section class="card ledger-how" aria-labelledby="howTitle">
+        <h2 id="howTitle">How it works</h2>
+        <ol class="how-steps">
+          <li><b>1 · Record</b><span>A project's details, status, progress, deadline, maintenance and every piece of evidence.</span></li>
+          <li><b>2 · Fingerprint</b><span>The record is hashed with SHA-256. Change one character and the fingerprint changes completely.</span></li>
+          <li><b>3 · Block</b><span>The fingerprint goes into a new block together with the previous block's hash, linking the chain.</span></li>
+          <li><b>4 · Verify</b><span>Anyone can recompute the hashes in their own browser. An edited record or block breaks the chain.</span></li>
+        </ol>
+      </section>
+      <div class="cols-2" style="margin-top:16px;align-items:start">
+        <section class="card" aria-labelledby="verifyTitle">
+          <h2 id="verifyTitle">Verify a project record</h2>
+          <label>Project <input id="vq" type="search" placeholder="Search by project or city…" autocomplete="off"></label>
+          <ul class="list vlist" id="vresults"></ul>
+          <div id="vresult"></div>
+        </section>
+        <section class="card" aria-labelledby="chainTitle">
+          <div class="row between"><h2 id="chainTitle">Chain check</h2><button class="btn" type="button" id="verifyAll">Verify entire chain</button></div>
+          <div id="chainResult"><p class="small muted">Recomputes every block's hash and link in your browser.</p></div>
+        </section>
+      </div>
+      <section class="card" style="margin-top:16px" aria-labelledby="blocksTitle">
+        <div class="row between"><h2 id="blocksTitle">Latest blocks</h2><div id="blockPager"></div></div>
+        <div id="blocks"></div>
+      </section>
+    </div></main>
+  </div>
+  <div id="navs"></div>
+</body>
+</html>

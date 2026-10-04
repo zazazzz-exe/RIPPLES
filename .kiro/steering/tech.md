@@ -48,4 +48,4 @@ The system is built **on Amazon Quick** as the AI orchestration layer. Feature n
 - All sends in the demo target **test addresses**, never real offices.
 
 ## Future stack (roadmap, do not build now)
-Live PAGASA/NDRRMC feeds · LCCAP ingestion pipeline · Sentinel-2 checks · browser-side photo re-encoding (strips location/EXIF, blurs faces) · Ripples backend via OpenAPI/MCP · Stellar timestamping · production map (Mapbox/MapLibre). Build tool for the public app to be confirmed with organizers.
+Live PAGASA/NDRRMC feeds · LCCAP ingestion pipeline · Sentinel-2 checks · browser-side photo re-encoding (strips location/EXIF, blurs faces) · Ripples backend via OpenAPI/MCP · hosted tamper-evident record ledger · production map (Mapbox/MapLibre). Build tool for the public app to be confirmed with organizers.

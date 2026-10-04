@@ -3,28 +3,28 @@
    explorer. The older names (--bg, --surface, --text, …) alias the mockup's. */
 :root {
   /* mockup palette */
-  --ink-0: #020817;
-  --ink-1: #06122b;
-  --ink-2: #0b1d3f;
-  --line: #1d3a68;
-  --line-hi: #2f5794;
-  --ice: #dde9ff;
-  --ice-dim: #93a9cf;
-  --mute: #6a82aa;
-  --route: #ff2e4a;
-  --sun: #ffcf4a;
+  --ink-0: #071b21;
+  --ink-1: #102d30;
+  --ink-2: #173b3a;
+  --line: #385c54;
+  --line-hi: #6f9684;
+  --ice: #f3f1e8;
+  --ice-dim: #c7d4c6;
+  --mute: #8ca093;
+  --route: #f05f3c;
+  --sun: #f2c14e;
 
   --low: #35e39a;
   --mod: #ffd23f;
   --high: #ff8a2b;
   --crit: #ff2e5b;
-  --on-risk: #020817;
+  --on-risk: #071b21;
 
-  --s-none: #8ea0c4;
+  --s-none: #a9b3aa;
   --s-run: #4cc3ff;
   --s-done: #35e39a;
   --s-late: #ffae2b;
-  --maint: #ff6bd6;
+  --maint: #d8799a;
 
   /* aliases used by the page components */
   --bg: var(--ink-0);

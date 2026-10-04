@@ -9,7 +9,6 @@ const OFFICIAL_SOURCES = Object.freeze([
 
 const OFFICIAL_LINE = 'Follow official warnings and evacuation orders from PAGASA and NDRRMC.';
 const SAMPLE_LABEL = 'Sample data. Not an official record.';
-const SIMULATION_LABEL = 'Simulated typhoon. Not a real advisory.';
 
 // S1: never tell anyone they are "safe".
 const NEVER_SAFE = [/\bsafe\b/i, /\bout of danger\b/i, /\bno risk\b/i, /\bnothing to worry\b/i];
@@ -76,6 +75,6 @@ function corroborationStatus({ matchingReports, satelliteAgrees }) {
 }
 
 module.exports = {
-  OFFICIAL_SOURCES, OFFICIAL_LINE, SAMPLE_LABEL, SIMULATION_LABEL, REPORTER_FIELDS,
+  OFFICIAL_SOURCES, OFFICIAL_LINE, SAMPLE_LABEL, REPORTER_FIELDS,
   check, enforce, SafeguardError, redactReporter, corroborationStatus,
 };

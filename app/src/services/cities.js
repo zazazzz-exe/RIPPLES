@@ -1,36 +1,22 @@
 // City and project views. Risk is always computed by the fixed rules from the
-// active advisories (CSV + any simulated signal) and the projects (S4).
+// active advisories and the projects (S4).
 const rules = require('../domain/rules');
-const { OFFICIAL_SOURCES, OFFICIAL_LINE, SAMPLE_LABEL, SIMULATION_LABEL } = require('../domain/safeguards');
+const { OFFICIAL_SOURCES, OFFICIAL_LINE, SAMPLE_LABEL } = require('../domain/safeguards');
 const OUTLOOK = require('../data/outlook');
 const { NotFoundError } = require('../errors');
 
-function createCityService({ repo, store, config }) {
+function createCityService({ repo, store, config }, { ratings }) {
   function mustCity(id) {
     const c = repo.city(id);
     if (!c) throw new NotFoundError(`No city ${id}`);
     return c;
   }
 
-  function simulatedAdvisory(cityId) {
-    const sim = store.get().simulation;
-    const signal = sim && sim.signals[cityId];
-    if (!signal) return null;
-    const level = `Signal ${signal}`;
-    return {
-      advisory_id: `sim-${cityId}`, city_id: cityId, type: 'Typhoon', level,
-      hazard_points: rules.hazardPoints({ type: 'Typhoon', level }),
-      issued: sim.started_at, title: `Wind Signal No. ${signal}: ${sim.name}`,
-      source: 'SIMULATED · demo mode', simulated: true, simulation_id: sim.id,
-    };
-  }
-
-  const activeAdvisories = (cityId) => [...repo.advisoriesOf(cityId), simulatedAdvisory(cityId)].filter(Boolean);
+  const activeAdvisories = (cityId) => repo.advisoriesOf(cityId);
 
   function risk(cityId) {
-    const c = mustCity(cityId);
-    const r = rules.cityRisk(activeAdvisories(cityId), repo.projectsOf(cityId), config.asOf);
-    return { ...r, baseline: { risk_score: c.risk_score, real_risk_level: c.real_risk_level }, changed_by_simulation: r.risk_score !== c.risk_score };
+    mustCity(cityId);
+    return rules.cityRisk(activeAdvisories(cityId), repo.projectsOf(cityId), config.asOf);
   }
 
   // CSV follow-up counts plus letters released by this app.
@@ -79,35 +65,23 @@ function createCityService({ repo, store, config }) {
     });
   }
 
-  // Advisories residents see: CSV sample advisories, the simulated signal, and
-  // generated guidance cards that have been released (S2).
+  // Advisories residents see: the CSV sample advisories, strongest first.
   function publicAdvisories(cityId) {
-    const sim = store.get().simulation;
-    const released = store.get().drafts.filter((d) => d.kind === 'advisory' && d.city_id === cityId && d.review_state === 'APPROVED'
-      && (!d.simulated || (sim && d.simulation_id === sim.id)));
-    const fromCsv = repo.advisoriesOf(cityId).map((a) => ({
+    return repo.advisoriesOf(cityId).map((a) => ({
       id: a.advisory_id, type: a.type, level: a.level, hazard_points: a.hazard_points, issued: a.issued,
-      title: a.title, source: a.source, simulated: false,
+      title: a.title, source: a.source,
       sections: { households: a.for_households, schools: a.for_schools, farmers: a.for_farmers, barangay_officials: a.for_barangay_officials },
-    }));
-    const generated = released.map((d) => ({
-      id: d.id, type: d.type, level: d.level, hazard_points: d.hazard_points, issued: d.issued, title: d.title,
-      source: d.source, simulated: d.simulated, sections: d.sections, generated: true,
-    }));
-    return [...generated, ...fromCsv].sort((a, b) => b.hazard_points - a.hazard_points || String(b.issued).localeCompare(String(a.issued)));
+    })).sort((a, b) => b.hazard_points - a.hazard_points || String(b.issued).localeCompare(String(a.issued)));
   }
 
   function page(cityId) {
     const c = mustCity(cityId);
-    const sim = store.get().simulation;
-    const reports = store.get().drafts.filter((d) => d.kind === 'report' && d.city_id === cityId && d.review_state === 'APPROVED');
     return {
       city: {
         city_id: c.city_id, city: c.city, province: c.province, island_group: c.island_group, lat: c.lat, lon: c.lon,
         hazards: c.hazards.split('; '), lccap: c.lccap, pilot_city: c.pilot_city, as_of: c.as_of,
       },
       risk: risk(cityId),
-      signal: simulatedAdvisory(cityId),
       advisories: publicAdvisories(cityId),
       projects: repo.projectsOf(cityId).map(projectSummary),
       open_gaps: openGaps(cityId),
@@ -115,11 +89,9 @@ function createCityService({ repo, store, config }) {
       evacuation_centers: repo.centersOf(cityId),
       community_actions: repo.actionsOf(cityId),
       scorecard: scorecard(cityId),
-      readiness_reports: reports.map((r) => ({ id: r.id, title: r.title, text: r.text, released_at: r.released_at })),
       official_sources: OFFICIAL_SOURCES,
       official_line: OFFICIAL_LINE,
       sample_label: SAMPLE_LABEL,
-      simulation: sim ? { active: true, name: sim.name, label: SIMULATION_LABEL } : { active: false },
     };
   }
 
@@ -132,7 +104,7 @@ function createCityService({ repo, store, config }) {
     const reports = store.get().reports.filter((r) => r.project_id === projectId)
       .map(({ observation_full, recorded_at, ...r }) => r);
     return {
-      project: { ...projectSummary(p), summary: p.summary, lccap_source: p.lccap_source, latest_reply: p.latest_reply },
+      project: { ...projectSummary(p), summary: p.summary, lccap_source: p.lccap_source, latest_reply: p.latest_reply, rating: ratings.of(projectId), media: repo.mediaOf(projectId) },
       city: { city_id: c.city_id, city: c.city },
       evidence: [...reports, ...repo.evidenceOf(projectId)].sort((a, b) => String(b.date).localeCompare(String(a.date))),
       followups: followupsOf(p),
@@ -143,11 +115,8 @@ function createCityService({ repo, store, config }) {
 
   // Everything the 3D explorer needs in one call, cities in route (CSV) order.
   function explore() {
-    const sim = store.get().simulation;
     return {
       as_of: config.asOf,
-      typhoon: { name: rules.DEMO_TYPHOON.name, track: rules.DEMO_TYPHOON.track },
-      simulation: sim ? { id: sim.id, name: sim.name, track: sim.track, signals: sim.signals } : null,
       cities: repo.cities().map((c) => {
         const p = page(c.city_id);
         return {

@@ -6,7 +6,8 @@ const EMPTY = () => ({
   outbox: [],          // released letters/notices (test addresses only)
   followups: [],       // follow-up log: { project_id, sent_on, clock_due, status }
   reports: [],         // triaged citizen reports (no reporter identity)
-  simulation: null,    // active typhoon simulation, or null
+  ratings: {},         // public thumbs up/down: { projectId: { voterHash: vote } }
+  ledger: [],          // record ledger: SHA-256 hash-chained blocks (see domain/ledger.js)
   seq: 0,
 });
 

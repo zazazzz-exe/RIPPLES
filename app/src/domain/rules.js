@@ -11,23 +11,6 @@ const ADVISORY_POINTS = Object.freeze({
   'Thunderstorm:Advisory': 1, 'Coastal:Gale warning': 1, 'Coastal:High tide': 1,
 });
 
-const ADVISORY_TYPES = Object.freeze(['Heat', 'Rain', 'Flood', 'Typhoon', 'Drought', 'Thunderstorm', 'Coastal']);
-
-const LEVELS = Object.freeze(['Low', 'Moderate', 'High', 'Critical']);
-
-// PAGASA heat index categories (°C).
-function heatLevelFromIndex(celsius) {
-  if (celsius >= 52) return 'Extreme Danger';
-  if (celsius >= 42) return 'Danger';
-  if (celsius >= 33) return 'Extreme Caution';
-  if (celsius >= 27) return 'Caution';
-  return null;
-}
-
-function levelsFor(type) {
-  return Object.keys(ADVISORY_POINTS).filter((k) => k.startsWith(`${type}:`)).map((k) => k.split(':')[1]);
-}
-
 function hazardPoints({ type, level }) {
   const key = `${type}:${level}`;
   if (!(key in ADVISORY_POINTS)) throw new RangeError(`Unknown advisory level: ${key}`);
@@ -93,35 +76,6 @@ function cityScorecard(projects, asOf) {
   };
 }
 
-// Simulated typhoon: the 3D mockup's track and distance thresholds (degrees).
-const DEMO_TYPHOON = Object.freeze({
-  name: 'Typhoon DEMO',
-  track: [[12.2, 131.5], [12.8, 127.5], [13.1, 124.9], [13.6, 123.0], [14.2, 121.3], [15.0, 119.0]],
-});
-
-function signalForDistance(d) {
-  if (d < 0.9) return 3;
-  if (d < 1.8) return 2;
-  if (d < 2.8) return 1;
-  return 0;
-}
-
-// Shortest distance (degrees, longitude scaled by latitude) from a point to a polyline.
-function distanceToTrack(lat, lon, track) {
-  const cs = Math.cos((lat * Math.PI) / 180);
-  let best = Infinity;
-  for (let i = 0; i < track.length - 1; i++) {
-    const [ay, axr] = track[i];
-    const [by, bxr] = track[i + 1];
-    const ax = axr * cs; const bx = bxr * cs; const px = lon * cs; const py = lat;
-    const dx = bx - ax; const dy = by - ay;
-    let t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
-    t = Math.max(0, Math.min(1, t));
-    best = Math.min(best, Math.hypot(px - (ax + t * dx), py - (ay + t * dy)));
-  }
-  return best;
-}
-
 // Working days after an ISO date (Mon–Fri; holidays not modeled).
 function addWorkingDays(isoDate, days) {
   const d = new Date(`${isoDate}T00:00:00Z`);
@@ -134,12 +88,8 @@ function addWorkingDays(isoDate, days) {
   return d.toISOString().slice(0, 10);
 }
 
-function daysBetween(a, b) {
-  return Math.round((new Date(`${b}T00:00:00Z`) - new Date(`${a}T00:00:00Z`)) / 86400000);
-}
-
 module.exports = {
-  ADVISORY_POINTS, ADVISORY_TYPES, LEVELS, DEMO_TYPHOON,
-  heatLevelFromIndex, levelsFor, hazardPoints, gapType, isOpenGap, riskLevel, cityRisk,
-  cityScorecard, signalForDistance, distanceToTrack, addWorkingDays, daysBetween,
+  ADVISORY_POINTS,
+  hazardPoints, gapType, isOpenGap, riskLevel, cityRisk,
+  cityScorecard, addWorkingDays,
 };

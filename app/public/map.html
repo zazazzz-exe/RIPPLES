@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ripples · Map Explorer</title>
+<meta name="description" content="Explore each Philippine city's climate defenses, real risk and open gaps on a 3D map. Sample data.">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/brand/ripples-mark-32.png">
+<link rel="apple-touch-icon" href="/img/brand/ripples-mark-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/explore.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+<script type="module" src="/js/explore/app.js"></script>
+</head>
+<body>
+<div id="gl" aria-label="Satellite map of the Philippines with 3D project pins"></div>
+<div class="scan"></div><div class="vignette"></div>
+<div id="world" aria-hidden="true"></div>
+
+<div class="search" role="search">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+  <input id="q" type="search" placeholder="Search projects, cities, rivers…" autocomplete="off" spellcheck="false"
+    role="combobox" aria-label="Search flood-control projects and cities" aria-expanded="false" aria-controls="qres" aria-autocomplete="list">
+  <kbd aria-hidden="true">/</kbd>
+  <ul id="qres" role="listbox" aria-label="Search results" hidden></ul>
+</div>
+<div class="hud" id="hud">
+  <a class="brand" href="/" aria-label="Ripples home">
+    <div><img class="brand-logo" src="/img/brand/ripples-logo.png" srcset="/img/brand/ripples-logo.png 1x, /img/brand/ripples-logo@2x.png 2x" alt="Ripples" width="133" height="45"><div class="brand-sub">Climate defense map<span class="sample">SAMPLE DATA</span></div></div>
+  </a>
+  <div class="filters" id="filters" role="group" aria-label="Filter cities by real-risk level"></div>
+  <aside class="log" id="log" aria-label="Cities">
+    <div class="log-head"><span id="logAsOf">CITY LOG</span><button class="log-toggle" id="logToggle" aria-expanded="false">Show</button></div>
+    <div class="nat" id="nat"></div>
+    <div class="log-body" id="logBody"></div>
+    <p class="log-foot">Prototype. Every city record, advisory and report here is sample data showing how the app works. It does not describe the real status of these LGUs' projects. Always follow PAGASA and NDRRMC.</p>
+  </aside>
+  <div class="topright">
+    <nav class="applinks" aria-label="Pages"><a href="/">Home</a><a href="/ops">Scorecard</a></nav>
+    <button class="btn-go" id="startTour"><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z" fill="currentColor"/></svg>START ROUTE</button>
+  </div>
+  <div class="readout mono"><span>CURSOR</span><b id="ll">—</b></div>
+  <div class="legend" aria-hidden="true">
+    <div class="lr">Real-risk level <span class="sw"><i style="--c:var(--low)"></i><i style="--c:var(--mod)"></i><i style="--c:var(--high)"></i><i style="--c:var(--crit)"></i></span></div>
+    <div class="lr">Beam height = risk score</div>
+    <div class="lr">Ring = promises kept on time</div>
+    <div class="lr">Readiness route (NEXT) <span class="ln"></span></div>
+  </div>
+  <div class="ctrls" role="group" aria-label="Map controls">
+    <button class="cb" id="zIn" title="Zoom in (+)" aria-label="Zoom in"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+    <button class="cb" id="zOut" title="Zoom out (−)" aria-label="Zoom out"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+    <button class="cb" id="rL" title="Rotate left" aria-label="Rotate left"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v5h5"/></svg></button>
+    <button class="cb" id="rR" title="Rotate right" aria-label="Rotate right"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg></button>
+    <button class="cb" id="tilt" title="Toggle 2D / 3D" aria-label="Toggle tilt"><svg viewBox="0 0 24 24"><path d="M3 16l9 4 9-4-9-4z"/><path d="M12 12V4M9 7l3-3 3 3"/></svg></button>
+    <button class="cb" id="home" title="Reset view" aria-label="Reset view"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 10v10h12V10"/></svg></button>
+  </div>
+  <div class="hint" id="hint">Drag to pan · Right-drag to rotate · Scroll to zoom · Click a city</div>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<section id="city" aria-label="City Page" hidden></section>
+
+<section id="proj" aria-label="Project evidence" hidden>
+  <div class="p-top"><nav class="crumbs" id="pCrumbs" aria-label="Breadcrumb"></nav><div class="c-count" id="pCount"></div></div>
+  <div class="p-main">
+    <figure class="frame" id="frame">
+      <div class="media" id="media"></div>
+      <div class="fhud"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="ftag"><i></i><span id="ftag">SCHEMATIC</span></div><div class="fcoord" id="fcoord"></div></div>
+      <figcaption class="fcap"><p id="fcap"></p><div class="factions" id="factions"></div></figcaption>
+    </figure>
+    <div class="info" id="info"></div>
+  </div>
+</section>
+
+<nav class="navbar" aria-label="Game navigation">
+  <button class="nav-btn back" id="btnBack"><span class="k">←</span><span><b>BACK</b><small id="backTo">Map</small></span></button>
+  <div class="center">
+    <div class="strip" id="strip" role="group" aria-label="Jump to"></div>
+    <button class="nav-btn map-btn" id="btnMap"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg><b>MAP</b><span class="k">M</span></button>
+  </div>
+  <button class="nav-btn next" id="btnNext"><span><b>NEXT</b><small id="nextTo"></small></span><span class="k">→</span></button>
+</nav>
+
+<div class="modal" id="mLetter" hidden role="dialog" aria-modal="true" aria-labelledby="mlT">
+  <div class="mbox"><div class="mhead"><div><h3 id="mlT">FOLLOW-UP LETTER</h3><small id="mlS"></small></div><button class="btn-sm" data-close>Close</button></div>
+    <div class="mbody"><textarea class="letter" id="letterText" aria-label="Letter text" readonly></textarea>
+      <p class="note">Drafted from the project record in neutral language: overdue, disputed, needs maintenance. Creating the draft sends nothing. A reviewer approves it on the Scorecard page, and in this version it then goes to a test address only.</p></div>
+    <div class="mfoot"><button class="btn-sm" id="copyLetter">Copy letter</button><button class="btn-sm warn" id="sendLetter">Create draft for approval</button></div></div>
+</div>
+<div class="modal" id="mReport" hidden role="dialog" aria-modal="true" aria-labelledby="mrT">
+  <div class="mbox"><div class="mhead"><div><h3 id="mrT">PHOTO REPORT</h3><small id="mrS"></small></div><button class="btn-sm" data-close>Close</button></div>
+    <div class="mbody">
+      <div class="field"><label for="rKind">Report type</label><select id="rKind"><option value="status">Status update (what I see on site)</option><option value="dispute">Dispute: listed status doesn't match reality</option><option value="maint">Maintenance problem (clogged, eroded, broken)</option></select></div>
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose a photo"><span>Drop a photo here or click to choose</span><small>JPG, PNG or WebP</small></div>
+      <div class="field" style="margin-top:12px"><label for="rText">What did you see?</label><textarea id="rText" rows="3" maxlength="1000" placeholder="e.g. The gap in the wall is still open."></textarea></div>
+      <div class="field" style="margin-top:12px"><label for="rPhoto">Describe the photo (optional)</label><input id="rPhoto" maxlength="300" placeholder="e.g. river wall with displaced sandbags"></div>
+      <p class="note">Reports are anonymous: we never ask for or store who you are. The photo is re-encoded in your browser to strip location and camera data and stays on this device; only your written description is sent. A report stays "Unverified" until two more matching reports or a satellite check back it up.</p>
+    </div>
+    <div class="mfoot"><button class="btn-sm warn" id="rSubmit">Submit report</button></div></div>
+</div>
+<div class="flash" id="flash"></div>
+<div class="toast" id="toast" role="status"><span id="toastMsg"></span><button id="toastBtn" hidden></button></div>
+<input type="file" id="file" accept="image/*" hidden>
+</body>
+</html>

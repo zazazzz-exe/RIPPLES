@@ -23,3 +23,27 @@ cdo-ev3,cdo,Carmen covered court,500,8.4810,124.6340,yes
 davao-ev1,davao,Davao City Recreation Center,2500,7.0770,125.6150,yes
 davao-ev2,davao,Matina Central School,900,7.0690,125.6010,yes
 davao-ev3,davao,Bucana covered court,400,7.0650,125.6210,yes
+manila-ev1,manila,Delpan Sports Complex,2000,14.5985,120.9640,yes
+manila-ev2,manila,Tondo Sports Complex,2500,14.6160,120.9660,yes
+manila-ev3,manila,Baseco covered court,400,14.5905,120.9595,yes
+tuguegarao-ev1,tuguegarao,Cagayan Sports Complex,2500,17.6320,121.7350,yes
+tuguegarao-ev2,tuguegarao,Tuguegarao East Central School,900,17.6150,121.7300,yes
+tuguegarao-ev3,tuguegarao,Pengue-Ruyu covered court,400,17.6245,121.7185,yes
+naga-ev1,naga,Naga City Coliseum,2500,13.6250,123.1930,yes
+naga-ev2,naga,Naga Central School I,900,13.6230,123.1880,yes
+naga-ev3,naga,Mabolo covered court,350,13.6320,123.1790,yes
+puerto-princesa-ev1,puerto-princesa,Puerto Princesa City Coliseum,3000,9.7700,118.7470,yes
+puerto-princesa-ev2,puerto-princesa,Puerto Princesa Pilot Elementary School,1000,9.7400,118.7360,yes
+puerto-princesa-ev3,puerto-princesa,San Jose covered court,400,9.7800,118.7470,yes
+cebu-ev1,cebu,Cebu City Sports Center,3000,10.3010,123.8950,yes
+cebu-ev2,cebu,Guadalupe Elementary School,900,10.3200,123.8850,yes
+cebu-ev3,cebu,Pasil covered court,400,10.2930,123.8920,yes
+ormoc-ev1,ormoc,Ormoc City Superdome,3000,11.0060,124.6110,yes
+ormoc-ev2,ormoc,Ormoc City Central School,1000,11.0070,124.6060,yes
+ormoc-ev3,ormoc,Cogon covered court,400,11.0160,124.6080,yes
+butuan-ev1,butuan,Butuan City Sports Complex,2500,8.9530,125.5470,yes
+butuan-ev2,butuan,Butuan Central Elementary School,1000,8.9490,125.5410,yes
+butuan-ev3,butuan,Bading covered court,400,8.9560,125.5260,yes
+zamboanga-ev1,zamboanga,Joaquin F. Enriquez Memorial Sports Complex,3000,6.9160,122.0780,yes
+zamboanga-ev2,zamboanga,Zamboanga Central School,1000,6.9080,122.0740,yes
+zamboanga-ev3,zamboanga,Tetuan covered court,400,6.9300,122.0910,yes

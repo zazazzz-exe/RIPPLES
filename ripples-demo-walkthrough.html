@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ripples: Climate Defense Map | Demo walkthrough (sample data)</title>
+<!--
+  Self-running demo walkthrough of the D8 Malabon runsheet (7 steps + title).
+  Single file, offline: no external scripts, styles or fonts.
+  Figures come from data/cities.csv + data/projects.csv (committed sample set) and the
+  quick-build D2-D7 artifacts. All content is SAMPLE DATA.
+  Keys: Space start/pause, Left/Right scenes, R restart, F fullscreen, H hide controls.
+-->
+<style>
+:root{
+  --ink-0:#020817; --ink-1:#06122b; --ink-2:#0b1d3f; --line:#1d3a68; --line-hi:#2f5794;
+  --ice:#dde9ff; --ice-dim:#a3b7da; --mute:#7f96bd;
+  --sun:#ffcf4a; --route:#ff2e4a;
+  --low:#35e39a; --mod:#ffd23f; --high:#ff8a2b; --crit:#ff2e5b; --ok:#35e39a;
+  --f-display:"Bahnschrift Condensed","Arial Narrow","Roboto Condensed","Helvetica Neue Condensed","Liberation Sans Narrow","Nimbus Sans Narrow",sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:Consolas,"Cascadia Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --ease:cubic-bezier(.22,.8,.2,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+body{color:var(--ice);font-family:var(--f-body);-webkit-font-smoothing:antialiased}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.disp{font-family:var(--f-display);font-stretch:condensed;font-weight:700}
+a{color:var(--sun)}
+
+/* ---------- 1920x1080 stage, scaled to fit ---------- */
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:50% 50%;
+  background:radial-gradient(1200px 700px at 70% 30%,#0b1d3f 0%,#06122b 45%,#020817 100%);overflow:hidden}
+#stage::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(150,190,255,.025) 0 1px,transparent 1px 3px)}
+.grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(47,87,148,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(47,87,148,.18) 1px,transparent 1px);
+  background-size:80px 80px}
+
+/* persistent header */
+.hdr{position:absolute;left:0;right:0;top:0;height:96px;display:flex;align-items:center;gap:22px;padding:0 48px;
+  border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(6,18,43,.96),rgba(4,12,30,.82));z-index:20}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:46px;height:46px}
+.brand-name{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:38px;letter-spacing:.16em;line-height:1}
+.brand-sub{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;color:var(--ice-dim);text-transform:uppercase;margin-top:4px}
+.sample{display:inline-block;padding:4px 10px;border:2px dashed var(--sun);color:var(--sun);font-family:var(--f-mono);
+  font-size:15px;font-weight:700;letter-spacing:.16em;background:rgba(255,207,74,.08)}
+.scene-tag{margin-left:auto;text-align:right}
+.scene-tag .t1{font-family:var(--f-mono);font-size:13px;letter-spacing:.18em;color:var(--mute);text-transform:uppercase}
+.scene-tag .t2{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:28px;letter-spacing:.08em;margin-top:2px}
+
+/* safeguard chips */
+.sg{position:absolute;right:48px;top:114px;display:flex;gap:8px;z-index:15;flex-wrap:wrap;justify-content:flex-end;max-width:1100px}
+.sg .lbl{font-family:var(--f-mono);font-size:13px;letter-spacing:.16em;color:var(--mute);align-self:center;margin-right:4px;text-transform:uppercase}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line-hi);background:rgba(6,18,43,.85);
+  border-radius:3px;font-size:15px;color:var(--ice)}
+.chip b{font-family:var(--f-mono);color:var(--sun);font-size:14px}
+
+/* scenes */
+.scene{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility 0s linear .6s}
+.scene.active{opacity:1;visibility:visible;transition:opacity .6s var(--ease)}
+.body{position:absolute;left:48px;right:48px;top:168px;bottom:190px}
+
+/* timed reveals */
+[data-at]{opacity:0;transform:translateY(10px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+[data-at].on{opacity:1;transform:none}
+[data-at].swap:not(.on){display:none}
+[data-at].swap{transform:none}
+[data-at].fade{transform:none}
+
+/* captions (lower third) */
+.caps{position:absolute;left:0;right:0;bottom:56px;height:120px;z-index:18;pointer-events:none}
+.cap{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:1500px;text-align:center;
+  font-size:31px;line-height:1.35;color:#fff;padding:16px 30px;background:rgba(2,8,23,.86);border:1px solid var(--line);
+  border-left:4px solid var(--sun);border-radius:3px;opacity:0;transition:opacity .45s var(--ease)}
+.cap.on{opacity:1;transform:translateX(-50%)}
+.cap[data-at]{transform:translateX(-50%)}
+.foot-note{position:absolute;left:48px;bottom:12px;font-family:var(--f-mono);font-size:13px;color:var(--mute);letter-spacing:.06em;z-index:18}
+
+/* shared UI */
+.panel{background:linear-gradient(180deg,rgba(11,29,63,.72),rgba(6,18,43,.72));border:1px solid var(--line);border-radius:4px}
+.panel-h{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);background:rgba(2,8,23,.45)}
+.panel-t{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:26px;letter-spacing:.06em}
+.kicker{font-family:var(--f-mono);font-size:13px;letter-spacing:.18em;color:var(--mute);text-transform:uppercase}
+.draft{display:inline-block;font-family:var(--f-mono);font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--sun);
+  border:2px solid var(--sun);padding:3px 10px;background:rgba(255,207,74,.08)}
+.approved{display:inline-block;font-family:var(--f-mono);font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--ink-0);
+  background:var(--ok);border:2px solid var(--ok);padding:3px 10px}
+.rk{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:20px;
+  letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;color:var(--ink-0);background:var(--c);border-radius:2px}
+.rk::before{content:"";width:10px;height:10px;border:2px solid var(--ink-0);border-radius:50%;background:transparent}
+.rk.high::before{border-radius:0;transform:rotate(45deg)}
+.rk.crit::before{border-radius:0}
+.rk.low{--c:var(--low)} .rk.mod{--c:var(--mod)} .rk.high{--c:var(--high)} .rk.crit{--c:var(--crit)}
+.gap{display:inline-block;font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:17px;letter-spacing:.08em;
+  text-transform:uppercase;padding:2px 8px;border-radius:2px;color:var(--ink-0)}
+.gap.od{background:var(--high)} .gap.nm{background:var(--mod)}
+code,.code{font-family:var(--f-mono);font-size:.88em;color:var(--ice);background:rgba(2,8,23,.6);border:1px solid var(--line);padding:0 6px;border-radius:2px}
+.cite{display:inline-block;font-family:var(--f-mono);font-size:14px;color:var(--ice-dim);border:1px solid var(--line-hi);padding:2px 8px;border-radius:2px;margin:4px 6px 0 0}
+.official{border:1px solid var(--line-hi);border-left:4px solid var(--sun);background:rgba(255,207,74,.06);padding:12px 16px;font-weight:600;font-size:20px}
+
+/* ---------- Scene 0: title ---------- */
+.title-wrap{position:absolute;left:0;right:0;top:200px;text-align:center}
+.title-main{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:132px;letter-spacing:.06em;line-height:1;margin:0}
+.title-main span{color:var(--sun)}
+.title-sub{font-size:34px;color:var(--ice-dim);margin-top:22px}
+.dpp{display:flex;justify-content:center;gap:28px;margin-top:64px}
+.dpp .step{width:380px;padding:26px 28px;text-align:left}
+.dpp .step h3{margin:0;font-family:var(--f-display);font-stretch:condensed;font-size:46px;letter-spacing:.12em}
+.dpp .step p{margin:10px 0 0;font-size:21px;line-height:1.4;color:var(--ice-dim)}
+.dpp .arrow{align-self:center;font-size:48px;color:var(--sun)}
+.title-badges{display:flex;justify-content:center;gap:16px;margin-top:44px;align-items:center}
+.title-badges .sample{font-size:20px;padding:8px 16px}
+.pill-plain{font-family:var(--f-mono);font-size:17px;letter-spacing:.1em;color:var(--ice-dim);border:1px solid var(--line-hi);padding:8px 14px}
+
+/* ---------- Scene 1: scorecard ---------- */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.kpi{padding:20px 26px}
+.kpi .n{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:84px;line-height:1}
+.kpi .l{font-size:22px;font-weight:600;margin-top:6px}
+.kpi .c{font-size:17px;color:var(--ice-dim);margin-top:6px}
+table.sc{width:100%;border-collapse:collapse;font-size:21px}
+table.sc th{font-family:var(--f-mono);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:10px 14px;border-bottom:1px solid var(--line-hi)}
+table.sc td{padding:8px 14px;border-bottom:1px solid var(--line)}
+table.sc td.num,table.sc th.num{text-align:right;font-family:var(--f-mono)}
+table.sc tr.mal{transition:background .6s,box-shadow .6s}
+table.sc tr.mal.hl{background:rgba(255,138,43,.16);box-shadow:inset 6px 0 0 var(--high),0 0 0 2px var(--high)}
+.pilot{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--sun);border:1px solid var(--sun);padding:1px 6px;margin-left:8px;vertical-align:middle}
+.note-r{font-size:16px;color:var(--ice-dim);margin-top:10px}
+
+/* ---------- Scene 2: assistant ---------- */
+.chat{position:absolute;left:150px;right:150px;top:0;bottom:0;display:flex;flex-direction:column}
+.chat-body{flex:1;padding:18px 28px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.msg{max-width:90%;padding:14px 20px;border-radius:6px;font-size:20px;line-height:1.42}
+.msg.user{align-self:flex-end;background:rgba(255,207,74,.12);border:1px solid rgba(255,207,74,.5)}
+.msg.bot{align-self:flex-start;background:rgba(11,29,63,.9);border:1px solid var(--line-hi)}
+.msg.bot p{margin:0 0 10px}
+.msg.bot ol{margin:0 0 10px;padding-left:28px}
+.msg.bot li{margin-bottom:8px}
+.who{font-family:var(--f-mono);font-size:13px;letter-spacing:.16em;color:var(--mute);text-transform:uppercase;margin-bottom:6px}
+.typing::after{content:"▍";color:var(--sun);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ice-dim);margin-right:6px;animation:dot 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.inputbar{margin:0 28px 16px;padding:10px 18px;border:1px solid var(--line-hi);border-radius:4px;font-size:20px;color:var(--mute);background:rgba(2,8,23,.6)}
+
+/* ---------- Scene 3: signal 3 ---------- */
+.demo-bar{position:absolute;left:0;right:0;top:96px;height:56px;display:flex;align-items:center;justify-content:center;gap:18px;
+  background:rgba(255,46,91,.16);border-bottom:2px solid var(--crit);z-index:16;font-size:22px}
+.demo-bar b{font-family:var(--f-display);font-stretch:condensed;font-weight:700;letter-spacing:.16em;color:#ff7a95;font-size:26px}
+.s3{display:grid;grid-template-columns:640px 1fr;gap:24px;height:100%}
+.rule{width:100%;border-collapse:collapse;font-size:19px}
+.rule td{padding:7px 14px;border-bottom:1px solid var(--line)}
+.rule td:last-child{text-align:right;font-family:var(--f-mono);color:var(--ice)}
+.rule tr.res td{font-weight:700;border-bottom:0}
+.shift{display:flex;align-items:center;gap:18px;padding:18px 20px;font-size:22px}
+.shift .arr{font-size:34px;color:var(--sun)}
+.card4{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}
+.aud{border:1px solid var(--line);padding:12px 14px;border-radius:3px;background:rgba(2,8,23,.4)}
+.aud h4{margin:0 0 6px;font-family:var(--f-display);font-stretch:condensed;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:var(--sun)}
+.aud p{margin:0;font-size:17px;line-height:1.42;color:var(--ice-dim)}
+.mini{font-size:17px;line-height:1.4}
+.mini table{width:100%;border-collapse:collapse}
+.mini td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+
+/* ---------- Scene 4: letter ---------- */
+.s4{display:grid;grid-template-columns:1fr 560px;gap:24px;height:100%}
+.letter{padding:20px 28px;font-size:18.5px;line-height:1.5;color:var(--ice-dim)}
+.letter p{margin:0 0 10px}
+.letter b{color:var(--ice)}
+.letter ol{margin:0 0 10px;padding-left:26px}
+.hl-cond{border-left:4px solid var(--crit);padding:6px 12px;background:rgba(255,46,91,.08)}
+.gate-tbl{width:100%;border-collapse:collapse;font-size:19px}
+.gate-tbl td{padding:10px 16px;border-bottom:1px solid var(--line)}
+.gate-tbl td:last-child{text-align:right;font-family:var(--f-mono)}
+.no{color:#ff8fa6}
+.big0{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:120px;line-height:1;color:var(--sun)}
+.blocked{margin:18px;padding:18px;border:2px solid var(--sun);text-align:center;background:rgba(255,207,74,.06)}
+
+/* ---------- Scene 5: reviewer ---------- */
+.rv{position:absolute;inset:0;display:flex;flex-direction:column}
+.rv-top{display:flex;align-items:center;gap:16px;padding:12px 22px;border-bottom:1px solid var(--line);background:rgba(2,8,23,.5)}
+.tabs{display:flex;gap:4px;padding:0 22px;border-bottom:1px solid var(--line);background:var(--ink-1)}
+.tab{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:22px;letter-spacing:.1em;text-transform:uppercase;
+  padding:12px 20px;color:var(--mute);border-bottom:3px solid transparent;transition:color .3s,border-color .3s}
+.tab.sel{color:var(--ice);border-bottom-color:var(--sun)}
+.tab .count{font-family:var(--f-mono);font-size:14px;background:var(--ink-2);border:1px solid var(--line);padding:1px 7px;margin-left:6px}
+.rv-main{flex:1;position:relative;padding:12px 22px}
+.split{display:grid;grid-template-columns:1fr 470px;height:100%}
+.col{padding:16px 20px}
+.col+.col{border-left:1px solid var(--line)}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;font-size:18px}
+.kv dt{color:var(--mute);font-family:var(--f-mono);font-size:15px;padding-top:2px}
+.kv dd{margin:0}
+.rec{transition:box-shadow .6s}
+.rec.hl{box-shadow:inset 0 0 0 2px var(--sun)}
+.actions{display:flex;gap:14px;margin-top:16px;align-items:center}
+.btn{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:24px;letter-spacing:.12em;padding:10px 26px;border-radius:3px;border:2px solid var(--line-hi);color:var(--ice);background:var(--ink-1);transition:transform .15s,box-shadow .3s,background .3s}
+.btn.approve{border-color:var(--ok);color:var(--ok)}
+.btn.approve.hover{box-shadow:0 0 0 4px rgba(53,227,154,.25),0 0 30px -4px var(--ok)}
+.btn.approve.pressed{transform:scale(.95);background:var(--ok);color:var(--ink-0)}
+.btn.reject{border-color:#ff7a95;color:#ff9fb2}
+.btn.done{opacity:.5}
+.cursor-wrap{position:absolute;left:0;top:0;z-index:30;pointer-events:none}
+.cursor{position:absolute;width:44px;height:44px;transform:translate(560px,-300px);transition:transform 1.5s var(--ease)}
+.cursor.on{transform:translate(0,0)}
+.cursor svg{width:44px;height:44px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.7))}
+.click{position:absolute;left:-26px;top:-26px;width:52px;height:52px;border-radius:50%;border:3px solid var(--ok);opacity:0}
+.click.on{animation:ring .9s var(--ease) forwards}
+@keyframes ring{0%{transform:scale(.3);opacity:1}100%{transform:scale(2.2);opacity:0}}
+.sendlog{font-family:var(--f-mono);font-size:16px;line-height:1.55;padding:12px 16px;border:1px solid var(--ok);background:rgba(53,227,154,.07);margin-top:14px}
+.sendlog b{color:var(--ok)}
+.rpt{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.metrics{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.metric{border:1px solid var(--line);padding:8px 14px;background:rgba(2,8,23,.5);min-width:150px}
+.metric .ml{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.metric .mv{font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:26px}
+.st-cor{color:var(--low)} .st-unv{color:var(--mod)}
+.btn.disabled{opacity:.4;border-style:dashed}
+
+/* ---------- Scene 6: readiness ---------- */
+.s6{display:grid;grid-template-columns:600px 1fr;gap:24px;height:100%}
+.secb{padding:14px 20px;font-size:18px;line-height:1.45;color:var(--ice-dim)}
+.secb h5{margin:10px 0 2px;font-family:var(--f-display);font-stretch:condensed;font-size:22px;letter-spacing:.08em;color:var(--ice)}
+.secb p{margin:0}
+.route{margin-top:14px;padding:14px 18px;border:2px solid var(--sun);background:rgba(255,207,74,.06);font-size:19px}
+
+/* ---------- Scene 7: close ---------- */
+.s7{display:grid;grid-template-columns:600px 1fr;gap:28px;height:100%}
+.map{position:relative;height:100%;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.recap{padding:18px 24px}
+.recap ol{list-style:none;margin:0;padding:0}
+.recap li{display:grid;grid-template-columns:64px 1fr;gap:10px;font-size:20px;line-height:1.35;padding:8px 0;border-bottom:1px solid var(--line)}
+.recap li b{font-family:var(--f-mono);color:var(--sun)}
+.closing{margin-top:14px;font-family:var(--f-display);font-stretch:condensed;font-weight:700;font-size:40px;letter-spacing:.08em;text-align:center}
+.closing span{color:var(--sun)}
+.foot-final{margin-top:12px;text-align:center;font-size:24px;font-weight:600;padding:12px;border:2px dashed var(--sun);color:var(--sun)}
+
+/* ---------- start screen + controls (outside stage scaling) ---------- */
+#start{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(2,8,23,.94);cursor:pointer}
+#start .box{text-align:center;max-width:900px;padding:40px}
+#start h1{font-family:var(--f-display);font-stretch:condensed;font-size:64px;letter-spacing:.1em;margin:0}
+#start .go{display:inline-block;margin-top:28px;padding:16px 30px;font-family:var(--f-display);font-stretch:condensed;font-weight:700;
+  font-size:30px;letter-spacing:.14em;color:var(--ink-0);background:var(--sun);border:0;border-radius:3px;cursor:pointer}
+#start p{font-size:19px;color:var(--ice-dim);line-height:1.5}
+#start kbd,#ctrl kbd{font-family:var(--f-mono);font-size:.9em;border:1px solid var(--line-hi);padding:1px 7px;border-radius:3px;background:var(--ink-1);color:var(--ice)}
+#ctrl{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;gap:14px;padding:6px 14px;
+  background:rgba(2,8,23,.88);border-top:1px solid var(--line);font-family:var(--f-mono);font-size:12px;color:var(--ice-dim)}
+#ctrl.hidden{display:none}
+#bar{flex:1;height:6px;background:var(--ink-2);border:1px solid var(--line);position:relative}
+#bar i{position:absolute;left:0;top:0;bottom:0;background:var(--sun);width:0}
+#bar .tick{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--line-hi)}
+#toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:95;padding:8px 16px;background:rgba(2,8,23,.92);
+  border:1px solid var(--line-hi);font-family:var(--f-mono);font-size:13px;color:var(--ice);opacity:0;transition:opacity .3s;pointer-events:none}
+#toast.on{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}
+  [data-at]{transform:none!important;transition:opacity .2s linear!important}
+  .scene{transition:opacity .2s linear!important}
+  .cap[data-at]{transform:translateX(-50%)!important}
+  .cursor{transition:none!important}
+  .click.on{animation:none!important;opacity:.9;transform:scale(1.2)}
+  .typing::after{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="stage" role="main" aria-label="Ripples demo walkthrough, sample data">
+  <div class="grid-bg"></div>
+
+  <header class="hdr">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5" fill="#ffcf4a"/><circle cx="24" cy="24" r="12" fill="none" stroke="#ffcf4a" stroke-width="2" opacity=".75"/><circle cx="24" cy="24" r="20" fill="none" stroke="#4cc3ff" stroke-width="2" opacity=".55"/></svg>
+      <div>
+        <div class="brand-name">RIPPLES</div>
+        <div class="brand-sub">Climate Defense Map · Amazon Quick + Kiro</div>
+      </div>
+    </div>
+    <span class="sample" aria-label="Sample data">SAMPLE DATA</span>
+    <div class="scene-tag" aria-live="polite">
+      <div class="t1" id="tagStep">Demo walkthrough</div>
+      <div class="t2" id="tagName">Ripples: Climate Defense Map</div>
+    </div>
+  </header>
+
+  <!-- ===================== SCENE 0 · TITLE ===================== -->
+  <section class="scene" data-dur="12000" data-step="Demo walkthrough · Malabon pilot" data-name="Ripples: Climate Defense Map">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S2</b>Human approval</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="title-wrap">
+      <h1 class="title-main fade" data-at="200">RIPPLES: <span>CLIMATE DEFENSE MAP</span></h1>
+      <div class="title-sub" data-at="900">Built on Amazon Quick with Kiro · A climate accountability system for the Philippines</div>
+      <div class="dpp">
+        <div class="step panel" data-at="1800"><h3 style="color:var(--low)">DETECT</h3><p>Track LCCAP commitments and score each city's real risk by fixed rules.</p></div>
+        <div class="arrow" data-at="2300" aria-hidden="true">→</div>
+        <div class="step panel" data-at="2600"><h3 style="color:var(--mod)">PROTECT</h3><p>Turn PAGASA / NDRRMC advisories into guidance for four audiences.</p></div>
+        <div class="arrow" data-at="3100" aria-hidden="true">→</div>
+        <div class="step panel" data-at="3400"><h3 style="color:var(--high)">PUSH</h3><p>Draft neutral follow-ups to the responsible office and track a reply clock.</p></div>
+      </div>
+      <div class="title-badges" data-at="4300">
+        <span class="sample">SAMPLE DATA</span>
+        <span class="pill-plain">Pilot city: Malabon City</span>
+        <span class="pill-plain">D8 runsheet · 7 steps</span>
+        <span class="pill-plain">A person approves every output</span>
+      </div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="600" data-until="6200">Ripples tracks climate-defense commitments, turns advisories into guidance, and follows up on open gaps.</div>
+      <div class="cap" data-at="6400">This walkthrough follows the Malabon City pilot through seven steps. All records are sample data.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 1 · SCORECARD (D2) ===================== -->
+  <section class="scene" data-dur="20000" data-step="Step 1 of 7 · D2 · Quick Sight" data-name="Ripples Climate Scorecard">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S3</b>Neutral language</span><span class="chip"><b>S4</b>Fixed-rule risk</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body">
+      <div class="kpis">
+        <div class="kpi panel" data-at="300"><div class="n">32</div><div class="l">Commitments tracked</div><div class="c">Rows in projects.csv</div></div>
+        <div class="kpi panel" data-at="700"><div class="n" style="color:var(--high)">12</div><div class="l">Open gaps</div><div class="c">Projects that are Overdue or Needs maintenance (8 + 4)</div></div>
+        <div class="kpi panel" data-at="1100"><div class="n" style="color:var(--high)">3</div><div class="l">Cities at High or Critical</div><div class="c">Read from cities.csv real_risk_level</div></div>
+      </div>
+      <div class="panel" style="margin-top:20px" data-at="1800">
+        <div class="panel-h"><span class="panel-t">City scorecard</span><span class="kicker">sorted by risk_score, descending · levels read from the record, not recalculated</span><span class="sample" style="margin-left:auto">SAMPLE DATA</span></div>
+        <table class="sc">
+          <thead><tr><th>City</th><th>Real-risk level</th><th class="num">Risk score</th><th class="num">Promises kept %</th><th class="num">Maintained %</th><th class="num">Open gaps</th><th class="num">Follow-ups sent</th><th class="num">Replied</th></tr></thead>
+          <tbody>
+            <tr><td>Legazpi City</td><td><span class="rk high">High</span></td><td class="num">4</td><td class="num">33</td><td class="num">50</td><td class="num">2</td><td class="num">1</td><td class="num">0</td></tr>
+            <tr class="mal" data-cls="hl@7000"><td><b>Malabon City</b><span class="pilot">PILOT</span></td><td><span class="rk high">High</span></td><td class="num">4</td><td class="num">67</td><td class="num">50</td><td class="num"><b>2</b></td><td class="num">3</td><td class="num">1</td></tr>
+            <tr><td>Dagupan City</td><td><span class="rk high">High</span></td><td class="num">4</td><td class="num">50</td><td class="num">0</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+            <tr><td>Iloilo City</td><td><span class="rk mod">Moderate</span></td><td class="num">3</td><td class="num">67</td><td class="num">50</td><td class="num">2</td><td class="num">1</td><td class="num">0</td></tr>
+            <tr><td>Cagayan de Oro City</td><td><span class="rk mod">Moderate</span></td><td class="num">2</td><td class="num">50</td><td class="num">100</td><td class="num">1</td><td class="num">1</td><td class="num">0</td></tr>
+            <tr><td>Marikina City</td><td><span class="rk mod">Moderate</span></td><td class="num">2</td><td class="num">50</td><td class="num">100</td><td class="num">1</td><td class="num">1</td><td class="num">1</td></tr>
+            <tr><td>Tacloban City</td><td><span class="rk mod">Moderate</span></td><td class="num">2</td><td class="num">50</td><td class="num">100</td><td class="num">1</td><td class="num">1</td><td class="num">1</td></tr>
+            <tr><td>Davao City</td><td><span class="rk low">Low</span></td><td class="num">1</td><td class="num">50</td><td class="num">100</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-r" data-at="9000">Malabon open gaps: <code>mal-wall</code> Tullahan River wall repair <span class="gap od">Overdue</span> &nbsp;·&nbsp; <code>mal-sensor</code> Flood early-warning sensors <span class="gap nm">Needs maintenance</span></div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="400" data-until="6600">The Ripples Climate Scorecard reads the sample CSVs. 12 projects are open gaps: overdue or needing maintenance.</div>
+      <div class="cap" data-at="6800" data-until="13200">Cities are sorted by risk score. Each level is read from the record by fixed rules, never recalculated.</div>
+      <div class="cap" data-at="13400">Malabon City, the pilot, is High with a score of 4 and two open gaps.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 2 · ASSISTANT (D6) ===================== -->
+  <section class="scene" data-dur="24000" data-step="Step 2 of 7 · D6 · Quick chat agent" data-name="Ripples City Assistant">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S1</b>Official sources first</span><span class="chip"><b>S3</b>Neutral language</span><span class="chip"><b>S4</b>Fixed-rule risk</span><span class="chip"><b>S5</b>Reporter identity protected</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body">
+      <div class="chat panel">
+        <div class="panel-h"><span class="panel-t">Ripples City Assistant</span><span class="kicker">grounded in the Ripples space · cites every row</span><span class="sample" style="margin-left:auto">SAMPLE DATA</span></div>
+        <div class="chat-body">
+          <div class="msg user" data-at="500"><div class="who">Team member</div><span data-type="700" data-cps="24">Which open gaps raise Malabon's risk this season?</span></div>
+          <div class="msg bot swap" data-at="3200" data-until="4600"><div class="dots" aria-label="Assistant is answering"><span></span><span></span><span></span></div></div>
+          <div class="msg bot" data-at="4600">
+            <div class="who">Assistant · sample data</div>
+            <p data-at="4700">Malabon City has <b>two open gaps</b>. Its recorded real-risk level is <span class="rk high">High</span> (<code>risk_score 4</code>), read from <code>cities.csv</code> as stored, not recalculated.</p>
+            <ol>
+              <li data-at="6800"><b>Tullahan River wall repair, Tinajeros</b> (<code>mal-wall</code>): Dike · DPWH Malabon-Navotas DEO · Delayed, 30%, deadline 2026-05 · <span class="gap od">Overdue</span>. Interim: a temporary sandbag line covers the 120-m gap; it does not hold against a strong high tide.</li>
+              <li data-at="9600"><b>Flood early-warning sensors (6 sites)</b> (<code>mal-sensor</code>): Warning · Malabon CDRRMO · Completed · <span class="gap nm">Needs maintenance</span>; two of six sensors offline since August. Interim: manual watchers at the two offline sites.</li>
+            </ol>
+            <p class="official" data-at="13200">Live conditions: follow PAGASA (pagasa.dost.gov.ph) and NDRRMC (ndrrmc.gov.ph). I don't report live warnings from memory.</p>
+            <div data-at="15400"><span class="cite">cities.csv · malabon</span><span class="cite">projects.csv · mal-wall</span><span class="cite">projects.csv · mal-sensor</span><span class="cite">sample_data = yes</span></div>
+          </div>
+        </div>
+        <div class="inputbar">Ask about a city, a project, or a follow-up…</div>
+      </div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="400" data-until="6400">The Ripples City Assistant answers only from the space and cites every row it uses.</div>
+      <div class="cap" data-at="6600" data-until="12800">It reads Malabon's level as stored and names the two open gaps with their interim measures.</div>
+      <div class="cap" data-at="13000">For live conditions it points to PAGASA and NDRRMC, and it makes no all-clear claims.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 3 · SAMPLE SIGNAL 3 (D5b) ===================== -->
+  <section class="scene" data-dur="26000" data-step="Step 3 of 7 · D5b · Quick Automate" data-name="Typhoon event playbook">
+    <div class="demo-bar" role="status"><b>DEMO MODE</b><span>Simulated typhoon. Not a real advisory.</span><span class="mono" style="color:var(--ice-dim);font-size:17px">Sample Signal No. 3 · Malabon · 2026-10-02 09:00 · manual team entry</span></div>
+    <div class="sg" style="top:166px"><span class="lbl">Safeguards</span><span class="chip"><b>S1</b>Official sources first</span><span class="chip"><b>S2</b>Drafts only</span><span class="chip"><b>S3</b>Neutral language</span><span class="chip"><b>S4</b>Fixed-rule risk</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body" style="top:218px">
+      <div class="s3">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="panel" data-at="1200">
+            <div class="panel-h"><span class="panel-t">Fixed-rule lookup</span><span class="kicker">Appendix B · not model scoring</span></div>
+            <table class="rule">
+              <tr data-at="2200"><td>Wind signal: Signal 3–5</td><td>hazard_points = 3</td></tr>
+              <tr data-at="3400"><td>Malabon open-gap burden (cities.csv)</td><td>gap_points = 2</td></tr>
+              <tr data-at="4600"><td>Rules-engine score: hazard + gap</td><td>3 + 2 = 5</td></tr>
+              <tr class="res" data-at="5800"><td>Band (5–6 = Critical)</td><td><span class="rk crit">Critical</span></td></tr>
+            </table>
+          </div>
+          <div class="panel shift" data-at="6800">
+            <span>Malabon City</span>
+            <span class="rk high">High · 4</span><span class="arr" aria-hidden="true">→</span><span class="rk crit">Critical · 5</span>
+            <span class="kicker" style="margin-left:auto">read, not computed</span>
+          </div>
+          <div class="panel" data-at="15500">
+            <div class="panel-h"><span class="panel-t" style="font-size:22px">Interim-measure notice</span><span class="draft" style="margin-left:auto">DRAFT</span></div>
+            <div class="mini" style="padding:8px 12px">
+              <table>
+                <tr><td><code>mal-wall</code> <span class="gap od">Overdue</span></td><td>Temporary sandbag line covers the 120-m gap; it does not hold against a strong high tide.</td></tr>
+                <tr><td><code>mal-sensor</code> <span class="gap nm">Needs maint.</span></td><td>Manual watchers at the two offline sites during advisories.</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-at="19000" style="padding:12px 16px;font-size:18px">
+            <span class="kicker">Queued · D5a Deadline escalation</span><br>
+            <code>mal-wall</code> · Dike · Overdue · advisory_active = yes · review_state = <span class="draft" style="font-size:13px;padding:1px 6px">DRAFT</span><br>
+            <span style="color:var(--ice-dim)">Posted or sent to any office: <b style="color:var(--sun)">0</b></span>
+          </div>
+        </div>
+
+        <div class="panel" data-at="8800">
+          <div class="panel-h">
+            <span class="draft">DRAFT</span>
+            <span class="panel-t">Advisory guidance card · Malabon City</span>
+            <span class="kicker" style="margin-left:auto">D4a · for reviewer approval (D7) · not published</span>
+          </div>
+          <div style="padding:10px 16px 0;font-size:17px;color:var(--ice-dim)">Typhoon · <b style="color:var(--ice)">Signal No. 3</b> (hazard points 3, Appendix B) · Source: PAGASA (sample) · <span class="sample" style="font-size:12px">SAMPLE DATA</span></div>
+          <div class="card4">
+            <div class="aud" data-at="9800"><h4>For households</h4><p>Secure your roof, windows and loose items, and prepare a go-bag. In Tinajeros and other riverside barangays, be ready to move early to Malabon National High School (1,500), Tonsuya covered court (400) or the City Hall annex (800). Follow your barangay's go-signal.</p></div>
+            <div class="aud" data-at="10800"><h4>For schools</h4><p>Prepare for class suspension and protect ground-floor equipment and records at riverside campuses. Any suspension follows DepEd and Malabon LGU announcements.</p></div>
+            <div class="aud" data-at="11800"><h4>For farmers</h4><p>Fishpond and sluice-gate operators along the Tullahan: close gates, secure nets and harvest stock that can be moved. Small boats remain in port.</p></div>
+            <div class="aud" data-at="12800"><h4>For barangay officials</h4><p>The Tullahan River wall repair is <b>overdue</b>: station a watcher at the 120-m sandbag gap and pre-position sandbags. The early-warning sensors <b>need maintenance</b>: keep manual watchers at the two offline sites.</p></div>
+          </div>
+          <div class="official" style="margin:0 16px 16px" data-at="13800">Follow official warnings and evacuation orders from PAGASA and NDRRMC.</div>
+        </div>
+      </div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="300" data-until="5400">Demo mode: the team enters a simulated Signal No. 3 over Malabon. This is not a real advisory.</div>
+      <div class="cap" data-at="5600" data-until="10400">The level is a fixed lookup: Signal 3 adds 3 hazard points, plus 2 gap points, for a score of 5: Critical.</div>
+      <div class="cap" data-at="10600" data-until="18600">The playbook drafts a four-audience advisory card that ends with the PAGASA and NDRRMC line, plus an interim-measure notice.</div>
+      <div class="cap" data-at="18800">It queues an escalation for the overdue river wall. Every output stays a draft; nothing is posted or sent.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 4 · ESCALATION DRAFT (D5a → D4b) ===================== -->
+  <section class="scene" data-dur="22000" data-step="Step 4 of 7 · D5a → D4b · Automate + Flows" data-name="Deadline escalation · Follow-up letter">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S2</b>Blocked until approved</span><span class="chip"><b>S3</b>Neutral language</span><span class="chip"><b>S4</b>Fields read from record</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body">
+      <div class="s4">
+        <div class="panel" data-at="300">
+          <div class="panel-h"><span class="draft">DRAFT</span><span class="panel-t">Follow-up letter · <code>mal-wall</code></span><span class="kicker" style="margin-left:auto">for reviewer approval (D7) · not sent · sample data</span></div>
+          <div class="letter">
+            <p data-at="900"><b>To:</b> District Engineer, DPWH Malabon–Navotas District Engineering Office<br><b>Re:</b> Status request: Tullahan River wall repair, Tinajeros (sample reference <code>mal-wall</code>)</p>
+            <p data-at="2200">We write regarding the <b>Tullahan River wall repair in Tinajeros</b>, a commitment under Malabon City's LCCAP 2020–2030. The recorded budget is <b>₱120 million</b>, with a committed <b>deadline of May 2026</b>. Our records show the status as <b>Delayed</b>, progress about <b>30%</b>, and the commitment marked <b>Overdue</b>. 2 follow-ups recorded, 0 replies logged.</p>
+            <p data-at="5600">So that this record can be kept accurate and complete, we respectfully request:</p>
+            <ol>
+              <li data-at="6400"><b>Current progress and a revised completion date.</b></li>
+              <li data-at="7200"><b>Interim measures</b> your office recommends for the affected barangays in Tinajeros.</li>
+              <li data-at="8000">A copy of the <b>latest progress report</b>, under Executive Order No. 2, s. 2016 (Freedom of Information) or the local FOI ordinance.</li>
+            </ol>
+            <p data-at="9400">Your reply will be posted in full on the City Page. If no reply is received within <b>15 working days</b>, the record will note <b>"No reply"</b> for that period.</p>
+            <p class="hl-cond" data-at="11200"><span class="kicker" style="color:#ff9fb2">Conditional · malabon-a1 + malabon-a2 active</span><br>This defense matters this week because PAGASA (sample) has an active coastal high-tide advisory and a flood advisory for the Tullahan River.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="panel" data-at="13200">
+            <div class="panel-h"><span class="panel-t">D5a · T2 · Reviewer gate</span><span class="draft" style="margin-left:auto">review_state = DRAFT</span></div>
+            <table class="gate-tbl">
+              <tr><td>Email to the real DPWH office</td><td class="no">never</td></tr>
+              <tr><td>Email to a test address</td><td class="no">blocked</td></tr>
+              <tr><td>Post to the City Page</td><td class="no">blocked</td></tr>
+              <tr><td>Any outbound effect</td><td class="no">none</td></tr>
+            </table>
+          </div>
+          <div class="panel blocked" data-at="15200">
+            <div class="kicker">Blocked at reviewer gate</div>
+            <div class="big0">0</div>
+            <div class="disp" style="font-size:34px;letter-spacing:.12em">SENDS</div>
+            <div style="font-size:17px;color:var(--ice-dim);margin-top:8px">Waiting for a person in the Ripples Reviewer (D7)</div>
+          </div>
+          <div class="panel" data-at="17000" style="padding:12px 16px;font-size:16px">
+            <span class="kicker">Log</span><br><span class="mono">2026-10-02, mal-wall, "District Engineer, DPWH Malabon-Navotas District Engineering Office", drafted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="300" data-until="5200">Deadline escalation calls the follow-up letter flow for the overdue Tullahan River wall.</div>
+      <div class="cap" data-at="5400" data-until="12800">The letter is neutral: commitment, budget, deadline and status, three information requests, and a 15-working-day reply clock.</div>
+      <div class="cap" data-at="13000">It goes to the reviewer and stops there. Sends so far: zero.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 5 · APPROVE IN REVIEWER (D7) ===================== -->
+  <section class="scene" data-dur="26000" data-step="Step 5 of 7 · D7 · Apps in Amazon Quick" data-name="Ripples Reviewer · approval gate">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S2</b>Human approval · test sends</span><span class="chip"><b>S5</b>Reporter identity protected</span><span class="chip"><b>S6</b>Unverified until corroborated</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body">
+      <div class="panel rv">
+        <div class="rv-top"><span class="panel-t">RIPPLES REVIEWER</span><span class="kicker">approval gate · DRAFT → APPROVED | REJECTED · this app never sends</span><span class="sample" style="margin-left:auto">SAMPLE DATA</span></div>
+        <div class="tabs" role="tablist">
+          <span class="tab" role="tab">Commitments<span class="count">1</span></span>
+          <span class="tab" role="tab" data-cls="sel@0-15000">Drafts<span class="count">4</span></span>
+          <span class="tab" role="tab" data-cls="sel@15000">Reports<span class="count">2</span></span>
+        </div>
+        <div class="rv-main">
+          <!-- Drafts queue -->
+          <div class="panel swap" data-at="0" data-until="15000" style="height:100%;transform:none">
+            <div class="panel-h">
+              <span class="panel-t" style="font-size:23px">Follow-up: Tullahan River wall repair (sample)</span>
+              <span class="mono" style="color:var(--mute);font-size:15px">draft-mal-wall-letter · source_ref mal-wall</span>
+              <span style="margin-left:auto"><span class="draft swap" data-at="0" data-until="6500">DRAFT</span><span class="approved swap" data-at="6500">APPROVED</span></span>
+            </div>
+            <div class="split">
+              <div class="col">
+                <div class="kicker" style="margin-bottom:8px">Draft letter (D4b)</div>
+                <div class="letter" style="padding:0;font-size:17.5px">
+                  <p><b>To:</b> District Engineer, DPWH Malabon–Navotas DEO · <b>Re:</b> Status request, <code>mal-wall</code></p>
+                  <p>Tullahan River wall repair, Tinajeros · LCCAP 2020–2030 · ₱120 million · deadline May 2026 · <b>Delayed</b>, 30% · <b>Overdue</b>.</p>
+                  <p>Requests: (1) progress + revised completion date · (2) interim measures for Tinajeros · (3) latest progress report under EO No. 2, s. 2016 (FOI). Reply clock: 15 working days, then "No reply".</p>
+                </div>
+                <div class="actions">
+                  <span style="position:relative;display:inline-block">
+                    <span class="btn approve" data-cls="hover@5400;pressed@6200-6700;done@6700">APPROVE</span>
+                    <span class="cursor-wrap" style="left:70%;top:65%">
+                      <span class="click" data-cls="on@6200"></span>
+                      <span class="cursor" data-at="3800"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l17 10-7.5 1.6L9 21z" fill="#fff" stroke="#020817" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+                    </span>
+                  </span>
+                  <span class="btn reject" data-cls="done@6700">REJECT</span>
+                  <span class="mono swap" data-at="6700" style="font-size:15px;color:var(--ice-dim)">decided by <b style="color:var(--ice)">reviewer</b> · 2026-10-02T09:40</span>
+                </div>
+                <div class="sendlog" data-at="8000">
+                  <b>D5a send · runs only after APPROVED</b><br>
+                  to: reviewer+dpwh-malabon-navotas@ripples.test <span style="color:var(--sun)">(TEST address)</span><br>
+                  real responsible office: not contacted in this version
+                </div>
+                <div class="sendlog" data-at="10200" style="border-color:var(--sun);background:rgba(255,207,74,.07)">
+                  <b style="color:var(--sun)">Reply clock started · 15 working days</b><br>
+                  2026-10-02 (Fri) → due 2026-10-23 (Fri) · no reply by then = neutral "No reply"
+                </div>
+              </div>
+              <div class="col rec" data-cls="hl@1500-5000">
+                <div class="kicker" style="margin-bottom:10px">Source record · projects.csv</div>
+                <dl class="kv">
+                  <dt>project_id</dt><dd>mal-wall</dd>
+                  <dt>city</dt><dd>Malabon City</dd>
+                  <dt>type</dt><dd>Dike</dd>
+                  <dt>office</dt><dd>District Engineer, DPWH Malabon-Navotas DEO</dd>
+                  <dt>budget</dt><dd>₱120M</dd>
+                  <dt>status</dt><dd>Delayed · 30%</dd>
+                  <dt>deadline</dt><dd>2026-05</dd>
+                  <dt>gap</dt><dd><span class="gap od">Overdue</span></dd>
+                  <dt>follow-ups</dt><dd>2 sent · 0 replied</dd>
+                  <dt>sample_data</dt><dd>yes</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <!-- Reports queue -->
+          <div class="swap" data-at="15000" style="height:100%">
+            <div class="kicker" style="margin-bottom:12px">Citizen report triage (D4c) · reporter identity is not stored and not displayed</div>
+            <div class="rpt">
+              <div class="panel" style="padding:16px 20px">
+                <div class="panel-t" style="font-size:23px">Triage: Tullahan River wall (Tinajeros)</div>
+                <div class="mono" style="color:var(--mute);font-size:14px">report-mal-wall · source_ref mal-wall</div>
+                <div class="metrics">
+                  <div class="metric"><div class="ml">status</div><div class="mv st-cor">✔ corroborated</div></div>
+                  <div class="metric"><div class="ml">matching reports · 30 days</div><div class="mv">2</div></div>
+                  <div class="metric"><div class="ml">review flag</div><div class="mv" style="color:var(--ice-dim)">none</div></div>
+                </div>
+                <div style="font-size:17px;color:var(--ice-dim)">Rule met: ≥2 other matching reports within 30 days. Observation: "Gap in the wall still open, sandbags displaced."</div>
+                <div class="mono" style="font-size:14px;color:var(--mute);margin-top:10px">reporter: — (no identity field)</div>
+              </div>
+              <div class="panel" style="padding:16px 20px" data-at="17500">
+                <div class="panel-t" style="font-size:23px">Triage: Calmay outfall tide gates (Dagupan)</div>
+                <div class="mono" style="color:var(--mute);font-size:14px">report-dag-tidegate · source_ref dag-tidegate</div>
+                <div class="metrics">
+                  <div class="metric"><div class="ml">status</div><div class="mv st-unv">◌ unverified</div></div>
+                  <div class="metric"><div class="ml">matching reports · 30 days</div><div class="mv">0</div></div>
+                  <div class="metric"><div class="ml">satellite check</div><div class="mv" style="color:var(--ice-dim)">no match</div></div>
+                </div>
+                <div style="font-size:17px;color:var(--ice-dim)">Lone report: stays unverified until two more matching reports or a satellite check corroborate it.</div>
+                <div class="actions"><span class="btn disabled" aria-disabled="true">CORROBORATE · locked by rule</span></div>
+                <div class="mono" style="font-size:14px;color:var(--mute);margin-top:10px">reporter: — (no identity field)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="300" data-until="5600">In the Ripples Reviewer, the draft sits beside its source record so a person can check every figure.</div>
+      <div class="cap" data-at="5800" data-until="14800">The reviewer approves. Only now does the letter go out, to a test address, and the reply clock starts.</div>
+      <div class="cap" data-at="15000">The Reports queue shows triage results with no reporter identity. A lone report stays unverified.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 6 · READINESS REPORT (D5c) ===================== -->
+  <section class="scene" data-dur="18000" data-step="Step 6 of 7 · D5c → D3 + D2 · Quick Automate" data-name="Pre-season readiness report">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S1</b>Official sources first</span><span class="chip"><b>S2</b>Not shared until approved</span><span class="chip"><b>S3</b>Neutral language</span><span class="chip"><b>S4</b>Fixed-rule risk</span><span class="chip"><b>S7</b>Sample data labeled</span></div>
+    <div class="body">
+      <div class="panel" style="padding:12px 20px;margin-bottom:16px;display:flex;align-items:center;gap:16px" data-at="200">
+        <span class="draft">DRAFT · NOT APPROVED</span>
+        <span class="panel-t">Pre-season readiness report · Malabon City</span>
+        <span class="sample" style="margin-left:auto">SAMPLE DATA</span>
+      </div>
+      <div class="official" style="margin-bottom:16px" data-at="900">Follow official warnings and evacuation orders from PAGASA (pagasa.dost.gov.ph) and NDRRMC (ndrrmc.gov.ph). This report makes no all-clear declaration.</div>
+      <div class="s6" style="height:auto">
+        <div class="panel" data-at="2000">
+          <div class="panel-h"><span class="panel-t" style="font-size:22px">Section A · Scorecard slice (D2)</span></div>
+          <table class="gate-tbl">
+            <tr><td>Real-risk level (baseline)</td><td><span class="rk high">High</span></td></tr>
+            <tr><td>Risk score</td><td>4</td></tr>
+            <tr><td>Promises kept on time</td><td>67%</td></tr>
+            <tr><td>Maintained OK</td><td>50%</td></tr>
+            <tr><td>Open gaps</td><td>2 (1 Overdue + 1 Needs maint.)</td></tr>
+            <tr><td>Follow-ups sent / replied</td><td>3 / 1</td></tr>
+          </table>
+          <div style="padding:8px 16px 12px;font-size:15px;color:var(--mute)">Read from cities.csv by fixed rule; not recomputed.</div>
+        </div>
+        <div class="panel" data-at="4200">
+          <div class="panel-h"><span class="panel-t" style="font-size:22px">Section B · City risk brief (D3), five cited sections</span></div>
+          <div class="secb">
+            <h5 data-at="5000">B.1 Hazard profile</h5><p data-at="5000">Flood, storm surge and high tide; low-lying coastal city at the mouth of the Tullahan River.</p>
+            <h5 data-at="6000">B.2 Seasonal outlook</h5><p data-at="6000">No current PAGASA seasonal outlook was retrieved; the report defers to PAGASA and NDRRMC rather than estimate one.</p>
+            <h5 data-at="7000">B.3 Commitments</h5><p data-at="7000">On track: <code>mal-pump</code>, <code>mal-drain</code> · Overdue: <code>mal-wall</code> · Needs maintenance: <code>mal-sensor</code>.</p>
+            <h5 data-at="8000">B.4 Open gaps + interim measures</h5><p data-at="8000">Sandbag line at the 120-m wall gap; manual watchers at the two offline sensor sites.</p>
+            <h5 data-at="9000">B.5 Recommended actions</h5><p data-at="9000">Three for the DRRMO, three for residents, including: follow PAGASA and NDRRMC directly, since two warning sensors are offline.</p>
+          </div>
+        </div>
+      </div>
+      <div class="route" data-at="11000">Routed to the <b>Ripples Reviewer (D7)</b> as <code>draft-malabon-readiness</code> · review_state = <b style="color:var(--sun)">DRAFT</b> · Not shared with the DRRMO, Sanggunian or media test contacts and not posted to the City Page until a reviewer approves.</div>
+    </div>
+    <div class="caps">
+      <div class="cap" data-at="300" data-until="6000">Pre-season readiness combines the scorecard slice and the city risk brief into one report for Malabon.</div>
+      <div class="cap" data-at="6200" data-until="10800">Outside the simulated storm, Malabon reads at its recorded baseline: High, score 4.</div>
+      <div class="cap" data-at="11000">The report is a draft routed to the reviewer. It is not shared until approved.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 7 · CLOSE ON THE MOCKUP ===================== -->
+  <section class="scene" data-dur="20000" data-step="Step 7 of 7 · Mockup · ripples-climate-map.html" data-name="Close: City Page mockup">
+    <div class="sg"><span class="lbl">Safeguards</span><span class="chip"><b>S1–S7</b>All seven hold</span></div>
+    <div class="body" style="bottom:120px">
+      <div class="s7">
+        <div class="panel map" data-at="200">
+          <svg viewBox="0 0 600 780" role="img" aria-label="Sample map of eight cities colored by recorded real-risk level, each with a text label">
+            <defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2f5794" stop-opacity=".35"/><stop offset="1" stop-color="#2f5794" stop-opacity="0"/></radialGradient></defs>
+            <rect width="600" height="780" fill="url(#glow)"/>
+            <g fill="rgba(170,200,255,.22)" font-family="Bahnschrift Condensed,Arial Narrow,sans-serif" font-size="30" letter-spacing="12" font-weight="700">
+              <text x="40" y="120">LUZON</text><text x="40" y="470">VISAYAS</text><text x="40" y="740">MINDANAO</text>
+            </g>
+            <g fill="none" stroke="#1d3a68" stroke-width="1.5" stroke-dasharray="4 6">
+              <path d="M187 120 C 230 200, 240 260, 300 300 S 420 340, 450 430 S 430 560, 480 665"/>
+            </g>
+            <g font-family="Consolas,monospace" font-size="15" fill="#dde9ff">
+              <circle cx="187" cy="165" r="9" fill="#ff8a2b"/><text x="203" y="160">Dagupan</text><text x="203" y="178" fill="#ff8a2b">HIGH 4</text>
+              <circle cx="222" cy="242" r="11" fill="#ff8a2b" stroke="#ffcf4a" stroke-width="3"/><text x="80" y="236">Malabon</text><text x="80" y="254" fill="#ff8a2b">HIGH 4</text>
+              <circle cx="232" cy="248" r="7" fill="#ffd23f"/><text x="246" y="262">Marikina</text><text x="246" y="280" fill="#ffd23f">MODERATE 2</text>
+              <circle cx="377" cy="327" r="9" fill="#ff8a2b"/><text x="393" y="322">Legazpi</text><text x="393" y="340" fill="#ff8a2b">HIGH 4</text>
+              <circle cx="448" cy="432" r="8" fill="#ffd23f"/><text x="464" y="428">Tacloban</text><text x="464" y="446" fill="#ffd23f">MODERATE 2</text>
+              <circle cx="312" cy="461" r="8" fill="#ffd23f"/><text x="200" y="490">Iloilo</text><text x="200" y="508" fill="#ffd23f">MODERATE 3</text>
+              <circle cx="428" cy="586" r="8" fill="#ffd23f"/><text x="300" y="582">Cagayan de Oro</text><text x="300" y="600" fill="#ffd23f">MODERATE 2</text>
+              <circle cx="482" cy="665" r="8" fill="#35e39a"/><text x="430" y="700">Davao</text><text x="430" y="718" fill="#35e39a">LOW 1</text>
+            </g>
+          </svg>
+          <div style="position:absolute;left:16px;top:14px"><span class="sample">SAMPLE DATA</span></div>
+          <div style="position:absolute;right:16px;bottom:14px;font-family:var(--f-mono);font-size:13px;color:var(--ice-dim);text-align:right;line-height:1.6">
+            <span class="rk low" style="font-size:14px">Low</span> <span class="rk mod" style="font-size:14px">Moderate</span><br><span class="rk high" style="font-size:14px">High</span> <span class="rk crit" style="font-size:14px">Critical</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="panel" style="padding:14px 20px" data-at="1400">
+            <div class="kicker">City Page · project evidence · mockup, not connected to Quick in this version</div>
+            <div style="font-size:20px;margin-top:6px"><b>Malabon City</b> · <code>mal-wall</code> Tullahan River wall repair · <span class="gap od">Overdue</span> · reply clock running to 2026-10-23 · letter action: "Mark as sent (demo)"</div>
+          </div>
+          <div class="panel recap" data-at="3000">
+            <div class="panel-t" style="margin-bottom:6px">Safeguards recap</div>
+            <ol>
+              <li data-at="3600"><b>S1</b><span>No all-clear claims. Official warnings come first; defer to and link PAGASA and NDRRMC.</span></li>
+              <li data-at="4400"><b>S2</b><span>Every letter, card and report is a DRAFT until a person approves it. Demo sends go to test addresses only.</span></li>
+              <li data-at="5200"><b>S3</b><span>Neutral status words only: overdue, delayed, needs maintenance, no reply.</span></li>
+              <li data-at="6000"><b>S4</b><span>Risk and advisory levels come from fixed-rule lookups, never model scoring.</span></li>
+              <li data-at="6800"><b>S5</b><span>No output shows who submitted a citizen report.</span></li>
+              <li data-at="7600"><b>S6</b><span>A report stays unverified until two more matching reports or a satellite check corroborate it.</span></li>
+              <li data-at="8400"><b>S7</b><span>Sample data is labeled everywhere it appears.</span></li>
+            </ol>
+          </div>
+          <div class="closing" data-at="10500">DETECT <span>→</span> PROTECT <span>→</span> PUSH</div>
+        </div>
+      </div>
+      <div class="foot-final" data-at="12000">Sample data. Always follow <a href="https://www.pagasa.dost.gov.ph/">PAGASA</a> and <a href="https://ndrrmc.gov.ph/">NDRRMC</a>.</div>
+    </div>
+    <div class="caps" style="bottom:44px;height:80px">
+      <div class="cap" data-at="300" data-until="9800" style="font-size:27px;padding:10px 24px">An approved report would post to the City Page: the 3D map mockup, not connected to Quick in this version.</div>
+      <div class="cap" data-at="10000" style="font-size:27px;padding:10px 24px">Detect, Protect, Push, with a person approving every output.</div>
+    </div>
+  </section>
+
+  <div class="foot-note">Ripples demo · sample data · figures from data/cities.csv and data/projects.csv</div>
+</div>
+
+<!-- start screen (sits outside the scaled stage) -->
+<div id="start" role="dialog" aria-labelledby="startTitle">
+  <div class="box">
+    <div class="sample" style="font-size:18px">SAMPLE DATA</div>
+    <h1 id="startTitle">RIPPLES · DEMO WALKTHROUGH</h1>
+    <p>Start your screen recording first (Windows Game Bar <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd>, or OBS), then begin. Runs about 2 min 48 s.</p>
+    <button class="go" id="goBtn" type="button">PRESS SPACE / CLICK TO START</button>
+    <p style="margin-top:26px"><kbd>Space</kbd> pause / resume · <kbd>←</kbd> <kbd>→</kbd> previous / next scene · <kbd>R</kbd> restart · <kbd>F</kbd> fullscreen · <kbd>H</kbd> hide controls</p>
+  </div>
+</div>
+
+<div id="ctrl" aria-label="Playback controls">
+  <span id="playState">▶ PLAYING</span>
+  <span id="counter">Scene 1 / 8</span>
+  <div id="bar" aria-hidden="true"><i id="barFill"></i></div>
+  <span id="clock">0:00 / 2:48</span>
+  <span><kbd>Space</kbd> pause · <kbd>←</kbd><kbd>→</kbd> scene · <kbd>R</kbd> restart · <kbd>F</kbd> fullscreen · <kbd>H</kbd> hide</span>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+  var stage = document.getElementById('stage');
+  var scenes = Array.prototype.slice.call(stage.querySelectorAll('.scene'));
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var durs = scenes.map(function (s) { return +s.dataset.dur; });
+  var total = durs.reduce(function (a, b) { return a + b; }, 0);
+  var starts = [];
+  durs.reduce(function (acc, d, i) { starts[i] = acc; return acc + d; }, 0);
+
+  var idx = 0, elapsed = 0, playing = false, started = false, last = null;
+  var el = {
+    start: document.getElementById('start'), go: document.getElementById('goBtn'),
+    ctrl: document.getElementById('ctrl'), fill: document.getElementById('barFill'),
+    bar: document.getElementById('bar'), counter: document.getElementById('counter'),
+    clock: document.getElementById('clock'), play: document.getElementById('playState'),
+    toast: document.getElementById('toast'),
+    tagStep: document.getElementById('tagStep'), tagName: document.getElementById('tagName')
+  };
+
+  /* Pre-parse timed elements per scene so state is a pure function of elapsed time
+     (pause, seek and restart all work by recomputing). */
+  var timed = scenes.map(function (s) {
+    var reveal = Array.prototype.slice.call(s.querySelectorAll('[data-at]')).map(function (n) {
+      return { n: n, at: +n.dataset.at, until: n.dataset.until != null ? +n.dataset.until : Infinity };
+    });
+    var types = Array.prototype.slice.call(s.querySelectorAll('[data-type]')).map(function (n) {
+      var text = n.textContent;
+      n.setAttribute('aria-label', text);
+      return { n: n, at: +n.dataset.type, cps: +(n.dataset.cps || 30), text: text, shown: -1 };
+    });
+    var cls = Array.prototype.slice.call(s.querySelectorAll('[data-cls]')).map(function (n) {
+      var rules = n.dataset.cls.split(';').map(function (r) {
+        var p = r.split('@'), range = p[1].split('-');
+        return { name: p[0].trim(), from: +range[0], to: range[1] != null ? +range[1] : Infinity };
+      });
+      return { n: n, rules: rules };
+    });
+    return { reveal: reveal, types: types, cls: cls };
+  });
+
+  // scene ticks on the progress bar
+  starts.forEach(function (st, i) {
+    if (i === 0) return;
+    var t = document.createElement('span');
+    t.className = 'tick';
+    t.style.left = (st / total * 100) + '%';
+    el.bar.appendChild(t);
+  });
+
+  function fmt(ms) {
+    var s = Math.floor(ms / 1000);
+    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
+  }
+
+  function apply() {
+    var t = timed[idx];
+    t.reveal.forEach(function (r) {
+      r.n.classList.toggle('on', elapsed >= r.at && elapsed < r.until);
+    });
+    t.types.forEach(function (ty) {
+      var count;
+      if (elapsed < ty.at) count = 0;
+      else if (reduced) count = ty.text.length;
+      else count = Math.min(ty.text.length, Math.floor((elapsed - ty.at) / 1000 * ty.cps));
+      if (count !== ty.shown) {
+        ty.shown = count;
+        ty.n.textContent = ty.text.slice(0, count);
+        ty.n.classList.toggle('typing', count > 0 && count < ty.text.length || (count === 0 && elapsed >= ty.at - 600));
+      }
+    });
+    t.cls.forEach(function (c) {
+      c.rules.forEach(function (r) {
+        c.n.classList.toggle(r.name, elapsed >= r.from && elapsed < r.to);
+      });
+    });
+    var g = starts[idx] + elapsed;
+    el.fill.style.width = (g / total * 100).toFixed(2) + '%';
+    el.clock.textContent = fmt(g) + ' / ' + fmt(total);
+  }
+
+  function show(i) {
+    idx = Math.max(0, Math.min(scenes.length - 1, i));
+    elapsed = 0;
+    scenes.forEach(function (s, k) { s.classList.toggle('active', k === idx); s.setAttribute('aria-hidden', k === idx ? 'false' : 'true'); });
+    timed[idx].types.forEach(function (ty) { ty.shown = -1; });
+    el.tagStep.textContent = scenes[idx].dataset.step;
+    el.tagName.textContent = scenes[idx].dataset.name;
+    el.counter.textContent = 'Scene ' + (idx + 1) + ' / ' + scenes.length;
+    apply();
+  }
+
+  function setPlaying(p) {
+    playing = p;
+    last = null;
+    var ended = !p && idx === scenes.length - 1 && elapsed >= durs[idx];
+    el.play.textContent = p ? '▶ PLAYING' : (ended ? '■ END · press R to restart' : 'Ⅱ PAUSED');
+  }
+
+  function frame(ts) {
+    if (playing) {
+      if (last != null) elapsed += ts - last;
+      last = ts;
+      if (elapsed >= durs[idx]) {
+        if (idx < scenes.length - 1) { var over = elapsed - durs[idx]; show(idx + 1); elapsed = Math.min(over, 200); last = ts; }
+        else { elapsed = durs[idx]; apply(); setPlaying(false); }
+      }
+      apply();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function toast(msg) {
+    el.toast.textContent = msg;
+    el.toast.classList.add('on');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { el.toast.classList.remove('on'); }, 1800);
+  }
+
+  function begin() {
+    if (started) return;
+    started = true;
+    el.start.style.display = 'none';
+    show(0);
+    setPlaying(true);
+  }
+
+  function toggleFullscreen() {
+    var d = document;
+    try {
+      if (!d.fullscreenElement) {
+        if (d.documentElement.requestFullscreen) d.documentElement.requestFullscreen().catch(function () { toast('Press F11 for fullscreen'); });
+        else toast('Press F11 for fullscreen');
+      } else if (d.exitFullscreen) { d.exitFullscreen(); }
+    } catch (e) { toast('Press F11 for fullscreen'); }
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (!started) {
+      if (k === ' ' || k === 'Enter') { e.preventDefault(); begin(); }
+      return;
+    }
+    if (k === ' ') { e.preventDefault(); if (!playing && idx === scenes.length - 1 && elapsed >= durs[idx]) { show(0); } setPlaying(!playing); }
+    else if (k === 'ArrowRight') { e.preventDefault(); show(idx + 1); if (!playing) setPlaying(false); }
+    else if (k === 'ArrowLeft') { e.preventDefault(); show(idx - 1); if (!playing) setPlaying(false); }
+    else if (k === 'r' || k === 'R') { show(0); setPlaying(true); toast('Restarted'); }
+    else if (k === 'f' || k === 'F') { toggleFullscreen(); }
+    else if (k === 'h' || k === 'H') { el.ctrl.classList.toggle('hidden'); if (el.ctrl.classList.contains('hidden')) toast('Controls hidden · H to show'); }
+  });
+  el.start.addEventListener('click', begin);
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  show(0);
+  // Optional preview: open with #scene=4&t=9000 to jump straight to a paused frame.
+  var hm = /scene=(\d+)(?:&t=(\d+))?/.exec(location.hash);
+  if (hm) {
+    started = true;
+    el.start.style.display = 'none';
+    show(+hm[1] - 1);
+    elapsed = Math.min(+(hm[2] || 0), durs[idx]);
+    apply();
+    setPlaying(false);
+  }
+  el.go.focus();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

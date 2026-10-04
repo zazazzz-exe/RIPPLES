@@ -3,7 +3,6 @@ const { AppError } = require('../errors');
 const { SafeguardError } = require('../domain/safeguards');
 const publicRoutes = require('./public');
 const opsRoutes = require('./ops');
-const automationRoutes = require('./automations');
 
 // Placeholder for auth/roles (future). Every request is treated as the demo
 // operator today; real login plugs in here without touching the routes.
@@ -20,7 +19,6 @@ function createApi(services) {
   api.get('/health', (_req, res) => res.json({ ok: true, approval_mode: services.drafts.mode, as_of: services.config.asOf }));
   api.use(publicRoutes(services));
   api.use(opsRoutes(services));
-  api.use(automationRoutes(services));
 
   api.use((_req, res) => res.status(404).json({ error: 'Not found' }));
   // eslint-disable-next-line no-unused-vars

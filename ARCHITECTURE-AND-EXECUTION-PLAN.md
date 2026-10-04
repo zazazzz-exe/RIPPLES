@@ -247,7 +247,7 @@ Mirrors the project doc's demo flow; use this as the live script.
 | HTML upload to a space | Decides whether the mockup lives in the space | Test in D0; fall back to Part B + CSVs |
 | Send targets for D5a/D5b | Must not email real offices with sample data | Point all sends at **test addresses** for the demo |
 | Build tool for the public app (e.g. Kiro) | Future, post-hackathon | Defer; mockup stands in for now |
-| Live PAGASA/NDRRMC feeds, satellite, Stellar | All marked future work | Out of scope this version; keep in roadmap |
+| Live PAGASA/NDRRMC feeds, satellite, hosted record ledger | All marked future work | Out of scope this version; keep in roadmap |
 
 ---
 

@@ -38,6 +38,6 @@ All three serve one goal: **the safety and well-being of Filipinos facing climat
 ## Scope boundary (this hackathon version)
 - **Built now:** the Quick space + knowledge, scorecard dashboard, city risk briefs, three flows, three automations, the chat agent, and the Reviewer app — all on the sample CSVs.
 - **Mockup only:** `ripples-climate-map.html` (3D map, City Pages, evidence view, typhoon demo).
-- **Future (not built):** live PAGASA/NDRRMC feeds, LCCAP ingestion at scale, Sentinel-2 satellite checks, real citizen uploads, a Ripples backend called via OpenAPI/MCP, Stellar-anchored records, a production map.
+- **Future (not built):** live PAGASA/NDRRMC feeds, LCCAP ingestion at scale, Sentinel-2 satellite checks, real citizen uploads, a Ripples backend called via OpenAPI/MCP, a hosted tamper-evident record ledger, a production map.
 
 > All records in the mockup and CSVs are **sample data**. They use real city names to show how the app works; they do not describe the actual status of any LGU, DPWH, DENR, MMDA or PAGASA record.

@@ -1,0 +1,26 @@
+// Line-drawing schematics of each climate-defense type (Dike, Drainage, Mangrove,
+// Seawall, Pump, Evac, Greening, Warning). From ripples-climate-map.html; shared
+// by the 3D explorer's evidence view and the landing page. Pass { type, gap } —
+// gap null draws the planned design, a gap draws what is missing.
+function waves(y0,rows,amp){let d="";for(let r=0;r<rows;r++){d+=`M0 ${y0+r*18}`;for(let x=0;x<820;x+=40)d+=` q10 ${-amp} 20 0 t20 0`;}return d;}
+export function schematic(p){const t=p.type,g=p.gap;let grid="",g2="";for(let x=0;x<=800;x+=20)grid+=`M${x} 0V500`;for(let y=0;y<=500;y+=20)grid+=`M0 ${y}H800`;for(let x=0;x<=800;x+=100)g2+=`M${x} 0V500`;for(let y=0;y<=500;y+=100)g2+=`M0 ${y}H800`;
+  let art="",lab="";
+  if(t==="Dike"){art=`<path class="sk" d="${waves(330,5,4)}" opacity=".45" clip-path="url(#L)"/><path class="fc" d="M240 400L330 250H470L560 400Z"/><path class="hi draw" d="M0 400H240L330 250H470L560 400H800"/>
+      <path class="sk" d="M330 250L360 210H440L470 250" stroke-dasharray="5 5"/><path class="dim" d="M600 250V400M594 250H606M594 400H606"/>`;lab=`<text x="616" y="330">CREST HEIGHT</text><text x="60" y="320">RIVER SIDE</text><text x="600" y="440">PROTECTED SIDE</text><text x="352" y="200">RAISED CREST</text>`;
+    if(g)art+=`<path class="gap" d="M300 236H500"/>`,lab+=`<text class="r" x="300" y="228">OPEN SECTION</text>`;}
+  else if(t==="Drainage"){art=`<path class="sk" d="M0 160H800M0 168H800" opacity=".7"/><path class="fc" d="M250 240H550V380H250Z"/><path class="hi draw" d="M250 240H550V380H250Z"/><path class="sk" d="M270 260H530V360H270Z"/>
+      <path class="sk" d="M120 160V240H250M680 160V240H550" /><path class="sk" d="M300 340q25-10 50 0t50 0t50 0t50 0" opacity=".6"/>`;lab=`<text x="290" y="420">BOX CULVERT · 2.0 × 1.4 M</text><text x="20" y="150">ROAD LEVEL</text><text x="80" y="230">INLET</text>`;
+    if(g)art+=`<path d="M270 360H530V320Q400 300 270 330Z" fill="var(--maint)" opacity=".35"/>`,lab+=`<text class="r" x="280" y="300">SILT BUILD-UP</text>`;}
+  else if(t==="Mangrove"){let tr="";[90,190,290,390,490,590,690].forEach((x,i)=>{const h=60+(i%3)*25;tr+=`M${x} 330V${330-h}M${x-36} ${330-h+10}Q${x} ${330-h-50} ${x+36} ${330-h+10}M${x} 330l-24 40M${x} 330l24 40M${x} 330l-10 44M${x} 330l10 44`;});
+    art=`<path class="sk" d="${waves(350,6,3)}" opacity=".45"/><path class="hi draw" d="${tr}"/><path class="sk" d="M0 380H800" opacity=".6"/>`;lab=`<text x="20" y="420">MEAN SEA LEVEL</text><text x="520" y="200">WAVE ENERGY ↓</text>`;}
+  else if(t==="Seawall"){art=`<path class="sk" d="${waves(330,6,5)}" opacity=".5" clip-path="url(#L)"/><path class="fc" d="M420 160H560V430H340L420 330Z"/><path class="hi draw" d="M340 430L380 380H400L420 330V160H560V430"/><path class="sk" d="M560 220H800" />`;
+    lab=`<text x="580" y="210">BOULEVARD</text><text x="60" y="300">STORM SURGE</text>`;if(g)art+=`<path class="gap" d="M340 430L300 470M380 430L350 470"/>`,lab+=`<text class="r" x="220" y="490">SCOUR AT TOE</text>`;}
+  else if(t==="Pump"){art=`<path class="fc" d="M300 200H520V400H300Z"/><path class="hi draw" d="M300 400V200L410 140L520 200V400Z"/><path class="sk" d="M520 300H700V260M700 260h40M300 340H150V420"/><circle class="sk" cx="410" cy="300" r="40"/><path class="sk" d="M410 270v60M380 300h60"/>
+      <path class="sk" d="${waves(430,3,3)}" opacity=".4"/>`;lab=`<text x="560" y="250">OUTFALL</text><text x="80" y="460">SUMP</text>`;if(g)art+=`<path class="gap" d="M300 400V200L410 140L520 200V400"/>`,lab+=`<text class="r" x="310" y="120">FOUNDATION ONLY</text>`;}
+  else if(t==="Evac"){art=`<path class="fc" d="M220 220H580V420H220Z"/><path class="hi draw" d="M200 230L400 120L600 230M220 220V420H580V220"/><path class="sk" d="M370 420V330H430V420M260 260h60v40h-60zM480 260h60v40h-60z"/><path class="sk" d="M620 420V200M620 200h50v30h-50"/><path class="sk" d="M0 420H800" opacity=".6"/>`;lab=`<text x="210" y="460">800 PERSONS · SIGNAL 5 RATED</text>`;}
+  else if(t==="Greening"){let tr="";[110,250,390,530,670].forEach(x=>tr+=`M${x} 380V300M${x-40} 300a40 34 0 1 0 80 0a40 34 0 1 0-80 0`);
+    art=`<path class="sk" d="M640 120a30 30 0 1 0 1 0" opacity=".6"/><path class="hi draw" d="${tr}"/><path class="sk" d="M0 380H800M0 400H800" opacity=".7"/><path class="sk" d="M40 392h40M140 392h40M240 392h40M340 392h40M440 392h40M540 392h40M640 392h40" opacity=".5"/>`;lab=`<text x="20" y="440">SHADED CORRIDOR · −3 °C SURFACE TARGET</text>`;}
+  else{art=`<path class="hi draw" d="M400 420V160M370 420L400 160L430 420M380 300h40M375 360h50"/><path class="sk" d="M400 160m-18 0a18 18 0 1 0 36 0a18 18 0 1 0-36 0"/><path class="sk" d="M440 140q30 20 0 40M460 120q50 40 0 80M360 140q-30 20 0 40M340 120q-50 40 0 80"/>
+      <path class="sk" d="${waves(430,3,3)}" opacity=".45"/><path class="sk" d="M560 420V340M548 340h24"/>`;lab=`<text x="580" y="350">WATER-LEVEL GAUGE</text><text x="440" y="240">SIREN</text>`;
+    if(g)art+=`<path class="gap" d="M380 140L420 180M420 140L380 180"/>`,lab+=`<text class="r" x="440" y="270">OFFLINE</text>`;}
+  return `<svg class="schem" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><clipPath id="L"><rect width="330" height="500"/></clipPath></defs><path class="gr" d="${grid}"/><path class="gr2" d="${g2}"/>${art}${lab}</svg>`;}

@@ -7,7 +7,7 @@ const slug = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
 function createOutbox({ store, config }) {
   const testAddress = (label) => `${slug(label)}@${config.testEmailDomain}`;
 
-  function send({ to, subject, body, kind, draft_id = null, city_id = null, simulated = false }) {
+  function send({ to, subject, body, kind, draft_id = null, city_id = null }) {
     const recipients = Array.isArray(to) ? to : [to];
     for (const r of recipients) {
       if (!r.endsWith(`@${config.testEmailDomain}`)) throw new Error(`Refusing to send to non-test address: ${r}`);
@@ -15,7 +15,7 @@ function createOutbox({ store, config }) {
     return store.update((s) => {
       const msg = {
         id: `out-${String(s.outbox.length + 1).padStart(4, '0')}`,
-        to: recipients, subject, body, kind, draft_id, city_id, simulated,
+        to: recipients, subject, body, kind, draft_id, city_id,
         sent_on: config.today, recorded_at: new Date().toISOString(), test_only: true,
       };
       s.outbox.push(msg);

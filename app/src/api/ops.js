@@ -1,4 +1,4 @@
-// Operations routes: scorecard, drafts (approval), flows, outbox, assistant.
+// Operations routes: scorecard, drafts (approval), letters, reports, outbox, follow-ups.
 const express = require('express');
 const { ValidationError } = require('../errors');
 
@@ -7,7 +7,7 @@ const str = (v, name, max = 2000) => {
   return v.trim().slice(0, max);
 };
 
-module.exports = function opsRoutes({ scorecard, drafts, advisoryCard, followUpLetter, reportTriage, outbox, assistant }) {
+module.exports = function opsRoutes({ scorecard, drafts, followUpLetter, reportTriage, outbox, followups, resetAll }) {
   const r = express.Router();
 
   r.get('/scorecard', (_req, res) => res.json(scorecard.build()));
@@ -22,11 +22,7 @@ module.exports = function opsRoutes({ scorecard, drafts, advisoryCard, followUpL
     res.json(drafts.decide(req.params.id, req.params.decision, note));
   });
 
-  // Flows (D4a, D4b, D4c)
-  r.post('/flows/advisory-card', (req, res) => {
-    const { city_id: cityId, type, level, heat_index: heatIndex, title } = req.body || {};
-    res.status(201).json(advisoryCard.create({ city_id: str(cityId, 'city_id', 40), type: str(type, 'type', 20), level, heat_index: heatIndex, title }));
-  });
+  // Flows (D4b follow-up letter, D4c citizen report triage)
   r.get('/flows/follow-up-letter/preview', (req, res) => {
     res.json(followUpLetter.preview(str(req.query.project_id, 'project_id', 40)));
   });
@@ -46,8 +42,11 @@ module.exports = function opsRoutes({ scorecard, drafts, advisoryCard, followUpL
 
   r.get('/outbox', (_req, res) => res.json({ note: 'Test outbox. Nothing is sent outside this app.', messages: outbox.list() }));
 
-  r.post('/assistant', (req, res) => res.json(assistant.ask(str(req.body?.question, 'question', 500))));
-  r.get('/assistant/suggestions', (_req, res) => res.json({ suggestions: assistant.SUGGESTIONS }));
+  r.get('/followups', (_req, res) => res.json(followups.summary()));
+  r.post('/followups/:id/reply', (req, res) => res.json(followups.recordReply(req.params.id, String(req.body?.reply || '').slice(0, 2000))));
+
+  // Clears drafts, outbox, follow-ups and reports (demo/test helper; the CSVs are never changed).
+  r.post('/admin/reset', (_req, res) => { resetAll(); res.json({ reset: true }); });
 
   return r;
 };

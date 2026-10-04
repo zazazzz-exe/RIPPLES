@@ -9,7 +9,7 @@ const { createApprovalPolicy } = require('../src/domain/approval');
 const repo = createRepository(config.dataDir);
 
 test('repository loads every sample CSV', () => {
-  assert.deepEqual(repo.counts(), { cities: 8, projects: 32, advisories: 10, evidence: 48, centers: 24, actions: 19 });
+  assert.deepEqual(repo.counts(), { cities: 16, projects: 220, advisories: 21, evidence: 261, centers: 48, actions: 38 });
   assert.ok(repo.cities().every((c) => c.sample_data));
 });
 
@@ -38,22 +38,10 @@ test('cityScorecard reproduces the scorecard fields in cities.csv', () => {
   }
 });
 
-test('risk bands and heat categories follow Appendix B', () => {
+test('risk bands follow Appendix B', () => {
   assert.deepEqual([0, 1, 2, 3, 4, 5, 6].map(rules.riskLevel),
     ['Low', 'Low', 'Moderate', 'Moderate', 'High', 'Critical', 'Critical']);
-  assert.equal(rules.heatLevelFromIndex(31), 'Caution');
-  assert.equal(rules.heatLevelFromIndex(36), 'Extreme Caution');
-  assert.equal(rules.heatLevelFromIndex(45), 'Danger');
-  assert.equal(rules.heatLevelFromIndex(52), 'Extreme Danger');
   assert.throws(() => rules.hazardPoints({ type: 'Heat', level: 'Scorching' }), RangeError);
-});
-
-test('demo typhoon gives Malabon Signal 3, as in the 3D mockup', () => {
-  const m = repo.city('malabon');
-  const d = rules.distanceToTrack(m.lat, m.lon, rules.DEMO_TYPHOON.track);
-  assert.equal(rules.signalForDistance(d), 3);
-  const davao = repo.city('davao');
-  assert.equal(rules.signalForDistance(rules.distanceToTrack(davao.lat, davao.lon, rules.DEMO_TYPHOON.track)), 0);
 });
 
 test('addWorkingDays skips weekends', () => {

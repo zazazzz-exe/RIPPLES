@@ -4,10 +4,13 @@
 ```
 cd app
 npm install
+cp .env.example .env   # then put the Mapbox public token in MAPBOX_TOKEN (satellite map)
 npm start      # open http://localhost:3000 on desktop or phone (same network)
 npm test
 ```
-Demo path: 3D map → click Malabon (or open `/#/city/malabon`) → Tullahan River wall evidence → TYPHOON DEMO (Malabon goes Critical; guidance shows "awaiting approval") → Scorecard → approve the Malabon advisory card → back on the map it shows the four-audience guidance → NEXT flies to Marikina → Assistant: "Which open gaps raise Malabon's risk this season?" Reset from Simulate → Reset demo. Architecture: `docs/ARCHITECTURE.md`.
+Landing page: `/` (scroll from the hero into the map, open Malabon → a project → NEXT). The map explorer is at `/map` (needs `MAPBOX_TOKEN` in `app/.env`).
+
+Demo path: 3D map at `/map` → click Malabon (or open `/map#/city/malabon`) → Tullahan River wall evidence → give it a thumbs down with a reason → Draft follow-up letter → Scorecard (see "Most thumbs down") → approve it (it lands in the test outbox and the reply clock starts) → record a reply in the follow-up log → back on the map, NEXT flies to Marikina. To clear demo activity: `curl -X POST localhost:3000/api/admin/reset`. Architecture: `docs/ARCHITECTURE.md`.
 
 **Build mode:** Kiro builds components **directly in the Amazon Quick environment**.
 **Spec:** `.kiro/specs/ripples-quick-system/` · **Steering:** `.kiro/steering/` · **Prompts implemented:** `quick-prompts.md` (D0–D7)

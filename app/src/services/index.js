@@ -6,12 +6,11 @@ const { createOutbox } = require('./outbox');
 const { createDraftService } = require('./drafts');
 const { createCityService } = require('./cities');
 const { createScorecard } = require('./scorecard');
-const { createAdvisoryCard } = require('./advisoryCard');
 const { createFollowUpLetter } = require('./followUpLetter');
 const { createReportTriage } = require('./reportTriage');
-const { createCityBrief } = require('./cityBrief');
-const { createAutomations } = require('./automations');
-const { createAssistant } = require('./assistant');
+const { createFollowups } = require('./followups');
+const { createRatings } = require('./ratings');
+const { createLedger } = require('./ledger');
 
 function createServices(config, { persist = true } = {}) {
   const ctx = {
@@ -22,17 +21,17 @@ function createServices(config, { persist = true } = {}) {
   };
   const outbox = createOutbox(ctx);
   const drafts = createDraftService(ctx, { outbox });
-  const cities = createCityService(ctx);
-  const scorecard = createScorecard(ctx, { cities });
-  const advisoryCard = createAdvisoryCard(ctx, { cities, drafts });
+  const ratings = createRatings(ctx);
+  const cities = createCityService(ctx, { ratings });
+  const scorecard = createScorecard(ctx, { cities, ratings });
   const followUpLetter = createFollowUpLetter(ctx, { cities, drafts, outbox });
   const reportTriage = createReportTriage(ctx);
-  const cityBrief = createCityBrief(ctx, { cities });
-  const automations = createAutomations(ctx, { cities, drafts, outbox, advisoryCard, followUpLetter, cityBrief });
-  const assistant = createAssistant(ctx, { cities, advisoryCard, scorecard });
+  const followups = createFollowups(ctx);
+  const ledger = createLedger(ctx);
+  ledger.sync();
 
   return {
-    config, outbox, drafts, cities, scorecard, advisoryCard, followUpLetter, reportTriage, cityBrief, automations, assistant,
+    config, outbox, drafts, cities, scorecard, followUpLetter, reportTriage, followups, ratings, ledger,
     resetAll: () => ctx.store.reset(),
   };
 }

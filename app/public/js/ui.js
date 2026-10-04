@@ -54,31 +54,30 @@ export function showError(el, err) {
 const ICONS = {
   map: '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
   ops: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
-  sim: '<path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0M5 9c2-5 9-6 12-3M19 15c-2 5-9 6-12 3"/>',
-  chat: '<path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/>',
+  home: '<path d="M4 11l8-7 8 7M6 10v10h12V10"/>',
+  ledger: '<path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/>',
 };
 const icon = (k) => raw(`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`);
 
 const NAV = [
-  ['map', '/', '3D Map'],
+  ['home', '/', 'Home'],
+  ['map', '/map', 'Map'],
   ['ops', '/ops', 'Scorecard'],
-  ['sim', '/simulate', 'Simulate'],
-  ['chat', '/assistant', 'Assistant'],
+  ['ledger', '/ledger', 'Ledger'],
 ];
 
-// The explorer's brand mark (sun with a red core).
-const BRAND = raw('<svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#ffcf4a" stroke-width="1.6"><circle cx="20" cy="20" r="6.5"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M8.7 8.7l4.2 4.2M27.1 27.1l4.2 4.2M8.7 31.3l4.2-4.2M27.1 12.9l4.2-4.2"/></g><circle cx="20" cy="20" r="2.2" fill="#ff2e4a"/></svg>');
+// The Ripples logo (mark and wordmark).
+const BRAND = raw('<img class="brand-logo" src="/img/brand/ripples-logo.png" srcset="/img/brand/ripples-logo.png 1x, /img/brand/ripples-logo@2x.png 2x" alt="Ripples" width="104" height="35">');
 
 // Renders banners, top bar, side nav and bottom tab bar.
-export function initShell(active, { simulation = null } = {}) {
+export function initShell(active) {
   const links = NAV.map(([k, href, label]) => html`<a href="${href}" ${raw(k === active ? 'aria-current="page"' : '')}>${icon(k)}<span>${label}</span></a>`);
   mount('#chrome', html`
     <div class="banner"><b>SAMPLE DATA</b><span>Real city names, sample records. For live warnings follow <a href="https://www.pagasa.dost.gov.ph" target="_blank" rel="noopener">PAGASA</a> and <a href="https://ndrrmc.gov.ph" target="_blank" rel="noopener">NDRRMC</a>.</span></div>
-    ${simulation ? html`<div class="banner sim" role="status"><b>DEMO MODE</b><span>Simulated typhoon. Not a real advisory.</span><a href="/simulate">Manage</a></div>` : ''}
     <header class="topbar">
-      <a class="brand" href="/">${BRAND}<span>RIPPLES<small>Climate defense map</small></span></a>
+      <a class="brand" href="/" aria-label="Ripples home">${BRAND}<small>Climate defense map</small></a>
       <div class="spacer"></div>
-      <a class="to-map" href="/">Open 3D map ›</a>
+      <a class="to-map" href="/map">Open map ›</a>
     </header>`);
   mount('#navs', html`
     <nav class="nav" aria-label="Main">${links}<div class="nav-foot">Sample data · as of Oct 2026</div></nav>

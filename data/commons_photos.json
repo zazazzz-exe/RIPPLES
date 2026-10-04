@@ -1,0 +1,115 @@
+{
+ "note": "Wikimedia Commons photos used as reference images for sample projects. They do not show the sample projects themselves.",
+ "photos": [
+  {
+   "project_id": "man-baseco-seawall",
+   "file": "Baseco beach from air (Manila; 01-09-2023) (cropped).jpg",
+   "local": "man-baseco-seawall.jpg",
+   "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+   "author": "Patrickroque01",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Baseco shoreline reference"
+  },
+  {
+   "project_id": "man-binondo-estero",
+   "file": "Estero de Binondo, Manila, Jun 2024.jpg",
+   "local": "man-binondo-estero.jpg",
+   "title": "Lined banks of the Estero de Binondo, Manila",
+   "author": "Ralff Nestor Nacor",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Estero de Binondo reference"
+  },
+  {
+   "project_id": "man-vitas-pump",
+   "file": "07806jfUrban Deca Homes Estero de Vitas Pumping Station Barangays Bridge Tondo Manilafvf 24.jpg",
+   "local": "man-vitas-pump.jpg",
+   "title": "Estero de Vitas pumping station gates, Tondo",
+   "author": "Judgefloro",
+   "file_page": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "match": "Vitas pumping station reference"
+  },
+  {
+   "project_id": "man-espana-drain",
+   "file": "España Boulevard in Sampaloc, Manila, 2024.jpg",
+   "local": "man-espana-drain.jpg",
+   "title": "España Boulevard in Sampaloc, Manila",
+   "author": "PhiliptheNumber1",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Espa%C3%B1a_Boulevard_in_Sampaloc,_Manila,_2024.jpg",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "match": "España Boulevard reference"
+  },
+  {
+   "project_id": "man-pasig-wall",
+   "file": "Pasig River - with Santa Mesa-Pandacan bridge and El Pueblo Condominium (Santa Mesa, Manila)(2017-03-04).jpg",
+   "local": "man-pasig-wall.jpg",
+   "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+   "author": "Patrickroque01",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Pasig River, Pandacan reference"
+  },
+  {
+   "project_id": "man-paco-estero",
+   "file": "05779jfBridge Estero de Paco Barangays Onyx Paco Manilafvf 04.jpg",
+   "local": "man-paco-estero.jpg",
+   "title": "Estero de Paco and its braced channel walls, Paco",
+   "author": "Judgefloro",
+   "file_page": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+   "license": "Public domain",
+   "license_url": null,
+   "match": "Estero de Paco reference"
+  },
+  {
+   "project_id": "man-sensors",
+   "file": "9768Sulipan Bridge Flood Forecasting 13.jpg",
+   "local": "man-sensors.jpg",
+   "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+   "author": "JFVelasquez Floro",
+   "file_page": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "match": "Flood sensor station reference"
+  },
+  {
+   "project_id": "man-evac",
+   "file": "Delpan Evacuation Center, Tondo (Manila; 11-10-2019).jpg",
+   "local": "man-evac.jpg",
+   "title": "Delpan Evacuation Center, Tondo",
+   "author": "patrickroque01",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Tondo evacuation building reference"
+  },
+  {
+   "project_id": "man-aviles-pump",
+   "file": "Valencia Pumping Station and Bridge (Manila; 2023-08-02) E911a 06.jpg",
+   "local": "man-aviles-pump.jpg",
+   "title": "Valencia pumping station, Manila",
+   "author": "E911a",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Manila pumping station reference"
+  },
+  {
+   "project_id": "man-roxas-outfall",
+   "file": "Roxas Boulevard, Manila Bay close-up (Manila; 02-10-2022).jpg",
+   "local": "man-roxas-outfall.jpg",
+   "title": "Roxas Boulevard along the Manila Bay shore",
+   "author": "Patrickroque01",
+   "file_page": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "match": "Roxas Boulevard bayfront reference"
+  }
+ ]
+}

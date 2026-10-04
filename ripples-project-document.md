@@ -97,7 +97,7 @@ Everything is organized **by city**. One Quick space holds this document, the sa
 |---|---|
 | **Built in Amazon Quick (the hackathon system)** | The Ripples space and knowledge (D0), scorecard dashboard (D2), city risk briefs (D3), advisory, letter and triage flows (D4), deadline, typhoon and pre-season automations (D5), the Ripples City Assistant chat agent (D6) and the Ripples Reviewer app (D7). All run on the sample CSVs in `data/`. |
 | **Mockup (shows the public experience)** | `ripples-climate-map.html`: the 3D map, City Pages, project evidence view, typhoon demo, in-browser photo report and a simulated "Verified record" badge. It shows the same sample data that Quick uses. It is a design, not a connected app. |
-| **Future (not built)** | Live PAGASA and NDRRMC feeds, LCCAP ingestion across many cities, Sentinel-2 satellite checks, real citizen uploads with location stripping and face blurring, a Ripples backend that Quick calls through an OpenAPI or MCP connector, Stellar timestamps for tamper-proof records, and a production map (Mapbox or MapLibre). The build tool for the public app (Kiro, if required) is still to be confirmed with the organizers. |
+| **Future (not built)** | Live PAGASA and NDRRMC feeds, LCCAP ingestion across many cities, Sentinel-2 satellite checks, real citizen uploads with location stripping and face blurring, a Ripples backend that Quick calls through an OpenAPI or MCP connector, a blockchain-style record ledger (SHA-256 hash chain) that keeps project records tamper-evident, and a production map (Mapbox or MapLibre). The build tool for the public app (Kiro, if required) is still to be confirmed with the organizers. |
 
 **Rule-based where it matters.** Advisory levels and real-risk levels come from fixed rules (PAGASA thresholds and the gap count), not a model, so every result can be explained. Quick uses AI for the language work (extracting commitments, triaging reports, writing guidance, letters and reports) and a person checks all of it.
 
@@ -194,7 +194,7 @@ A clearly labeled simulation for pitching and training. A typhoon crosses the ma
 
 - Every evidence item shows its source (citizen photo, satellite check, LGU update, community monitoring) and whether it is corroborated.
 - Citizen photos are re-encoded in the browser on upload, which removes location and camera data.
-- Every project and scorecard shows a "Verified record" badge with a short record hash. In production this is the Stellar timestamp; in the mockup it is simulated.
+- Every project and scorecard shows a "Verified record" badge with a short record hash. The web app backs it with a blockchain-style record ledger: every record is fingerprinted with SHA-256 and hash-chained, and anyone can verify it in their browser. It is used for record integrity only, with no currency, wallets or payments.
 
 # Part C: Amazon Quick, the AI orchestration layer
 
@@ -204,7 +204,7 @@ Amazon Quick is the system we build for the hackathon (Part A). The map and City
 
 | Objective | Quick component | What it does for Ripples |
 |---|---|---|
-| **Connect data sources** | Spaces, Quick Index, knowledge bases (S3, web crawler, Google Drive, SharePoint), structured data, action connectors, MCP and OpenAPI | One space holds this document, the CSVs, LCCAP PDFs and LGU budget files. The web crawler indexes public PAGASA and NDRRMC pages. Action connectors reach email, Slack or Teams. Later, an OpenAPI or MCP connector calls the Ripples backend (project records, Stellar anchoring); for now the CSVs stand in for it. |
+| **Connect data sources** | Spaces, Quick Index, knowledge bases (S3, web crawler, Google Drive, SharePoint), structured data, action connectors, MCP and OpenAPI | One space holds this document, the CSVs, LCCAP PDFs and LGU budget files. The web crawler indexes public PAGASA and NDRRMC pages. Action connectors reach email, Slack or Teams. Later, an OpenAPI or MCP connector calls the Ripples backend (project records and the record ledger); for now the CSVs stand in for it. |
 | **Synthesize research** | Quick Research | Per-city climate risk briefs; pre-season readiness research; cross-checking AI-extracted commitments against the source LCCAP; summarizing news about a project. |
 | **Turn ideas into actions** | Quick Flows, chat agents | Repeatable, shareable workflows: advisory text → four-audience guidance card; project record → follow-up letter; citizen report → triage summary; city → readiness report. A custom chat agent answers team and partner questions grounded in the space. |
 | **Automate workflows** | Quick Automate | Multi-step escalation that runs on triggers: a deadline passes, a typhoon signal is raised, the pre-season window opens. Includes human approval steps before anything is sent. |
@@ -224,7 +224,7 @@ Amazon Quick is the system we build for the hackathon (Part A). The map and City
 
 ## Workflows Quick runs
 
-**1. Deadline escalation (Quick Automate).** Trigger: a project deadline passes and the status is not Completed, or a completed defense is flagged "Needs maintenance." Steps: pull the project record → check the latest evidence → draft a neutral follow-up letter and FOI request → **reviewer approves** → send to the responsible office → log it and start a 15-working-day reply clock → if no reply, record "No reply" on the scorecard → request a Stellar timestamp for each status change.
+**1. Deadline escalation (Quick Automate).** Trigger: a project deadline passes and the status is not Completed, or a completed defense is flagged "Needs maintenance." Steps: pull the project record → check the latest evidence → draft a neutral follow-up letter and FOI request → **reviewer approves** → send to the responsible office → log it and start a 15-working-day reply clock → if no reply, record "No reply" on the scorecard → chain each status change into the record ledger.
 
 **2. Advisory guidance (Quick Flows).** Input: a PAGASA or NDRRMC advisory and the city. Steps: classify type and level against the PAGASA thresholds in Appendix B → pull the city's open gaps and evacuation centers → write the four audience sections → **reviewer approves** → post to the City Page. The flow never says an area is safe and always links the official source.
 
@@ -239,7 +239,7 @@ Amazon Quick is the system we build for the hackathon (Part A). The map and City
 ## What stays outside Quick
 
 - **The real-risk calculation** runs in the app backend as fixed rules (Appendix B), so it is predictable and auditable. Quick reads its results; it does not change them.
-- **Stellar anchoring** runs in the backend. Quick requests a timestamp through an action connector.
+- **Record ledger** runs in the backend. Every project record is fingerprinted (SHA-256) and hash-chained, so past records cannot be quietly edited. Record keeping only: no currency, wallets or payments.
 - **Nothing is sent or published without human approval.** Quick drafts; a reviewer approves.
 
 # Part D: Prompts for Amazon Quick
@@ -474,6 +474,6 @@ The real-risk level is a fixed rule, not a model.
 
 **"What if an LGU says your data is wrong?"** Every office has a right of reply that is posted in full, every status change is timestamped, and citizen reports stay "unverified" until corroborated.
 
-**"What did you actually build, and what is a mockup?"** We built the internal system in Amazon Quick: the dashboard, research briefs, flows, automations, chat agent and reviewer app, all running on sample data. The 3D map is a mockup of the public experience. Live feeds, satellite checks, citizen uploads and Stellar timestamps are future work (Part A, "What we're building now, and what comes later").
+**"What did you actually build, and what is a mockup?"** We built the internal system in Amazon Quick: the dashboard, research briefs, flows, automations, chat agent and reviewer app, all running on sample data. The 3D map is a mockup of the public experience. Live feeds, satellite checks, and citizen uploads are future work; the record ledger runs in the web app (Part A, "What we're building now, and what comes later").
 
 **"What does Amazon Quick actually do?"** It is the orchestration layer: it connects the documents and data, writes the research briefs, runs the letter and advisory flows, and automates the escalation and typhoon workflows, with a person approving every output (Part C).

@@ -1,0 +1,3711 @@
+{
+ "note": "Reference photos are illustrative, not verified evidence for the sample projects. Team-folder credits are as listed there (news and company photos need the owner's permission before a public release); Wikimedia Commons photos are used under the listed free licenses.",
+ "projects": {
+  "btn-agusan-dike": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-bading-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-bamboo": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-culverts": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-libertad-pump": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-masao": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-montilla-drain": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-taguibo": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "btn-telemetry": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-dike": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "CDO River dike reference"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-02": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-03": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-05": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-07": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-08": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-10": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-flood-12": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-forest": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-puntod-drain": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-reloc": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "cdo-telemetry": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-buhisan-forest": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-butuanon": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-guadalupe": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-kinalumsan": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-lahug-drain": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-mahiga": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-pardo-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-pasil-pump": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-sensors": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ceb-srp-revet": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dag-dike": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Pangasinan flood mitigation embankment",
+     "source": "PIA / DPWH Pangasinan",
+     "url": "https://mirror.pia.gov.ph/news/2023/07/30/dpwh-constructs-p72-m-flood-mitigation-structure-in-pangasinan"
+    },
+    {
+     "title": "Pentor Balsik River flood control structure",
+     "source": "PIA / DPWH",
+     "url": "https://mirror.pia.gov.ph/news/2022/10/30/dpwh-completes-flood-control-structure-along-pentor-balsik-river"
+    }
+   ]
+  },
+  "dag-drain": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Pangasinan riverside infrastructure upgrade",
+     "source": "PIA / DPWH Pangasinan",
+     "url": "https://mirror.pia.gov.ph/news/2022/12/30/dpwh-completes-flood-control-projects-farm-to-market-road-in-pangasinan"
+    }
+   ]
+  },
+  "dag-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove buffer reference"
+    }
+   ],
+   "references": []
+  },
+  "dag-retention": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Pangasinan riverside infrastructure upgrade",
+     "source": "PIA / DPWH Pangasinan",
+     "url": "https://mirror.pia.gov.ph/news/2022/12/30/dpwh-completes-flood-control-projects-farm-to-market-road-in-pangasinan"
+    }
+   ]
+  },
+  "dag-tidegate": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-02": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-03": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-05": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-07": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-08": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-10": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-12": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dagupan-flood-13": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dav-cool": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dav-floodwall": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Davao dike works reference"
+    },
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Davao riverbank works reference"
+    }
+   ],
+   "references": []
+  },
+  "dav-forest": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "dav-matina": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Davao river-wall reference"
+    }
+   ],
+   "references": []
+  },
+  "dav-talomo-basin": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Talomo River revetment wall",
+     "source": "Philippine Information Agency",
+     "url": "https://pia.gov.ph/press-release/revetment-wall-enhances-protection-to-riverside-community-in-davao-city/"
+    }
+   ]
+  },
+  "davao-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-02": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-03": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-05": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-07": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-08": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-10": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "davao-flood-12": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "ilo-basin": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Iloilo creek works reference"
+    }
+   ],
+   "references": []
+  },
+  "ilo-esplanade": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Iloilo River Esplanade reference"
+    }
+   ],
+   "references": []
+  },
+  "ilo-floodway": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Iloilo floodway reference"
+    }
+   ],
+   "references": []
+  },
+  "ilo-molo-gate": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Molo riverside construction reference",
+     "source": "Daily Guardian",
+     "url": "https://dailyguardian.com.ph/private-hospital-proposes-to-run-iloilo-city-public-hospital/"
+    }
+   ]
+  },
+  "ilo-pump": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pumping station reference"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-02": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-03": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-05": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-07": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-08": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-10": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "iloilo-flood-12": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "leg-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "leg-lahar": {
+   "photos": [
+    {
+     "file": "legazpi-yawa-mayon.jpg",
+     "small": "legazpi-yawa-mayon-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Yawa River channel works below Mayon Volcano",
+     "source": "Albay 3rd District archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Yawa River lahar-channel reference"
+    }
+   ],
+   "references": [
+    {
+     "title": "Sloped flood-control structure reference",
+     "source": "PIA / DPWH",
+     "url": "https://mirror.pia.gov.ph/news/2022/10/30/dpwh-completes-flood-control-structure-along-pentor-balsik-river"
+    }
+   ]
+  },
+  "leg-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "leg-seawall": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Albay flood-control wall reference"
+    }
+   ],
+   "references": [
+    {
+     "title": "New floodwall along Gandara riverbank",
+     "source": "DPWH",
+     "url": "https://www.dpwh.gov.ph/dpwh/news/36315"
+    }
+   ]
+  },
+  "leg-yawa-sabo": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-02": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-03": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-05": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-07": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-08": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-10": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-12": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "legazpi-flood-13": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mal-drain": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mal-navotas-drain": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mal-pump": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Metro Manila pump-station reference"
+    }
+   ],
+   "references": []
+  },
+  "mal-sensor": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mal-wall": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Marikina flood control wall",
+     "source": "DPWH",
+     "url": "https://www.dpwh.gov.ph/dpwh/news/17668"
+    }
+   ]
+  },
+  "malabon-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-02": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-03": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-05": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-07": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-08": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-10": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-12": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "malabon-flood-13": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "man-aviles-pump": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Manila pumping station reference"
+    }
+   ],
+   "references": []
+  },
+  "man-baseco-seawall": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Baseco shoreline reference"
+    }
+   ],
+   "references": []
+  },
+  "man-binondo-estero": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Estero de Binondo reference"
+    }
+   ],
+   "references": []
+  },
+  "man-espana-drain": {
+   "photos": [
+    {
+     "file": "commons-man-espana-drain.jpg",
+     "small": "commons-man-espana-drain-sm.jpg",
+     "width": 1280,
+     "height": 856,
+     "title": "España Boulevard in Sampaloc, Manila",
+     "source": "Wikimedia Commons · PhiliptheNumber1",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Espa%C3%B1a_Boulevard_in_Sampaloc,_Manila,_2024.jpg",
+     "license_note": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "match": "España Boulevard reference"
+    }
+   ],
+   "references": []
+  },
+  "man-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Tondo evacuation building reference"
+    }
+   ],
+   "references": []
+  },
+  "man-paco-estero": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Estero de Paco reference"
+    }
+   ],
+   "references": []
+  },
+  "man-pasig-wall": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pasig River, Pandacan reference"
+    }
+   ],
+   "references": []
+  },
+  "man-roxas-outfall": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Roxas Boulevard bayfront reference"
+    }
+   ],
+   "references": []
+  },
+  "man-sensors": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Flood sensor station reference"
+    }
+   ],
+   "references": []
+  },
+  "man-vitas-pump": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Vitas pumping station reference"
+    }
+   ],
+   "references": []
+  },
+  "mar-dredge": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Marikina River corridor reference"
+    }
+   ],
+   "references": [
+    {
+     "title": "Marikina river flood-control wall",
+     "source": "DPWH",
+     "url": "https://www.dpwh.gov.ph/dpwh/news/17668"
+    }
+   ]
+  },
+  "mar-green": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mar-nangka-basin": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Solano flood-control embankment",
+     "source": "PIA / DPWH",
+     "url": "https://mirror.pia.gov.ph/news/2023/09/11/dpwh-wraps-flood-control-project-in-solano"
+    }
+   ]
+  },
+  "mar-siren": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "mar-wall": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": [
+    {
+     "title": "Marikina flood control wall",
+     "source": "DPWH",
+     "url": "https://www.dpwh.gov.ph/dpwh/news/17668"
+    }
+   ]
+  },
+  "marikina-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-02": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-03": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-05": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-07": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-08": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-10": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-12": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "marikina-flood-13": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-balatas-revet": {
+   "photos": [
+    {
+     "file": "davao-talomo-protective-wall.jpg",
+     "small": "davao-talomo-protective-wall-sm.jpg",
+     "width": 1526,
+     "height": 1145,
+     "title": "Protective river wall along the Talomo River, Davao City",
+     "source": "DPWH Official Press Release (News #33310)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/33310",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-bicol-dike": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-calauag-drain": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-centro-drain": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-gauges": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-pacol-basin": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-river-green": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-river-wall": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "nag-triangulo-pump": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-anilao-dike": {
+   "photos": [
+    {
+     "file": "commons-man-pasig-wall.jpg",
+     "small": "commons-man-pasig-wall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Pasig River at the Santa Mesa–Pandacan bridge",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Pasig_River_-_with_Santa_Mesa-Pandacan_bridge_and_El_Pueblo_Condominium_(Santa_Mesa,_Manila)(2017-03-04).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-cogon-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-diversion": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-downtown-drain": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-gauges": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-malbasag": {
+   "photos": [
+    {
+     "file": "legazpi-albay-dike.jpg",
+     "small": "legazpi-albay-dike-sm.jpg",
+     "width": 960,
+     "height": 720,
+     "title": "Concrete river dike, Albay",
+     "source": "Albay 3rd District Engineering Office Archive",
+     "source_url": "https://albay3d.blogspot.com/2014/02/albay-3rd-district-flood-control-dikes.html",
+     "license_note": "Philippine government work",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-outfall-pump": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-seawall": {
+   "photos": [
+    {
+     "file": "commons-man-roxas-outfall.jpg",
+     "small": "commons-man-roxas-outfall-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Roxas Boulevard along the Manila Bay shore",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Roxas_Boulevard,_Manila_Bay_close-up_(Manila;_02-10-2022).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "orm-watershed": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-baywalk-seawall": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-irawan-dike": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-mandaragat-revet": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-rizal-drain": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-school-shade": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-sicsican-basin": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-sirens": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "pps-tagburos-drain": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tac-buffer": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tac-drain": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage construction reference"
+    }
+   ],
+   "references": []
+  },
+  "tac-embank": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Tacloban coastal embankment reference"
+    },
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Tacloban storm-surge barrier reference"
+    }
+   ],
+   "references": []
+  },
+  "tac-outfall": {
+   "photos": [
+    {
+     "file": "malabon-valenzuela-pump.jpg",
+     "small": "malabon-valenzuela-pump-sm.jpg",
+     "width": 854,
+     "height": 570,
+     "title": "Valenzuela pumping station outfall, Metro Manila",
+     "source": "Manila Bulletin",
+     "source_url": "https://mb.com.ph/2024/9/19/valenzuela-lgu-opens-new-pumping-station-to-address-flooding-in-the-city-1",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tac-siren": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-01": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-02": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-03": {
+   "photos": [
+    {
+     "file": "davao-dike-reinforcement.jpg",
+     "small": "davao-dike-reinforcement-sm.jpg",
+     "width": 750,
+     "height": 450,
+     "title": "Gabion dike reinforcement works, Davao",
+     "source": "SunStar Davao News Archive",
+     "source_url": "https://www.sunstar.com.ph/davao/barangays-urged-to-monitor-dikes-prevent-illegal-structures",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-04": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-05": {
+   "photos": [
+    {
+     "file": "tacloban-coastal-defense.jpg",
+     "small": "tacloban-coastal-defense-sm.jpg",
+     "width": 768,
+     "height": 431,
+     "title": "Coastal embankment and road, Tacloban City",
+     "source": "Agence France-Presse (AFP) / Imaz Press",
+     "source_url": "https://imazpress.com/france-monde/philippines-dix-ans-apres-le-typhon-haiyan-la-vie-a-repris-a-tacloban",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-06": {
+   "photos": [
+    {
+     "file": "iloilo-creek-bank-works.jpg",
+     "small": "iloilo-creek-bank-works-sm.jpg",
+     "width": 1200,
+     "height": 900,
+     "title": "Creek bank works, Iloilo City",
+     "source": "Manila Bulletin News Archive",
+     "source_url": "https://mb.com.ph/2025/09/04/mayor-trenas-wants-to-stop-discaya-flood-control-projects-in-iloilo-city",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-07": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-08": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-09": {
+   "photos": [
+    {
+     "file": "iloilo-floodway-channel.jpg",
+     "small": "iloilo-floodway-channel-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Floodway channel works, Iloilo City",
+     "source": "GMA Regional TV News Report",
+     "source_url": "https://www.gmanetwork.com/regionaltv/news/109683/alleged-ghost-projects-in-iloilo-city-are-on-sked-says-dpwh/story/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-10": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-11": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tacloban-flood-12": {
+   "photos": [
+    {
+     "file": "malabon-pumping-station.jpg",
+     "small": "malabon-pumping-station-sm.jpg",
+     "width": 1059,
+     "height": 867,
+     "title": "Estero de Sunog Apog Pumping Station, Metro Manila",
+     "source": "DPWH Official Press Release (News #20732)",
+     "source_url": "https://dpwh.gov.ph/dpwh/news/20732",
+     "license_note": "Philippine government work",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-annafunan-drain": {
+   "photos": [
+    {
+     "file": "drainage-box-culvert-construction.jpg",
+     "small": "drainage-box-culvert-construction-sm.jpg",
+     "width": 1600,
+     "height": 1200,
+     "title": "Concrete drainage works",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-atulayan": {
+   "photos": [
+    {
+     "file": "marikina-manggahan-floodway.jpg",
+     "small": "marikina-manggahan-floodway-sm.jpg",
+     "width": 1536,
+     "height": 900,
+     "title": "Manggahan Floodway, Pasig-Marikina river system",
+     "source": "Wikimedia Commons / Public Domain",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Manggahan_Floodway.jpg",
+     "license_note": "Public domain (Wikimedia Commons)",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-buntun-dike": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-carig-forest": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-centro-drain": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-gauges": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-larion-pump": {
+   "photos": [
+    {
+     "file": "commons-man-vitas-pump.jpg",
+     "small": "commons-man-vitas-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Vitas pumping station gates, Tondo",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:07806jfUrban_Deca_Homes_Estero_de_Vitas_Pumping_Station_Barangays_Bridge_Tondo_Manilafvf_24.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-pinacanauan": {
+   "photos": [
+    {
+     "file": "cdo-river-boulevard-dike.jpg",
+     "small": "cdo-river-boulevard-dike-sm.jpg",
+     "width": 1600,
+     "height": 901,
+     "title": "Cagayan de Oro River and River Boulevard dike",
+     "source": "Metro CDO Dev Project Watch",
+     "source_url": "https://metrocdodev.com/2023/05/11/project-watch-cdo-river-flood-risk-management-project-river-boulevard-macasandig-section-as-of-may-2023/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "tug-shade": {
+   "photos": [
+    {
+     "file": "iloilo-esplanade-river.jpg",
+     "small": "iloilo-esplanade-river-sm.jpg",
+     "width": 960,
+     "height": 636,
+     "title": "Iloilo River Esplanade",
+     "source": "Daily Guardian",
+     "source_url": "https://dailyguardian.com.ph/iloilo-citys-sunset-boulevard-to-open-jan-24/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-arena-seawall": {
+   "photos": [
+    {
+     "file": "commons-man-baseco-seawall.jpg",
+     "small": "commons-man-baseco-seawall-sm.jpg",
+     "width": 1280,
+     "height": 532,
+     "title": "Baseco shoreline at the mouth of the Pasig River, from the air",
+     "source": "Wikimedia Commons · Patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Baseco_beach_from_air_(Manila;_01-09-2023)_(cropped).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-canelar-drain": {
+   "photos": [
+    {
+     "file": "commons-man-binondo-estero.jpg",
+     "small": "commons-man-binondo-estero-sm.jpg",
+     "width": 1280,
+     "height": 964,
+     "title": "Lined banks of the Estero de Binondo, Manila",
+     "source": "Wikimedia Commons · Ralff Nestor Nacor",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Estero_de_Binondo,_Manila,_Jun_2024.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-mangrove": {
+   "photos": [
+    {
+     "file": "mangrove-buffer-forest.jpg",
+     "small": "mangrove-buffer-forest-sm.jpg",
+     "width": 1280,
+     "height": 853,
+     "title": "Mangrove roots in a coastal buffer forest",
+     "source": "Team photo folder",
+     "source_url": null,
+     "license_note": "original source not listed",
+     "match": "Mangrove reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-riohondo": {
+   "photos": [
+    {
+     "file": "tacloban-storm-surge-barrier.jpg",
+     "small": "tacloban-storm-surge-barrier-sm.jpg",
+     "width": 1600,
+     "height": 900,
+     "title": "Storm-surge barrier sheet-pile works, Tacloban City",
+     "source": "MLION Corporation Engineering Project Archive",
+     "source_url": "https://mlioncorp.com/tacloban-storm-surge-barrier/",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Seawall reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-shade": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Greening reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-sirens": {
+   "photos": [
+    {
+     "file": "commons-man-sensors.jpg",
+     "small": "commons-man-sensors-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "River water-level sensor station on the Sulipan Bridge, Pampanga",
+     "source": "Wikimedia Commons · JFVelasquez Floro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:9768Sulipan_Bridge_Flood_Forecasting_13.jpg",
+     "license_note": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "match": "Warning reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-stamaria-pump": {
+   "photos": [
+    {
+     "file": "commons-man-aviles-pump.jpg",
+     "small": "commons-man-aviles-pump-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Valencia pumping station, Manila",
+     "source": "Wikimedia Commons · E911a",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Valencia_Pumping_Station_and_Bridge_(Manila;_2023-08-02)_E911a_06.jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Pump reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-tetuan-evac": {
+   "photos": [
+    {
+     "file": "commons-man-evac.jpg",
+     "small": "commons-man-evac-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Delpan Evacuation Center, Tondo",
+     "source": "Wikimedia Commons · patrickroque01",
+     "source_url": "https://commons.wikimedia.org/wiki/File:Delpan_Evacuation_Center,_Tondo_(Manila;_11-10-2019).jpg",
+     "license_note": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "match": "Evac reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-tumaga": {
+   "photos": [
+    {
+     "file": "davao-riverbank-sheet-piling.jpg",
+     "small": "davao-riverbank-sheet-piling-sm.jpg",
+     "width": 640,
+     "height": 426,
+     "title": "Riverbank sheet-piling works, Davao",
+     "source": "ABS-CBN News / Public Infrastructure Photo",
+     "source_url": "https://www.abs-cbn.com/news/business/2025/11/13/corruption-scandal-not-lone-factor-in-ph-s-economic-downturn-in-q3-2025-marcos-jr-1507",
+     "license_note": "Used as a reference with credit; get the owner's permission before a public release",
+     "match": "Dike reference (shared photo)"
+    }
+   ],
+   "references": []
+  },
+  "zam-tumaga-basin": {
+   "photos": [
+    {
+     "file": "commons-man-paco-estero.jpg",
+     "small": "commons-man-paco-estero-sm.jpg",
+     "width": 1280,
+     "height": 960,
+     "title": "Estero de Paco and its braced channel walls, Paco",
+     "source": "Wikimedia Commons · Judgefloro",
+     "source_url": "https://commons.wikimedia.org/wiki/File:05779jfBridge_Estero_de_Paco_Barangays_Onyx_Paco_Manilafvf_04.jpg",
+     "license_note": "Public domain",
+     "license_url": null,
+     "match": "Drainage reference (shared photo)"
+    }
+   ],
+   "references": []
+  }
+ }
+}

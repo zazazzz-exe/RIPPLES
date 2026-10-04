@@ -20,18 +20,23 @@ It rests on three core focuses, which all serve one goal: **the well-being of Fi
 - **Accountability.** Make sure unmet commitments lead to action from the right office.
 - **Sustainability.** Make sure the protection lasts, and that the system is cheap enough for a small team to run.
 
-The motto, *micro effort, macro effect*, is how Ripples works. A reviewer spends a few minutes approving a draft letter or advisory card. That small action reaches a whole city's households, schools, farmers and barangay officials, and puts a public record on every promise.
+The motto, *micro effort, macro effect*, is how Ripples works. A citizen spends a minute rating a project, sending a photo or asking for a follow-up. Many of those small actions together put a public record on every promise, and push the right office to act before the next typhoon.
 
 ## Target market
 
-| Who | What they use | What they get |
-|---|---|---|
-| **Ripples reviewers**: our team, later partner universities and NGOs | Reviewer app, chat agent, scorecard dashboard | A queue of AI drafts (commitments, letters, advisory cards, readiness reports, triaged citizen reports) to approve or reject |
-| **DRRMO staff, barangay officials, partner NGOs** | Chat agent, scorecard, shared reports | Answers grounded in the data, pre-season readiness reports, interim-measure notices during a typhoon |
-| **Responsible offices**: LGU, DPWH, DENR, MMDA | They receive our letters | Neutral follow-up letters and FOI requests, with a right of reply |
-| **Residents** of flood- and typhoon-exposed cities | Approved advisories through barangay channels; the public map and City Pages | Clear guidance for households, schools and farmers, and a view of what their city promised |
+**The Filipino citizen.** Ripples is open to the general public. Anyone can open the map, see what their city promised, and check how those promises are going. No account is needed.
 
-**Pilot:** one city (Malabon City), one hazard season, one DRRMO or NGO partner. The approach can grow city by city, because every LGU has the same LCCAP requirement under the Climate Change Act (RA 9729, amended by RA 10174).
+What a citizen can do on Ripples:
+
+- **See their city's climate defenses**: every dike, drain, pumping station, seawall, mangrove belt, evacuation center and warning system in the city's LCCAP, with its status, deadline, progress and maintenance.
+- **Understand their real risk**: the current hazard together with the city's open gaps, with official PAGASA and NDRRMC advisories always first.
+- **Get guidance they can act on**: advisory cards with sections for households, schools, farmers and barangay officials.
+- **Take part**: rate a project, submit a photo report (reporter identities are never shown), dispute a "completed" project, or ask for a follow-up letter to the responsible office.
+- **Hold offices to account**: see which follow-ups were sent, which were answered, and which got no reply.
+
+This matters most for residents of flood- and typhoon-exposed cities. The approach can grow city by city, because every LGU has the same LCCAP requirement under the Climate Change Act (RA 9729, amended by RA 10174). The pilot city is Malabon City.
+
+Behind the public site, a small Ripples review team approves every letter and advisory before it goes out.
 
 ## The problem
 

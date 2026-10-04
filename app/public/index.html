@@ -13,7 +13,28 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="preload" as="image" href="/img/landing/hero-flood-quezon-city.jpg" imagesrcset="/img/landing/hero-flood-quezon-city-sm.jpg 800w, /img/landing/hero-flood-quezon-city.jpg 1920w" imagesizes="100vw">
   <link rel="stylesheet" href="/css/landing.css">
-  <script type="module" src="/js/landing/main.js"></script>
+  <script>
+    // If the landing script can't load or crashes, show a way forward instead of a blank page.
+    window.ripplesLandingFailed = function (err) {
+      if (document.getElementById('landing-fallback')) return;
+      var msg = (err && (err.message || err.type)) || 'unknown error';
+      var box = document.createElement('section');
+      box.id = 'landing-fallback';
+      box.setAttribute('role', 'alert');
+      box.style.cssText = 'max-width:640px;margin:12vh auto;padding:28px;font:16px/1.6 system-ui,sans-serif;color:#0f3b3a;background:#fff;border:1px solid #cfe0db;border-radius:8px';
+      box.innerHTML = '<h1 style="margin:0 0 8px;font-size:24px">Ripples: Climate Defense Map</h1>'
+        + '<p style="margin:0 0 16px">The home page could not finish loading. You can still open the map and the scorecard.</p>'
+        + '<p style="margin:0 0 16px"><a href="/map">Open the map</a> · <a href="/ops">Open the scorecard</a></p>'
+        + '<p style="margin:0;font-size:13px;color:#5b6b67">Details: <code></code>. Sample data. For live warnings follow PAGASA and NDRRMC.</p>';
+      box.querySelector('code').textContent = msg;
+      (document.body || document.documentElement).appendChild(box);
+    };
+    window.addEventListener('error', function (e) { if (!window.__ripplesLanding) console.error('[landing]', e.message); });
+    window.addEventListener('load', function () {
+      setTimeout(function () { if (!window.__ripplesLanding && !document.querySelector('#m-hero > *')) window.ripplesLandingFailed(new Error('the page script did not start (a file may be missing on the server)')); }, 8000);
+    });
+  </script>
+  <script type="module" src="/js/landing/main.js" onerror="window.ripplesLandingFailed(new Error('could not load /js/landing/main.js'))"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

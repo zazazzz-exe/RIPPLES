@@ -45,7 +45,10 @@ const SECTIONS = [
 ];
 
 async function main() {
-  const credits = await fetch('/img/landing/credits.json').then((r) => r.json());
+  // Photo credits only decorate the page; never let them block it from rendering.
+  const credits = await fetch('/img/landing/credits.json')
+    .then((r) => { if (!r.ok) throw new Error(`credits ${r.status}`); return r.json(); })
+    .catch((e) => { console.warn('[landing] photo credits unavailable:', e.message); return { photos: [] }; });
   const photos = Object.fromEntries(credits.photos.map((p) => [p.file.replace(/\.jpg$/, ''), p]));
   mount('#m-nav', Navbar.render());
   mount('#m-hero', Hero.render({ photos }));
@@ -92,4 +95,4 @@ async function main() {
   });
 }
 
-main();
+main().then(() => { window.__ripplesLanding = 'ok'; }, (e) => { window.__ripplesLanding = 'failed'; window.ripplesLandingFailed?.(e); });

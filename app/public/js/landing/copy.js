@@ -63,7 +63,7 @@ export const STEPS = [
 ];
 
 export const FEATURES = [
-  { icon: 'chain', title: 'Tamper-evident records (blockchain)', text: 'Every project record is fingerprinted with SHA-256 and chained in a ledger, so a past status, deadline or piece of evidence can't be quietly edited. Anyone can verify a record in their own browser. Used for record keeping only: no currency, wallets or payments.', href: '/ledger', highlight: true },
+  { icon: 'chain', title: 'Tamper-evident records (blockchain)', text: 'Every project record is fingerprinted with SHA-256 and chained in a ledger, so a past status, deadline or piece of evidence can’t be quietly edited. Anyone can verify a record in their own browser. Used for record keeping only: no currency, wallets or payments.', href: '/ledger', highlight: true },
   { icon: 'map', title: 'Interactive Philippine map', text: 'Explore projects geographically, from the whole archipelago down to a single site.', href: '#map' },
   { icon: 'progress', title: 'Project progress tracking', text: 'Follow the reported status and physical progress of each commitment over time.', href: '#status' },
   { icon: 'camera', title: 'Visual evidence', text: 'See photos, satellite checks and site updates tied to a project\'s location.', href: '#evidence' },
